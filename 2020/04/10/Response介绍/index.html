@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://Kayuyu1.github.io">
   <title>Response介绍 | 湖底幽魂</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内容 HTTP协议：响应消息  Response对象  ServletContext对象">
+  <meta name="description" content="内容1.HTTP协议：响应消息 2.Response对象 3.ServletContext对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Response介绍">
 <meta property="og:url" content="http://kayuyu1.github.io/2020/04/10/Response%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="内容 HTTP协议：响应消息  Response对象  ServletContext对象">
+<meta property="og:description" content="内容1.HTTP协议：响应消息 2.Response对象 3.ServletContext对象">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://kayuyu1.github.io/2020/04/10/Response%E4%BB%8B%E7%BB%8D/%E9%87%8D%E5%AE%9A%E5%90%91.bmp">
 <meta property="article:published_time" content="2020-04-10T01:30:16.000Z">
-<meta property="article:modified_time" content="2020-04-10T01:32:26.474Z">
+<meta property="article:modified_time" content="2020-04-10T02:00:49.273Z">
 <meta property="article:author" content="kuangyu">
 <meta property="article:tag" content="javaee">
 <meta name="twitter:card" content="summary">
@@ -188,17 +188,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><ol>
-<li><p>HTTP协议：响应消息</p>
-</li>
-<li><p>Response对象</p>
-</li>
-<li><p>ServletContext对象</p>
+        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>1.HTTP协议：响应消息</p>
+<p>2.Response对象</p>
+<p>3.ServletContext对象</p>
 <a id="more"></a>
 
 
-</li>
-</ol>
 <h2 id="HTTP协议："><a href="#HTTP协议：" class="headerlink" title="HTTP协议："></a>HTTP协议：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 请求消息：客户端发送给服务器端的数据</span><br><span class="line">	* 数据格式：</span><br><span class="line">		<span class="number">1</span>. 请求行</span><br><span class="line">		<span class="number">2</span>. 请求头</span><br><span class="line">		<span class="number">3</span>. 请求空行</span><br><span class="line">		<span class="number">4</span>. 请求体</span><br><span class="line"><span class="number">2</span>. 响应消息：服务器端发送给客户端的数据</span><br><span class="line">	* 数据格式：</span><br><span class="line">		<span class="number">1</span>. 响应行</span><br><span class="line">			<span class="number">1</span>. 组成：协议/版本 响应状态码 状态码描述</span><br><span class="line">			<span class="number">2</span>. 响应状态码：服务器告诉客户端浏览器本次请求和响应的一个状态。</span><br><span class="line">				<span class="number">1</span>. 状态码都是<span class="number">3</span>位数字 </span><br><span class="line">				<span class="number">2</span>. 分类：</span><br><span class="line">					<span class="number">1</span>. <span class="number">1</span>xx：服务器就收客户端消息，但没有接受完成，等待一段时间后，发送<span class="number">1</span>xx多状态码</span><br><span class="line">					<span class="number">2</span>. <span class="number">2</span>xx：成功。代表：<span class="number">200</span></span><br><span class="line">					<span class="number">3</span>. <span class="number">3</span>xx：重定向。代表：<span class="number">302</span>(重定向)，<span class="number">304</span>(访问缓存)</span><br><span class="line">					<span class="number">4</span>. <span class="number">4</span>xx：客户端错误。</span><br><span class="line">						* 代表：</span><br><span class="line">							* <span class="number">404</span>（请求路径没有对应的资源） </span><br><span class="line">							* <span class="number">405</span>：请求方式没有对应的doXxx方法</span><br><span class="line">					<span class="number">5</span>. <span class="number">5</span>xx：服务器端错误。代表：<span class="number">500</span>(服务器内部出现异常)</span><br></pre></td></tr></table></figure>
 
 
@@ -504,7 +499,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javase</a>
+                <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,7 +507,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JDBC</a>
+                <a href="javascript:void(0)" class="js-tag color2">javase</a>
               </li>
              
               <li class="article-tag-list-item">
