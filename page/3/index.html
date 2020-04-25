@@ -6,23 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://Kayuyu1.github.io">
-  <title>Junit与反射 | 湖底幽魂</title>
+  <title>湖底幽魂</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内容 Junit单元测试 反射 注解">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Junit与反射">
-<meta property="og:url" content="http://kayuyu1.github.io/2020/04/08/Junit%E4%B8%8E%E5%8F%8D%E5%B0%84/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="湖底幽魂">
+<meta property="og:url" content="http://kayuyu1.github.io/page/3/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="内容 Junit单元测试 反射 注解">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/04/08/Junit%E4%B8%8E%E5%8F%8D%E5%B0%84/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB.bmp">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/04/08/Junit%E4%B8%8E%E5%8F%8D%E5%B0%84/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5.bmp">
-<meta property="article:published_time" content="2020-04-07T16:16:08.000Z">
-<meta property="article:modified_time" content="2020-04-07T16:24:18.929Z">
 <meta property="article:author" content="kuangyu">
-<meta property="article:tag" content="javase">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kayuyu1.github.io/2020/04/08/Junit%E4%B8%8E%E5%8F%8D%E5%B0%84/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB.bmp">
   
     <link rel="alternative" href="/atom.xml" title="湖底幽魂" type="application/atom+xml">
   
@@ -169,112 +161,38 @@
           </div>
           <div id="js-content" class="content-ll">
             
-<article id="post-Junit与反射" class="article article-type-post " itemscope itemprop="blogPost">
+  
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Junit与反射
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/03/hello-world/">Hello World</a>
     </h1>
   
 
 		<!--显示阅读次数-->
 
-  <br/>
-  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
-  <span class="icon-sort"></span>
-  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
-            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
-  </span>
-  </a>
-
 <!--显示阅读次数完毕-->
 		
         
-        <a href="/2020/04/08/Junit%E4%B8%8E%E5%8F%8D%E5%B0%84/" class="archive-article-date">
-  	<time datetime="2020-04-07T16:16:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-08</time>
+        <a href="/2020/04/03/hello-world/" class="archive-article-date">
+  	<time datetime="2020-04-03T08:43:13.270Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><ol>
-<li>Junit单元测试</li>
-<li>反射</li>
-<li>注解</li>
-</ol>
-<a id="more"></a>
-
-<h2 id="Junit单元测试："><a href="#Junit单元测试：" class="headerlink" title="Junit单元测试："></a>Junit单元测试：</h2><img src="/2020/04/08/Junit%E4%B8%8E%E5%8F%8D%E5%B0%84/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB.bmp" class title="测试分类">
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">* 测试分类：</span><br><span class="line">	<span class="number">1</span>. 黑盒测试：不需要写代码，给输入值，看程序是否能够输出期望的值。</span><br><span class="line">	<span class="number">2</span>. 白盒测试：需要写代码的。关注程序具体的执行流程。</span><br><span class="line"></span><br><span class="line">* Junit使用：白盒测试</span><br><span class="line">	* 步骤：</span><br><span class="line">		<span class="number">1</span>. 定义一个测试类(测试用例)</span><br><span class="line">			* 建议：</span><br><span class="line">				* 测试类名：被测试的类名Test		CalculatorTest</span><br><span class="line">				* 包名：xxx.xxx.xx.test		cn.itcast.test</span><br><span class="line"></span><br><span class="line">		<span class="number">2</span>. 定义测试方法：可以独立运行</span><br><span class="line">			* 建议：</span><br><span class="line">				* 方法名：test测试的方法名		testAdd()  </span><br><span class="line">				* 返回值：<span class="keyword">void</span></span><br><span class="line">				* 参数列表：空参</span><br><span class="line"></span><br><span class="line">		<span class="number">3</span>. 给方法加<span class="meta">@Test</span></span><br><span class="line">		<span class="number">4</span>. 导入junit依赖环境</span><br><span class="line"></span><br><span class="line">	* 判定结果：</span><br><span class="line">		* 红色：失败</span><br><span class="line">		* 绿色：成功</span><br><span class="line">		* 一般我们会使用断言操作来处理结果</span><br><span class="line">			* Assert.assertEquals(期望的结果,运算的结果);</span><br><span class="line"></span><br><span class="line">	* 补充：</span><br><span class="line">		* <span class="meta">@Before</span>:</span><br><span class="line">			* 修饰的方法会在测试方法之前被自动执行</span><br><span class="line">		* <span class="meta">@After</span>:</span><br><span class="line">			* 修饰的方法会在测试方法执行之后自动被执行</span><br></pre></td></tr></table></figure>
-
-<h2 id="反射：框架设计的灵魂"><a href="#反射：框架设计的灵魂" class="headerlink" title="反射：框架设计的灵魂"></a>反射：框架设计的灵魂</h2><p>代码的三个阶段</p>
-<img src="/2020/04/08/Junit%E4%B8%8E%E5%8F%8D%E5%B0%84/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5.bmp" class title="代码的三个阶段">
-
-<pre><code>* 框架：半成品软件。可以在框架的基础上进行软件开发，简化编码
-* 反射：将类的各个组成部分封装为其他对象，这就是反射机制
-    * 好处：
-        1. 可以在程序运行过程中，操作这些对象。
-        2. 可以解耦，提高程序的可扩展性。</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">* 获取Class对象的方式：</span><br><span class="line">	<span class="number">1</span>. Class.forName(<span class="string">"全类名"</span>)：将字节码文件加载进内存，返回Class对象</span><br><span class="line">		* 多用于配置文件，将类名定义在配置文件中。读取文件，加载类</span><br><span class="line">	<span class="number">2</span>. 类名<span class="class">.<span class="keyword">class</span>：通过类名的属性<span class="title">class</span>获取</span></span><br><span class="line"><span class="class">		* 多用于参数的传递</span></span><br><span class="line"><span class="class">	3. 对象.<span class="title">getClass</span>()：<span class="title">getClass</span>()方法在<span class="title">Object</span>类中定义着。</span></span><br><span class="line"><span class="class">		* 多用于对象的获取字节码的方式</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">	* 结论：</span></span><br><span class="line"><span class="class">		同一个字节码文件(*.<span class="title">class</span>)在一次程序运行过程中，只会被加载一次，不论通过哪一种方式获取的<span class="title">Class</span>对象都是同一个。</span></span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">* Class对象功能：</span><br><span class="line">	* 获取功能：</span><br><span class="line">		<span class="number">1</span>. 获取成员变量们</span><br><span class="line">			* Field[] getFields() ：获取所有<span class="keyword">public</span>修饰的成员变量</span><br><span class="line">			* <span class="function">Field <span class="title">getField</span><span class="params">(String name)</span>   获取指定名称的 <span class="keyword">public</span>修饰的成员变量</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">			* Field[] <span class="title">getDeclaredFields</span><span class="params">()</span>  获取所有的成员变量，不考虑修饰符</span></span><br><span class="line"><span class="function">			* Field <span class="title">getDeclaredField</span><span class="params">(String name)</span>  </span></span><br><span class="line"><span class="function">		2. 获取构造方法们</span></span><br><span class="line"><span class="function">			* Constructor&lt;?&gt;[] <span class="title">getConstructors</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">			* Constructor&lt;T&gt; <span class="title">getConstructor</span><span class="params">(类&lt;?&gt;... parameterTypes)</span>  </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">			* Constructor&lt;T&gt; <span class="title">getDeclaredConstructor</span><span class="params">(类&lt;?&gt;... parameterTypes)</span>  </span></span><br><span class="line"><span class="function">			* Constructor&lt;?&gt;[] <span class="title">getDeclaredConstructors</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">		3. 获取成员方法们：</span></span><br><span class="line"><span class="function">			* Method[] <span class="title">getMethods</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">			* Method <span class="title">getMethod</span><span class="params">(String name, 类&lt;?&gt;... parameterTypes)</span>  </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">			* Method[] <span class="title">getDeclaredMethods</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function">			* Method <span class="title">getDeclaredMethod</span><span class="params">(String name, 类&lt;?&gt;... parameterTypes)</span>  </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">		4. 获取全类名	</span></span><br><span class="line"><span class="function">			* String <span class="title">getName</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">* Field：成员变量</span><br><span class="line">	* 操作：</span><br><span class="line">		<span class="number">1</span>. 设置值</span><br><span class="line">			* <span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(Object obj, Object value)</span>  </span></span><br><span class="line"><span class="function">		2. 获取值</span></span><br><span class="line"><span class="function">			* <span class="title">get</span><span class="params">(Object obj)</span> </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">		3. 忽略访问权限修饰符的安全检查</span></span><br><span class="line"><span class="function">			* <span class="title">setAccessible</span><span class="params">(<span class="keyword">true</span>)</span>:暴力反射</span></span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* Constructor:构造方法</span><br><span class="line">	* 创建对象：</span><br><span class="line">		* <span class="function">T <span class="title">newInstance</span><span class="params">(Object... initargs)</span>  </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">		* 如果使用空参数构造方法创建对象，操作可以简化：Class对象的newInstance方法</span></span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* Method：方法对象</span><br><span class="line">	* 执行方法：</span><br><span class="line">		* <span class="function">Object <span class="title">invoke</span><span class="params">(Object obj, Object... args)</span>  </span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">	* 获取方法名称：</span></span><br><span class="line"><span class="function">		* String getName:获取方法名</span></span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">* 案例：</span><br><span class="line">	* 需求：写一个<span class="string">"框架"</span>，不能改变该类的任何代码的前提下，可以帮我们创建任意类的对象，并且执行其中任意方法</span><br><span class="line">		* 实现：</span><br><span class="line">			<span class="number">1</span>. 配置文件</span><br><span class="line">			<span class="number">2</span>. 反射</span><br><span class="line">		* 步骤：</span><br><span class="line">			<span class="number">1</span>. 将需要创建的对象的全类名和需要执行的方法定义在配置文件中</span><br><span class="line">			<span class="number">2</span>. 在程序中加载读取配置文件</span><br><span class="line">			<span class="number">3</span>. 使用反射技术来加载类文件进内存</span><br><span class="line">			<span class="number">4</span>. 创建对象</span><br><span class="line">			<span class="number">5</span>. 执行方法</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="注解："><a href="#注解：" class="headerlink" title="注解："></a>注解：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">* 概念：说明程序的。给计算机看的</span><br><span class="line">* 注释：用文字描述程序的。给程序员看的</span><br><span class="line"></span><br><span class="line">* 定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1<span class="number">.5</span>及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。</span><br><span class="line">* 概念描述：</span><br><span class="line">	* JDK1<span class="number">.5</span>之后的新特性</span><br><span class="line">	* 说明程序的</span><br><span class="line">	* 使用注解：@注解名称</span><br></pre></td></tr></table></figure>
-
-
-<p>​    </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 作用分类：</span><br><span class="line">	①编写文档：通过代码里标识的注解生成文档【生成文档doc文档】</span><br><span class="line">	②代码分析：通过代码里标识的注解对代码进行分析【使用反射】</span><br><span class="line">	③编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查【Override】</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">* JDK中预定义的一些注解</span><br><span class="line">	* <span class="meta">@Override</span>	：检测被该注解标注的方法是否是继承自父类(接口)的</span><br><span class="line">	* <span class="meta">@Deprecated</span>：该注解标注的内容，表示已过时</span><br><span class="line">	* <span class="meta">@SuppressWarnings</span>：压制警告</span><br><span class="line">		* 一般传递参数all  <span class="meta">@SuppressWarnings</span>(<span class="string">"all"</span>)</span><br><span class="line"></span><br><span class="line">* 自定义注解</span><br><span class="line">	* 格式：</span><br><span class="line">		元注解</span><br><span class="line">		<span class="keyword">public</span> <span class="meta">@interface</span> 注解名称&#123;</span><br><span class="line">			属性列表;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	* 本质：注解本质上就是一个接口，该接口默认继承Annotation接口</span><br><span class="line">		* <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyAnno</span> <span class="keyword">extends</span> <span class="title">java</span>.<span class="title">lang</span>.<span class="title">annotation</span>.<span class="title">Annotation</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	* 属性：接口中的抽象方法</span><br><span class="line">		* 要求：</span><br><span class="line">			<span class="number">1</span>. 属性的返回值类型有下列取值</span><br><span class="line">				* 基本数据类型</span><br><span class="line">				* String</span><br><span class="line">				* 枚举</span><br><span class="line">				* 注解</span><br><span class="line">				* 以上类型的数组</span><br><span class="line"></span><br><span class="line">			<span class="number">2</span>. 定义了属性，在使用时需要给属性赋值</span><br><span class="line">				<span class="number">1</span>. 如果定义属性时，使用<span class="keyword">default</span>关键字给属性默认初始化值，则使用注解时，可以不进行属性的赋值。</span><br><span class="line">				<span class="number">2</span>. 如果只有一个属性需要赋值，并且属性的名称是value，则value可以省略，直接定义值即可。</span><br><span class="line">				<span class="number">3</span>. 数组赋值时，值使用&#123;&#125;包裹。如果数组中只有一个值，则&#123;&#125;可以省略</span><br><span class="line">	</span><br><span class="line">	* 元注解：用于描述注解的注解</span><br><span class="line">		* <span class="meta">@Target</span>：描述注解能够作用的位置</span><br><span class="line">			* ElementType取值：</span><br><span class="line">				* TYPE：可以作用于类上</span><br><span class="line">				* METHOD：可以作用于方法上</span><br><span class="line">				* FIELD：可以作用于成员变量上</span><br><span class="line">		* <span class="meta">@Retention</span>：描述注解被保留的阶段</span><br><span class="line">			* <span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)：当前被描述的注解，会保留到<span class="class"><span class="keyword">class</span>字节码文件中，并被<span class="title">JVM</span>读取到</span></span><br><span class="line"><span class="class">		* @<span class="title">Documented</span>：描述注解是否被抽取到<span class="title">api</span>文档中</span></span><br><span class="line"><span class="class">		* @<span class="title">Inherited</span>：描述注解是否被子类继承</span></span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">* 在程序使用(解析)注解：获取注解中定义的属性值</span><br><span class="line">	<span class="number">1</span>. 获取注解定义的位置的对象  （Class，Method,Field）</span><br><span class="line">	<span class="number">2</span>. 获取指定的注解</span><br><span class="line">		* getAnnotation(Class)</span><br><span class="line">		<span class="comment">//其实就是在内存中生成了一个该注解接口的子类实现对象</span></span><br><span class="line"></span><br><span class="line">	            <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProImpl</span> <span class="keyword">implements</span> <span class="title">Pro</span></span>&#123;</span><br><span class="line">	                <span class="function"><span class="keyword">public</span> String <span class="title">className</span><span class="params">()</span></span>&#123;</span><br><span class="line">	                    <span class="keyword">return</span> <span class="string">"cn.itcast.annotation.Demo1"</span>;</span><br><span class="line">	                &#125;</span><br><span class="line">	                <span class="function"><span class="keyword">public</span> String <span class="title">methodName</span><span class="params">()</span></span>&#123;</span><br><span class="line">	                    <span class="keyword">return</span> <span class="string">"show"</span>;</span><br><span class="line">	                &#125;</span><br><span class="line">	            &#125;</span><br><span class="line">	<span class="number">3</span>. 调用注解中的抽象方法获取配置的属性值</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* 案例：简单的测试框架</span><br><span class="line">* 小结：</span><br><span class="line">	<span class="number">1</span>. 以后大多数时候，我们会使用注解，而不是自定义注解</span><br><span class="line">	<span class="number">2</span>. 注解给谁用？</span><br><span class="line">		<span class="number">1</span>. 编译器</span><br><span class="line">		<span class="number">2</span>. 给解析程序用</span><br><span class="line">	<span class="number">3</span>. 注解不是程序的一部分，可以理解为注解就是一个标签</span><br></pre></td></tr></table></figure>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
+        
+          <a class="article-more-a" href="/2020/04/03/hello-world/#more">more >></a>
+        
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -285,7 +203,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javase</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		
 		</ul>
@@ -294,84 +212,16 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/03/hello-world/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://kayuyu1.github.io/b.io/2020/04/08/Junit%E4%B8%8E%E5%8F%8D%E5%B0%84/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/04/10/Response%E4%BB%8B%E7%BB%8D/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Response介绍
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/04/07/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">java网络编程</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -386,32 +236,17 @@
         </div>
         
         
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内容"><span class="toc-number">1.</span> <span class="toc-text">内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Junit单元测试："><span class="toc-number">1.1.</span> <span class="toc-text">Junit单元测试：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反射：框架设计的灵魂"><span class="toc-number">1.2.</span> <span class="toc-text">反射：框架设计的灵魂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注解："><span class="toc-number">1.3.</span> <span class="toc-text">注解：</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
     </div>
 </aside>
 
 
 
-  
-  
-  
 
   
-
   
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
   
 
 
@@ -437,8 +272,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
