@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,6 +13,13 @@
 <meta name="theme-color" content="#222">
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-center-atom.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -85,7 +92,6 @@
 <meta property="og:url" content="http://kayuyu1.github.io/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/index.html">
 <meta property="og:site_name" content="湖底幽魂">
 <meta property="og:description" content="第一章 线程">
-<meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://kayuyu1.github.io/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E7%BA%BF%E7%A8%8B%E6%B5%81%E7%A8%8B%E5%9B%BE.png">
 <meta property="og:image" content="http://kayuyu1.github.io/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E6%A0%88%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86%E5%9B%BE.bmp">
 <meta property="og:image" content="http://kayuyu1.github.io/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98.png">
@@ -107,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -115,7 +121,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -147,7 +153,7 @@
 
 <meta name="generator" content="Hexo 4.2.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -191,29 +197,73 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
           </a>
         </li>
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
           </a>
         </li>
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -247,7 +297,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kuangyu">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/cat.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -269,9 +319,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-25T10:27:35+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-25T10:27:35+08:00">
                 2020-04-25
               </time>
             
@@ -291,7 +341,43 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  21
+                </span>
+              
+            </div>
           
 
           
@@ -315,12 +401,12 @@
 
 <h3 id="测试类："><a href="#测试类：" class="headerlink" title="测试类："></a>测试类：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">System.out.println(<span class="string">"这里是main线程"</span>);</span><br><span class="line">MyThread mt = <span class="keyword">new</span> MyThread(<span class="string">"小强"</span>);</span><br><span class="line">mt.start();<span class="comment">//开启了一个新的线程</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i =  <span class="number">0</span> ; i &lt;  <span class="number">20</span> ; i++) &#123;</span><br><span class="line">System.out.println(<span class="string">"旺财:"</span>+i);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="流程图："><a href="#流程图：" class="headerlink" title="流程图："></a>流程图：</h3><img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E7%BA%BF%E7%A8%8B%E6%B5%81%E7%A8%8B%E5%9B%BE.png" class title="线程流程图">
+<h3 id="流程图："><a href="#流程图：" class="headerlink" title="流程图："></a>流程图：</h3><img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E7%BA%BF%E7%A8%8B%E6%B5%81%E7%A8%8B%E5%9B%BE.png" class="" title="线程流程图">
 
 <p>程序启动运行main时候，java虚拟机启动一个进程，主线程main在main()调用时候被创建。随着调用mt的对象的<br>start方法，另外一个新的线程也启动了，这样，整个应用就在多线程下运行。</p>
 <p>通过这张图我们可以很清晰的看到多线程的执行流程，那么为什么可以完成并发执行呢？我们再来讲一讲原理。</p>
 <p>多线程执行时，到底在内存中是如何运行的呢？以上个程序为例，进行图解说明：</p>
-<img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E6%A0%88%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86%E5%9B%BE.bmp" class title="栈内存图">
+<img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E6%A0%88%E5%86%85%E5%AD%98%E5%8E%9F%E7%90%86%E5%9B%BE.bmp" class="" title="栈内存图">
 
 <p>多线程执行时，在栈内存中，其实每一个执行线程都有一片自己所属的栈内存空间。进行方法的压栈和弹栈。</p>
 <h3 id="当执行线程的任务结束了，线程自动在栈内存中释放了。但是当所有的执行线程都结束了，那么进程就结束了。"><a href="#当执行线程的任务结束了，线程自动在栈内存中释放了。但是当所有的执行线程都结束了，那么进程就结束了。" class="headerlink" title="当执行线程的任务结束了，线程自动在栈内存中释放了。但是当所有的执行线程都结束了，那么进程就结束了。"></a>当执行线程的任务结束了，线程自动在栈内存中释放了。但是当所有的执行线程都结束了，那么进程就结束了。</h3><h2 id="1-2-Thread类"><a href="#1-2-Thread类" class="headerlink" title="1. 2 Thread类"></a>1. 2 Thread类</h2><p>在上一天内容中我们已经可以完成最基本的线程开启，那么在我们完成操作过程中用到了java.lang.Thread类，<br>API中该类中定义了有关线程的一些方法，具体如下：</p>
@@ -355,7 +441,7 @@
 <p>模拟票：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i =  <span class="number">0</span> ; i &lt;  <span class="number">20</span> ; i++) &#123;</span><br><span class="line">System.out.println(<span class="string">"费玉清:"</span>+i);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Ticket</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> ticket =  <span class="number">100</span> ;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 执行卖票操作</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//每个窗口卖票的操作</span></span><br><span class="line"><span class="comment">//窗口 永远开启</span></span><br><span class="line"><span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line"><span class="keyword">if</span> (ticket &gt;  <span class="number">0</span> ) &#123;<span class="comment">//有票 可以卖</span></span><br><span class="line"><span class="comment">//出票操作</span></span><br><span class="line"><span class="comment">//使用sleep模拟一下出票时间</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">Thread.sleep( <span class="number">100</span> );</span><br><span class="line">&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line"><span class="comment">// TODO Auto‐generated catch block</span></span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//获取当前线程对象的名字</span></span><br><span class="line">String name = Thread.currentThread().getName();</span><br><span class="line">System.out.println(name + <span class="string">"正在卖:"</span> + ticket‐‐);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="测试类：-1"><a href="#测试类：-1" class="headerlink" title="测试类："></a>测试类：</h3><h3 id="结果中有一部分这样现象："><a href="#结果中有一部分这样现象：" class="headerlink" title="结果中有一部分这样现象："></a>结果中有一部分这样现象：</h3><img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98.png" class title="线程安全问题">
+<h3 id="测试类：-1"><a href="#测试类：-1" class="headerlink" title="测试类："></a>测试类：</h3><h3 id="结果中有一部分这样现象："><a href="#结果中有一部分这样现象：" class="headerlink" title="结果中有一部分这样现象："></a>结果中有一部分这样现象：</h3><img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98.png" class="" title="线程安全问题">
 
 <h3 id="发现程序出现了两个问题："><a href="#发现程序出现了两个问题：" class="headerlink" title="发现程序出现了两个问题："></a>发现程序出现了两个问题：</h3><h3 id="1-相同的票数-比如-5-这张票被卖了两回。"><a href="#1-相同的票数-比如-5-这张票被卖了两回。" class="headerlink" title="1. 相同的票数,比如 5 这张票被卖了两回。"></a>1. 相同的票数,比如 5 这张票被卖了两回。</h3><h3 id="2-不存在的票，比如-0-票与-1-票，是不存在的。"><a href="#2-不存在的票，比如-0-票与-1-票，是不存在的。" class="headerlink" title="2. 不存在的票，比如 0 票与- 1 票，是不存在的。"></a>2. 不存在的票，比如 0 票与- 1 票，是不存在的。</h3><h3 id="这种问题，几个窗口-线程-票数不同步了，这种问题称为线程不安全。"><a href="#这种问题，几个窗口-线程-票数不同步了，这种问题称为线程不安全。" class="headerlink" title="这种问题，几个窗口(线程)票数不同步了，这种问题称为线程不安全。"></a>这种问题，几个窗口(线程)票数不同步了，这种问题称为线程不安全。</h3><h3 id="线程安全问题都是由全局变量及静态变量引起的。若每个线程中对全局变量、静态变量只有读操作，而无写"><a href="#线程安全问题都是由全局变量及静态变量引起的。若每个线程中对全局变量、静态变量只有读操作，而无写" class="headerlink" title="线程安全问题都是由全局变量及静态变量引起的。若每个线程中对全局变量、静态变量只有读操作，而无写"></a>线程安全问题都是由全局变量及静态变量引起的。若每个线程中对全局变量、静态变量只有读操作，而无写</h3><h3 id="操作，一般来说，这个全局变量是线程安全的；若有多个线程同时执行写操作，一般都需要考虑线程同步，"><a href="#操作，一般来说，这个全局变量是线程安全的；若有多个线程同时执行写操作，一般都需要考虑线程同步，" class="headerlink" title="操作，一般来说，这个全局变量是线程安全的；若有多个线程同时执行写操作，一般都需要考虑线程同步，"></a>操作，一般来说，这个全局变量是线程安全的；若有多个线程同时执行写操作，一般都需要考虑线程同步，</h3><h3 id="否则的话就可能影响线程安全。"><a href="#否则的话就可能影响线程安全。" class="headerlink" title="否则的话就可能影响线程安全。"></a>否则的话就可能影响线程安全。</h3><h2 id="2-2-线程同步"><a href="#2-2-线程同步" class="headerlink" title="2. 2 线程同步"></a>2. 2 线程同步</h2><h3 id="当我们使用多个线程访问同一资源的时候，且多个线程中对资源有写的操作，就容易出现线程安全问题。"><a href="#当我们使用多个线程访问同一资源的时候，且多个线程中对资源有写的操作，就容易出现线程安全问题。" class="headerlink" title="当我们使用多个线程访问同一资源的时候，且多个线程中对资源有写的操作，就容易出现线程安全问题。"></a>当我们使用多个线程访问同一资源的时候，且多个线程中对资源有写的操作，就容易出现线程安全问题。</h3><p>要解决上述多线程并发访问一个资源的安全性问题:也就是解决重复票与不存在票问题，Java中提供了同步机制<br>(synchronized)来解决。</p>
 <p>根据案例简述：</p>
@@ -390,7 +476,7 @@
 <h3 id="线程状态-导致状态发生条件"><a href="#线程状态-导致状态发生条件" class="headerlink" title="线程状态 导致状态发生条件"></a>线程状态 导致状态发生条件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">NEW(新建) 线程刚被创建，但是并未启动。还没调用start方法。</span><br><span class="line">Runnable(可</span><br><span class="line">运行)</span><br><span class="line">线程可以在java虚拟机中运行的状态，可能正在运行自己代码，也可能没有，这取决于操</span><br><span class="line">作系统处理器。</span><br><span class="line">Blocked(锁阻</span><br><span class="line">塞)</span><br><span class="line">当一个线程试图获取一个对象锁，而该对象锁被其他的线程持有，则该线程进入Blocked状</span><br><span class="line">态；当该线程持有锁时，该线程将变成Runnable状态。</span><br><span class="line">Waiting(无限</span><br><span class="line">等待)</span><br><span class="line">一个线程在等待另一个线程执行一个（唤醒）动作时，该线程进入Waiting状态。进入这个</span><br><span class="line">状态后是不能自动唤醒的，必须等待另一个线程调用notify或者notifyAll方法才能够唤醒。</span><br><span class="line">Timed</span><br><span class="line">Waiting(计时</span><br><span class="line">等待)</span><br><span class="line">同waiting状态，有几个方法有超时参数，调用他们将进入Timed Waiting状态。这一状态</span><br><span class="line">将一直保持到超时期满或者接收到唤醒通知。带有超时参数的常用方法有Thread.sleep 、</span><br><span class="line">Object.wait。</span><br><span class="line">Teminated(被</span><br><span class="line">终止) 因为run方法正常退出而死亡，或者因为没有捕获的异常终止了run方法而死亡。</span><br></pre></td></tr></table></figure>
 
 <h2 id="3-1-线程状态概述"><a href="#3-1-线程状态概述" class="headerlink" title="3. 1 线程状态概述"></a>3. 1 线程状态概述</h2><h3 id="当线程被创建并启动以后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，"><a href="#当线程被创建并启动以后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，" class="headerlink" title="当线程被创建并启动以后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，"></a>当线程被创建并启动以后，它既不是一启动就进入了执行状态，也不是一直处于执行状态。在线程的生命周期中，</h3><p>有几种状态呢？在API中java.lang.Thread.State这个枚举中给出了六种线程状态：</p>
-<img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E7%8A%B6%E6%80%81.png" class title="六种状态">
+<img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E7%8A%B6%E6%80%81.png" class="" title="六种状态">
 
 <p>这里先列出各个线程状态发生的条件，下面将会对每种状态进行详细解析</p>
 <h3 id="我们不需要去研究这几种状态的实现原理，我们只需知道在做线程操作中存在这样的状态。那我们怎么去理解这几"><a href="#我们不需要去研究这几种状态的实现原理，我们只需知道在做线程操作中存在这样的状态。那我们怎么去理解这几" class="headerlink" title="我们不需要去研究这几种状态的实现原理，我们只需知道在做线程操作中存在这样的状态。那我们怎么去理解这几"></a>我们不需要去研究这几种状态的实现原理，我们只需知道在做线程操作中存在这样的状态。那我们怎么去理解这几</h3><p>个状态呢，新建与被终止还是很容易理解的，我们就研究一下线程从Runnable（可运行）状态与非运行状态之间<br>的转换问题。</p>
@@ -405,13 +491,13 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. 进入 TIMED_WAITING 状态的一种常见情形是调用的 sleep 方法，单独的线程也可以调用，不一定非要有协</span><br><span class="line">作关系。</span><br><span class="line"><span class="number">2</span>. 为了让其他线程有机会执行，可以将Thread.sleep()的调用放线程run()之内。这样才能保证该线程执行过程</span><br><span class="line">中会睡眠</span><br><span class="line"><span class="number">3</span>. sleep与锁无关，线程睡眠到期自动苏醒，并返回到Runnable（可运行）状态。</span><br><span class="line">小提示：sleep()中指定的时间是线程不会运行的最短时间。因此，sleep()方法不能保证该线程睡眠到期后就</span><br><span class="line">开始立刻执行。</span><br></pre></td></tr></table></figure>
 
 <p>Timed Waiting 线程状态图：</p>
-<img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E8%AE%A1%E6%97%B6%E7%AD%89%E5%BE%85.png" class title="计时等待">
+<img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E8%AE%A1%E6%97%B6%E7%AD%89%E5%BE%85.png" class="" title="计时等待">
 
 <h2 id="3-3-BLOCKED（锁阻塞）"><a href="#3-3-BLOCKED（锁阻塞）" class="headerlink" title="3. 3 BLOCKED（锁阻塞）"></a>3. 3 BLOCKED（锁阻塞）</h2><p>Blocked状态在API中的介绍为：一个正在阻塞等待一个监视器锁（锁对象）的线程处于这一状态。</p>
 <p>我们已经学完同步机制，那么这个状态是非常好理解的了。比如，线程A与线程B代码中使用同一锁，如果线程A获<br>取到锁，线程A进入到Runnable状态，那么线程B就进入到Blocked锁阻塞状态。</p>
 <p>这是由Runnable状态进入Blocked状态。除此Waiting以及Time Waiting状态也会在某种情况下进入阻塞状态，而<br>这部分内容作为扩充知识点带领大家了解一下。</p>
 <p>Blocked 线程状态图</p>
-<img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E9%94%81%E9%98%BB%E5%A1%9E.png" class title="锁阻塞">
+<img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E9%94%81%E9%98%BB%E5%A1%9E.png" class="" title="锁阻塞">
 
 
 
@@ -423,11 +509,11 @@
 <p>其实waiting状态并不是一个线程的操作，它体现的是多个线程间的通信，可以理解为多个线程之间的协作关系，<br>多个线程会争取锁，同时相互之间又存在协作关系。就好比在公司里你和你的同事们，你们可能存在晋升时的竞<br>争，但更多时候你们更多是一起合作以完成某些任务。</p>
 <p>当多个线程协作时，比如A，B线程，如果A线程在Runnable（可运行）状态中调用了wait()方法那么A线程就进入<br>了Waiting（无限等待）状态，同时失去了同步锁。假如这个时候B线程获取到了同步锁，在运行状态中调用了<br>notify()方法，那么就会将无限等待的A线程唤醒。注意是唤醒，如果获取到锁对象，那么A线程唤醒后就进入<br>Runnable（可运行）状态；如果没有获取锁对象，那么就进入到Blocked（锁阻塞状态）。</p>
 <p>Waiting 线程状态图</p>
-<img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E6%97%A0%E9%99%90%E7%AD%89%E5%BE%85.png" class title="无限等待">
+<img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E6%97%A0%E9%99%90%E7%AD%89%E5%BE%85.png" class="" title="无限等待">
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WaitingTest</span> </span>&#123; </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Object obj = <span class="keyword">new</span> Object(); <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 演示waiting new Thread(new Runnable() &#123; @Override public void run() &#123; while (true)&#123; synchronized (obj)&#123; try &#123;System.out.println( Thread.currentThread().getName() +"=== 获取到锁对</span></span><br><span class="line">象，调用wait方法，进入waiting状态，释放锁对象<span class="string">");</span></span><br><span class="line"><span class="string">obj.wait(); //无限等待</span></span><br><span class="line"><span class="string">//obj.wait( 5000 ); //计时等待,  5 秒 时间到，自动醒来</span></span><br><span class="line"><span class="string">&#125; catch (InterruptedException e) &#123;</span></span><br><span class="line"><span class="string">e.printStackTrace();</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">System.out.println( Thread.currentThread().getName() + "</span>=== 从waiting状</span><br><span class="line">态醒来，获取到锁对象，继续执行了<span class="string">");</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;,"</span>等待线程<span class="string">").start();</span></span><br><span class="line"><span class="string">new Thread(new Runnable() &#123;</span></span><br><span class="line"><span class="string">@Override</span></span><br><span class="line"><span class="string">public void run() &#123;</span></span><br><span class="line"><span class="string">// while (true)&#123; //每隔 3 秒 唤醒一次</span></span><br><span class="line"><span class="string">try &#123;</span></span><br><span class="line"><span class="string">System.out.println( Thread.currentThread().getName() +"</span>‐‐‐‐‐ 等待 <span class="number">3</span> 秒钟<span class="string">");</span></span><br><span class="line"><span class="string">Thread.sleep( 3000 );</span></span><br><span class="line"><span class="string">&#125; catch (InterruptedException e) &#123;</span></span><br><span class="line"><span class="string">e.printStackTrace();</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">synchronized (obj)&#123;</span></span><br><span class="line"><span class="string">System.out.println( Thread.currentThread().getName() +"</span>‐‐‐‐‐ 获取到锁对</span><br><span class="line">象,调用notify方法，释放锁对象<span class="string">");</span></span><br><span class="line"><span class="string">obj.notify();</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">// &#125;</span></span><br><span class="line"><span class="string">&#125;,"</span>唤醒线程<span class="string">").start();</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="3-5-补充知识点"><a href="#3-5-补充知识点" class="headerlink" title="3. 5 补充知识点"></a>3. 5 补充知识点</h2><h3 id="到此为止我们已经对线程状态有了基本的认识，想要有更多的了解，详情可以见下图："><a href="#到此为止我们已经对线程状态有了基本的认识，想要有更多的了解，详情可以见下图：" class="headerlink" title="到此为止我们已经对线程状态有了基本的认识，想要有更多的了解，详情可以见下图："></a>到此为止我们已经对线程状态有了基本的认识，想要有更多的了解，详情可以见下图：</h3><img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E5%9B%BE.png" class title="线程状态图">
+<h2 id="3-5-补充知识点"><a href="#3-5-补充知识点" class="headerlink" title="3. 5 补充知识点"></a>3. 5 补充知识点</h2><h3 id="到此为止我们已经对线程状态有了基本的认识，想要有更多的了解，详情可以见下图："><a href="#到此为止我们已经对线程状态有了基本的认识，想要有更多的了解，详情可以见下图：" class="headerlink" title="到此为止我们已经对线程状态有了基本的认识，想要有更多的了解，详情可以见下图："></a>到此为止我们已经对线程状态有了基本的认识，想要有更多的了解，详情可以见下图：</h3><img src="/2020/04/25/%E7%BA%BF%E7%A8%8B%E4%B8%8E%E5%90%8C%E6%AD%A5/%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%E5%9B%BE.png" class="" title="线程状态图">
 
 <p>一条有意思的tips:</p>
 <p>我们在翻阅API的时候会发现Timed Waiting（计时等待） 与 Waiting（无限等待） 状态联系还是很紧密的，<br>比如Waiting（无限等待） 状态中wait方法是空参的，而timed waiting（计时等待） 中wait方法是带参的。<br>这种带参的方法，其实是一种倒计时操作，相当于我们生活中的小闹钟，我们设定好时间，到时通知，可是<br>如果提前得到（唤醒）通知，那么设定好时间在通知也就显得多此一举了，那么这种设计方案其实是一举两<br>得。如果没有得到（唤醒）通知，那么线程就处于Timed Waiting状态,直到倒计时完毕自动醒来；如果在倒<br>计时期间得到（唤醒）通知，那么线程从Timed Waiting状态立刻唤醒。</p>
@@ -441,6 +527,30 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>随便打钱，我不在乎</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="kuangyu 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -448,7 +558,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javase/" rel="tag"># javase</a>
+            <a href="/tags/javase/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>javase</a>
           
         </div>
       
@@ -527,10 +637,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -538,6 +648,10 @@
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/cat.jpg"
+                alt="kuangyu" />
             
               <p class="site-author-name" itemprop="name">kuangyu</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -548,10 +662,10 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/%20%7C%7C%20archive">
+                <a href="/archives/%7C%7C%20archive">
               
                   <span class="site-state-item-count">23</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -562,10 +676,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
+                <a href="/tags/index.html">
                   <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">tags</span>
-                
+                  <span class="site-state-item-name">标签</span>
+                </a>
               </div>
             
 
@@ -574,11 +688,45 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Kayuyu1" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/kuangyu123" target="_blank" title="Gitee">
+                      
+                        <i class="fa fa-fw fa-gitee"></i>Gitee</a>
+                  </span>
+                
+            </div>
+          
 
           
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://kayuyu1.github.io/" title="ky" target="_blank">ky</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mvnrepository.com/" title="maven" target="_blank">maven</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -626,7 +774,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -634,12 +782,32 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 
@@ -681,6 +849,8 @@
   
 
 
+  
+
 
 
 
@@ -719,6 +889,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -789,6 +964,323 @@
 
   
 
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
@@ -808,5 +1300,12 @@
 
   
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haru01.model.json"},"display":{"position":"left","width":200,"height":400,"hOffset":200,"vOffset":0},"mobile":{"show":false}});</script></body>
+  
+  
+  
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+</body>
 </html>
