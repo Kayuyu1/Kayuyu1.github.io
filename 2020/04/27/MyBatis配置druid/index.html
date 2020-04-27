@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://Kayuyu1.github.io">
-  <title>Tag: JDBC | 湖底幽魂</title>
+  <title>MyBatis配置druid | 湖底幽魂</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="湖底幽魂">
-<meta property="og:url" content="http://kayuyu1.github.io/tags/JDBC/index.html">
+  <meta name="description" content="MyBatis配置druid步骤">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBatis配置druid">
+<meta property="og:url" content="http://kayuyu1.github.io/2020/04/27/MyBatis%E9%85%8D%E7%BD%AEdruid/index.html">
 <meta property="og:site_name" content="湖底幽魂">
+<meta property="og:description" content="MyBatis配置druid步骤">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-27T11:47:29.000Z">
+<meta property="article:modified_time" content="2020-04-27T12:05:47.289Z">
 <meta property="article:author" content="kuangyu">
+<meta property="article:tag" content="MyBatis">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="湖底幽魂" type="application/atom+xml">
@@ -161,97 +166,207 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-MyBatis配置druid" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/06/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/" class="archive-article-date">
-  	<time datetime="2020-04-06T01:37:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/06/JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/">JDBC连接池</a>
+    <h1 class="article-title" itemprop="name">
+      MyBatis配置druid
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+		<!--显示阅读次数-->
+
+  <br/>
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+  <span class="icon-sort"></span>
+  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+  </span>
+  </a>
+
+<!--显示阅读次数完毕-->
+		
+        
+        <a href="/2020/04/27/MyBatis%E9%85%8D%E7%BD%AEdruid/" class="archive-article-date">
+  	<time datetime="2020-04-27T11:47:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MyBatis配置druid步骤"><a href="#MyBatis配置druid步骤" class="headerlink" title="MyBatis配置druid步骤"></a>MyBatis配置druid步骤<a id="more"></a></h1><h2 id="1-导入依赖"><a href="#1-导入依赖" class="headerlink" title="1.导入依赖"></a>1.导入依赖</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;druid&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.9&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-创建druid工厂类"><a href="#2-创建druid工厂类" class="headerlink" title="2.创建druid工厂类"></a>2.创建druid工厂类</h2><p>虽然Druid提供了一个同名的DruidDataSourceFactory类，但是不能在MyBatis中直接使用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DruidUtils</span> <span class="keyword">extends</span> <span class="title">PooledDataSourceFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DruidUtils</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.dataSource = <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-创建druid配置文件druid-properties"><a href="#3-创建druid配置文件druid-properties" class="headerlink" title="3.创建druid配置文件druid.properties"></a>3.创建druid配置文件druid.properties</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">username=root</span><br><span class="line">password=<span class="number">123456</span></span><br><span class="line">jdbcUrl=jdbc:mysql:<span class="comment">///mybatis?useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8</span></span><br><span class="line">driverClass=com.mysql.jdbc.Driver</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-设置mybatis-config-xml"><a href="#4-设置mybatis-config-xml" class="headerlink" title="4.设置mybatis-config.xml"></a>4.设置mybatis-config.xml</h2><h3 id="1-引入外部文件"><a href="#1-引入外部文件" class="headerlink" title="(1)引入外部文件"></a>(1)引入外部文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--引入外部配置文件--&gt;</span><br><span class="line">&lt;properties resource=<span class="string">"druid.properties"</span>/&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-修改属性配置"><a href="#2-修改属性配置" class="headerlink" title="(2)修改属性配置"></a>(2)修改属性配置</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dataSource type=<span class="string">"com.ky.utils.DruidUtils"</span>&gt;</span><br><span class="line">    &lt;property name=<span class="string">"driverClass"</span> value=<span class="string">"$&#123;driverClass&#125;"</span>/&gt;</span><br><span class="line">    &lt;property name=<span class="string">"jdbcUrl"</span> value=<span class="string">"$&#123;jdbcUrl&#125;"</span>/&gt;</span><br><span class="line">    &lt;property name=<span class="string">"username"</span> value=<span class="string">"$&#123;username&#125;"</span>/&gt;</span><br><span class="line">    &lt;property name=<span class="string">"password"</span> value=<span class="string">"$&#123;password&#125;"</span>/&gt;</span><br><span class="line">&lt;/dataSource&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：因为在DruidAbstractDataSource的源码为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">volatile</span> String jdbcUrl;</span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">volatile</span> String driverClass;</span><br></pre></td></tr></table></figure>
+
+<p>所以设置property的时候尽量以driverClass和jdbcUrl命名，如果以默认driver命名（默认的url不改不会报错，不知道为啥）否则会报错</p>
+<p>Caused by: org.apache.ibatis.reflection.ReflectionException: Could not set property ‘driver’ of ‘class com.alibaba.druid.pool.DruidDataSource’ with value ‘com.mysql.jdbc.Driver’ Cause: java.lang.IllegalArgumentException: argument type mismatch </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MyBatis</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://kayuyu1.github.io/b.io/2020/04/27/MyBatis%E9%85%8D%E7%BD%AEdruid/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/04/JDBC%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2020-04-04T14:59:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于update多个字段的某细节</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/04/JDBC%E5%9F%BA%E7%A1%80/">JDBC基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">JDBC</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MyBatis配置druid步骤"><span class="toc-number">1.</span> <span class="toc-text">MyBatis配置druid步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-导入依赖"><span class="toc-number">1.1.</span> <span class="toc-text">1.导入依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-创建druid工厂类"><span class="toc-number">1.2.</span> <span class="toc-text">2.创建druid工厂类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-创建druid配置文件druid-properties"><span class="toc-number">1.3.</span> <span class="toc-text">3.创建druid配置文件druid.properties</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-设置mybatis-config-xml"><span class="toc-number">1.4.</span> <span class="toc-text">4.设置mybatis-config.xml</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-引入外部文件"><span class="toc-number">1.4.1.</span> <span class="toc-text">(1)引入外部文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-修改属性配置"><span class="toc-number">1.4.2.</span> <span class="toc-text">(2)修改属性配置</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -277,9 +392,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
