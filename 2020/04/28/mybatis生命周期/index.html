@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Mysql," />
+  <meta name="keywords" content="MyBatis," />
 
 
 
@@ -86,21 +86,20 @@
 
 
 
-<meta name="description" content="在使用update更新多条语句的时候不能使用and连接">
+<meta name="description" content="MyBatis生命周期1.SqlSessionFactoryBuilder这个类可以被实例化、使用和丢弃，一旦创建了 SqlSessionFactory，就不再需要它了。 因此 SqlSessionFactoryBuilder 实例的最佳作用域是方法作用域（也就是局部方法变量）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于update多个字段的某细节">
-<meta property="og:url" content="http://kayuyu1.github.io/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/index.html">
+<meta property="og:title" content="mybatis生命周期">
+<meta property="og:url" content="http://kayuyu1.github.io/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="在使用update更新多条语句的时候不能使用and连接">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/1.png">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/2.png">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/update%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3.png">
-<meta property="article:published_time" content="2020-04-26T15:50:14.000Z">
-<meta property="article:modified_time" content="2020-04-26T16:10:14.541Z">
+<meta property="og:description" content="MyBatis生命周期1.SqlSessionFactoryBuilder这个类可以被实例化、使用和丢弃，一旦创建了 SqlSessionFactory，就不再需要它了。 因此 SqlSessionFactoryBuilder 实例的最佳作用域是方法作用域（也就是局部方法变量）。">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/1.png">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/2.png">
+<meta property="article:published_time" content="2020-04-28T04:00:17.000Z">
+<meta property="article:modified_time" content="2020-04-28T04:09:47.824Z">
 <meta property="article:author" content="kuangyu">
-<meta property="article:tag" content="Mysql">
+<meta property="article:tag" content="MyBatis">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kayuyu1.github.io/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/1.png">
+<meta name="twitter:image" content="http://kayuyu1.github.io/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/1.png">
 
 
 
@@ -130,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://Kayuyu1.github.io/2020/04/26/关于update多个字段的某细节/"/>
+  <link rel="canonical" href="http://Kayuyu1.github.io/2020/04/28/mybatis生命周期/"/>
 
 
 
 
 
-  <title>关于update多个字段的某细节 | 湖底幽魂</title>
+  <title>mybatis生命周期 | 湖底幽魂</title>
   
 
 
@@ -287,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/">
+    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kuangyu">
@@ -304,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于update多个字段的某细节</h1>
+          <h1 class="post-title" itemprop="name headline">mybatis生命周期</h1>
         
 
         <div class="post-meta">
@@ -316,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-26T23:50:14+08:00">
-                2020-04-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-28T12:00:17+08:00">
+                2020-04-28
               </time>
             
 
@@ -353,7 +352,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  163
+                  249
                 </span>
               
 
@@ -390,24 +389,17 @@
       
 
       
-        <h1 id="在使用update更新多条语句的时候不能使用and连接"><a href="#在使用update更新多条语句的时候不能使用and连接" class="headerlink" title="在使用update更新多条语句的时候不能使用and连接"></a>在使用update更新多条语句的时候不能使用and连接</h1><a id="more"></a>
+        <h1 id="MyBatis生命周期"><a href="#MyBatis生命周期" class="headerlink" title="MyBatis生命周期"></a>MyBatis生命周期</h1><h2 id="1-SqlSessionFactoryBuilder"><a href="#1-SqlSessionFactoryBuilder" class="headerlink" title="1.SqlSessionFactoryBuilder"></a>1.SqlSessionFactoryBuilder</h2><p>这个类可以被实例化、使用和丢弃，一旦创建了 SqlSessionFactory，就不再需要它了。 因此 SqlSessionFactoryBuilder 实例的最佳作用域是方法作用域（也就是局部方法变量）。 </p>
+<a id="more"></a>
 
-<p>首先先来看一个现象</p>
-<p>这是表的原始数据：</p>
-<img src="/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/1.png" class="" title="原始数据">
+<h2 id="2-SqlSessionFactory"><a href="#2-SqlSessionFactory" class="headerlink" title="2.SqlSessionFactory"></a>2.SqlSessionFactory</h2><p>SqlSessionFactory 一旦被创建就应该在应用的运行期间一直存在，没有任何理由丢弃它或重新创建另一个实例。 使用 SqlSessionFactory 的最佳实践是在应用运行期间不要重复创建多次，多次重建 SqlSessionFactory 被视为一种代码“坏习惯”。因此 SqlSessionFactory 的最佳作用域是应用作用域。 有很多方法可以做到，最简单的就是使用单例模式或者静态单例模式。</p>
+<p><strong>（类似连接池）</strong></p>
+<h2 id="3-SqlSession"><a href="#3-SqlSession" class="headerlink" title="3.SqlSession"></a>3.SqlSession</h2><p><strong>可以想象成连接池的一次连接请求</strong></p>
+<p><strong>SqlSession 的实例不是线程安全的，因此是不能被共享的，所以它最好用完就关闭</strong></p>
+<h2 id="4-Mapper"><a href="#4-Mapper" class="headerlink" title="4.Mapper"></a>4.Mapper</h2><p><strong>代表具体的业务实现</strong></p>
+<h2 id="5-图示"><a href="#5-图示" class="headerlink" title="5.图示"></a>5.图示</h2><img src="/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/1.png" class="" title="生命周期">
 
-<p>这是执行语句：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">test</span> <span class="keyword">set</span> <span class="keyword">id</span>=<span class="number">2</span> <span class="keyword">and</span> <span class="keyword">name</span>=<span class="string">'kyky'</span> <span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>可结果却和预期不同：</p>
-<img src="/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/2.png" class="" title="修改">
-
-<p>为什么吗？</p>
-<p>来看官方文档：</p>
-<img src="/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/update%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3.png" class="" title="官方文档">
-
-<p>assignment_list的格式是以逗号分隔的col_name=value列表 所以不能用and连接</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">test</span> <span class="keyword">set</span> <span class="keyword">id</span>=<span class="number">2</span> <span class="keyword">and</span> <span class="keyword">name</span>=<span class="string">'kyky'</span> <span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">1</span>;</span><br><span class="line"><span class="comment">--相当于以下语句</span></span><br><span class="line"><span class="keyword">update</span> <span class="keyword">test</span> <span class="keyword">set</span> <span class="keyword">id</span>= (<span class="number">2</span> <span class="keyword">and</span> <span class="keyword">name</span>=<span class="string">'kyky'</span>) <span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">1</span>;</span><br><span class="line"><span class="comment">/*(2 and name='kyky')返回的是一个布尔值flase,子啊数据库中flase为0，所以原本改修改为2的id变成了0，而name不改变。*/</span></span><br></pre></td></tr></table></figure>
+<img src="/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/2.png" class="" title="层次">
 
 
       
@@ -453,7 +445,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://kayuyu1.github.io/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/" title="关于update多个字段的某细节">http://kayuyu1.github.io/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/</a>
+    <a href="http://kayuyu1.github.io/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="mybatis生命周期">http://kayuyu1.github.io/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -468,7 +460,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Mysql/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>Mysql</a>
+            <a href="/tags/MyBatis/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>MyBatis</a>
           
         </div>
       
@@ -481,8 +473,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/25/%E4%B8%BA%E4%BB%80%E4%B9%88set%E4%B8%8D%E8%83%BD%E5%AD%98%E9%87%8D%E5%A4%8D%E7%9A%84%E5%80%BC/" rel="next" title="为什么set不能存重复的值">
-                <i class="fa fa-chevron-left"></i> 为什么set不能存重复的值
+              <a href="/2020/04/27/MyBatis%E9%85%8D%E7%BD%AEdruid/" rel="next" title="MyBatis配置druid">
+                <i class="fa fa-chevron-left"></i> MyBatis配置druid
               </a>
             
           </div>
@@ -490,10 +482,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/27/MyBatis%E9%85%8D%E7%BD%AEdruid/" rel="prev" title="MyBatis配置druid">
-                MyBatis配置druid <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -658,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在使用update更新多条语句的时候不能使用and连接"><span class="nav-number">1.</span> <span class="nav-text">在使用update更新多条语句的时候不能使用and连接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MyBatis生命周期"><span class="nav-number">1.</span> <span class="nav-text">MyBatis生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-SqlSessionFactoryBuilder"><span class="nav-number">1.1.</span> <span class="nav-text">1.SqlSessionFactoryBuilder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-SqlSessionFactory"><span class="nav-number">1.2.</span> <span class="nav-text">2.SqlSessionFactory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-SqlSession"><span class="nav-number">1.3.</span> <span class="nav-text">3.SqlSession</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Mapper"><span class="nav-number">1.4.</span> <span class="nav-text">4.Mapper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-图示"><span class="nav-number">1.5.</span> <span class="nav-text">5.图示</span></a></li></ol></li></ol></div>
             
 
           </div>

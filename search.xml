@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>mybatis生命周期</title>
+    <url>/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
+    <content><![CDATA[<h1 id="MyBatis生命周期"><a href="#MyBatis生命周期" class="headerlink" title="MyBatis生命周期"></a>MyBatis生命周期</h1><h2 id="1-SqlSessionFactoryBuilder"><a href="#1-SqlSessionFactoryBuilder" class="headerlink" title="1.SqlSessionFactoryBuilder"></a>1.SqlSessionFactoryBuilder</h2><p>这个类可以被实例化、使用和丢弃，一旦创建了 SqlSessionFactory，就不再需要它了。 因此 SqlSessionFactoryBuilder 实例的最佳作用域是方法作用域（也就是局部方法变量）。 </p>
+<a id="more"></a>
+
+<h2 id="2-SqlSessionFactory"><a href="#2-SqlSessionFactory" class="headerlink" title="2.SqlSessionFactory"></a>2.SqlSessionFactory</h2><p>SqlSessionFactory 一旦被创建就应该在应用的运行期间一直存在，没有任何理由丢弃它或重新创建另一个实例。 使用 SqlSessionFactory 的最佳实践是在应用运行期间不要重复创建多次，多次重建 SqlSessionFactory 被视为一种代码“坏习惯”。因此 SqlSessionFactory 的最佳作用域是应用作用域。 有很多方法可以做到，最简单的就是使用单例模式或者静态单例模式。</p>
+<p><strong>（类似连接池）</strong></p>
+<h2 id="3-SqlSession"><a href="#3-SqlSession" class="headerlink" title="3.SqlSession"></a>3.SqlSession</h2><p><strong>可以想象成连接池的一次连接请求</strong></p>
+<p><strong>SqlSession 的实例不是线程安全的，因此是不能被共享的，所以它最好用完就关闭</strong></p>
+<h2 id="4-Mapper"><a href="#4-Mapper" class="headerlink" title="4.Mapper"></a>4.Mapper</h2><p><strong>代表具体的业务实现</strong></p>
+<h2 id="5-图示"><a href="#5-图示" class="headerlink" title="5.图示"></a>5.图示</h2><img src="/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/1.png" class="" title="生命周期">
+
+<img src="/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/2.png" class="" title="层次">
+
+]]></content>
+      <tags>
+        <tag>MyBatis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MyBatis配置druid</title>
     <url>/2020/04/27/MyBatis%E9%85%8D%E7%BD%AEdruid/</url>
     <content><![CDATA[<h1 id="MyBatis配置druid步骤"><a href="#MyBatis配置druid步骤" class="headerlink" title="MyBatis配置druid步骤"></a>MyBatis配置druid步骤<a id="more"></a></h1><h2 id="1-导入依赖"><a href="#1-导入依赖" class="headerlink" title="1.导入依赖"></a>1.导入依赖</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;druid&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.9&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
