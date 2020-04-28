@@ -86,14 +86,14 @@
 
 
 
-<meta name="description" content="MyBatis配置druid步骤">
+<meta name="description" content="MyBatis配置druid步骤1.导入依赖12345&lt;dependency&gt;    &lt;groupId&gt;com.alibaba&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;druid&lt;&#x2F;artifactId&gt;    &lt;version&gt;1.0.9&lt;&#x2F;version&gt;&lt;&#x2F;dependency&gt;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MyBatis配置druid">
 <meta property="og:url" content="http://kayuyu1.github.io/2020/04/27/MyBatis%E9%85%8D%E7%BD%AEdruid/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="MyBatis配置druid步骤">
+<meta property="og:description" content="MyBatis配置druid步骤1.导入依赖12345&lt;dependency&gt;    &lt;groupId&gt;com.alibaba&lt;&#x2F;groupId&gt;    &lt;artifactId&gt;druid&lt;&#x2F;artifactId&gt;    &lt;version&gt;1.0.9&lt;&#x2F;version&gt;&lt;&#x2F;dependency&gt;">
 <meta property="article:published_time" content="2020-04-27T11:47:29.000Z">
-<meta property="article:modified_time" content="2020-04-27T12:05:47.289Z">
+<meta property="article:modified_time" content="2020-04-28T07:48:17.443Z">
 <meta property="article:author" content="kuangyu">
 <meta property="article:tag" content="MyBatis">
 <meta name="twitter:card" content="summary">
@@ -386,7 +386,9 @@
       
 
       
-        <h1 id="MyBatis配置druid步骤"><a href="#MyBatis配置druid步骤" class="headerlink" title="MyBatis配置druid步骤"></a>MyBatis配置druid步骤<a id="more"></a></h1><h2 id="1-导入依赖"><a href="#1-导入依赖" class="headerlink" title="1.导入依赖"></a>1.导入依赖</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;druid&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.9&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+        <h1 id="MyBatis配置druid步骤"><a href="#MyBatis配置druid步骤" class="headerlink" title="MyBatis配置druid步骤"></a>MyBatis配置druid步骤</h1><h2 id="1-导入依赖"><a href="#1-导入依赖" class="headerlink" title="1.导入依赖"></a>1.导入依赖</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;druid&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.9&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h2 id="2-创建druid工厂类"><a href="#2-创建druid工厂类" class="headerlink" title="2.创建druid工厂类"></a>2.创建druid工厂类</h2><p>虽然Druid提供了一个同名的DruidDataSourceFactory类，但是不能在MyBatis中直接使用。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DruidUtils</span> <span class="keyword">extends</span> <span class="title">PooledDataSourceFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DruidUtils</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.dataSource = <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
