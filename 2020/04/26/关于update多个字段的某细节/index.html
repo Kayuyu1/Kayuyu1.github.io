@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -93,6 +93,8 @@
 <meta property="og:site_name" content="湖底幽魂">
 <meta property="og:description" content="在使用update更新多条语句的时候不能使用and连接">
 <meta property="og:image" content="http://kayuyu1.github.io/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/1.png">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/2.png">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/update%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3.png">
 <meta property="article:published_time" content="2020-04-26T15:50:14.000Z">
 <meta property="article:modified_time" content="2020-04-26T16:10:14.541Z">
 <meta property="article:author" content="kuangyu">
@@ -106,7 +108,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -351,7 +353,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  179
+                  163
                 </span>
               
 
@@ -395,17 +397,17 @@
 <img src="/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/1.png" class="" title="原始数据">
 
 <p>这是执行语句：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">update</span> <span class="hljs-keyword">test</span> <span class="hljs-keyword">set</span> <span class="hljs-keyword">id</span>=<span class="hljs-number">2</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">name</span>=<span class="hljs-string">'kyky'</span> <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">id</span>=<span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">test</span> <span class="keyword">set</span> <span class="keyword">id</span>=<span class="number">2</span> <span class="keyword">and</span> <span class="keyword">name</span>=<span class="string">'kyky'</span> <span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 
 <p>可结果却和预期不同：</p>
-{% asset_img 2.png 修改%}
+<img src="/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/2.png" class="" title="修改">
 
 <p>为什么吗？</p>
 <p>来看官方文档：</p>
-{% asset_img update官方文档.png  官方文档%}
+<img src="/2020/04/26/%E5%85%B3%E4%BA%8Eupdate%E5%A4%9A%E4%B8%AA%E5%AD%97%E6%AE%B5%E7%9A%84%E6%9F%90%E7%BB%86%E8%8A%82/update%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3.png" class="" title="官方文档">
 
 <p>assignment_list的格式是以逗号分隔的col_name=value列表 所以不能用and连接</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">update</span> <span class="hljs-keyword">test</span> <span class="hljs-keyword">set</span> <span class="hljs-keyword">id</span>=<span class="hljs-number">2</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">name</span>=<span class="hljs-string">'kyky'</span> <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">id</span>=<span class="hljs-number">1</span>;<br><span class="hljs-comment">--相当于以下语句</span><br><span class="hljs-keyword">update</span> <span class="hljs-keyword">test</span> <span class="hljs-keyword">set</span> <span class="hljs-keyword">id</span>= (<span class="hljs-number">2</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">name</span>=<span class="hljs-string">'kyky'</span>) <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">id</span>=<span class="hljs-number">1</span>;<br><span class="hljs-comment">/*(2 and name='kyky')返回的是一个布尔值flase,子啊数据库中flase为0，所以原本改修改为2的id变成了0，而name不改变。*/</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> <span class="keyword">test</span> <span class="keyword">set</span> <span class="keyword">id</span>=<span class="number">2</span> <span class="keyword">and</span> <span class="keyword">name</span>=<span class="string">'kyky'</span> <span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">1</span>;</span><br><span class="line"><span class="comment">--相当于以下语句</span></span><br><span class="line"><span class="keyword">update</span> <span class="keyword">test</span> <span class="keyword">set</span> <span class="keyword">id</span>= (<span class="number">2</span> <span class="keyword">and</span> <span class="keyword">name</span>=<span class="string">'kyky'</span>) <span class="keyword">WHERE</span> <span class="keyword">id</span>=<span class="number">1</span>;</span><br><span class="line"><span class="comment">/*(2 and name='kyky')返回的是一个布尔值flase,子啊数据库中flase为0，所以原本改修改为2的id变成了0，而name不改变。*/</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -694,7 +696,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 

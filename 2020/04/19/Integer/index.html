@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -92,11 +92,13 @@
 <meta property="og:url" content="http://kayuyu1.github.io/2020/04/19/Integer/index.html">
 <meta property="og:site_name" content="湖底幽魂">
 <meta property="og:description" content="Integer的某些特点">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/04/19/Integer/1.png">
 <meta property="article:published_time" content="2020-04-19T08:27:36.000Z">
 <meta property="article:modified_time" content="2020-04-28T07:51:21.959Z">
 <meta property="article:author" content="kuangyu">
 <meta property="article:tag" content="javase">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kayuyu1.github.io/2020/04/19/Integer/1.png">
 
 
 
@@ -104,7 +106,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -349,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  222
+                  217
                 </span>
               
 
@@ -388,12 +390,12 @@
       
         <h1 id="Integer的某些特点"><a href="#Integer的某些特点" class="headerlink" title="Integer的某些特点"></a>Integer的某些特点</h1><a id="more"></a>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test6</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> a=<span class="hljs-number">3</span>;<br>    Integer b=<span class="hljs-number">3</span>;<span class="hljs-comment">//等于 Integer b=Integer.valueOf(3);</span><br>    Integer c=<span class="hljs-keyword">new</span> Integer(<span class="hljs-number">3</span>);<br>    Integer d=<span class="hljs-keyword">new</span> Integer(<span class="hljs-number">3</span>);<br>    <span class="hljs-comment">//a在常量池 Integer会自动装箱拆箱 ==比较值</span><br>    System.out.println(b.equals(a));<span class="hljs-comment">//true</span><br>    System.out.println(a==b);<span class="hljs-comment">//ture</span><br>    <span class="hljs-comment">//两个new出来的对象不会拆箱，==比较的是地址值</span><br>    System.out.println(c==d);<span class="hljs-comment">//false</span><br><br>    System.out.println(<span class="hljs-string">"============"</span>);<br><br><br>    Integer e=<span class="hljs-number">127</span>;<br>    Integer f=<span class="hljs-number">127</span>;<br><br>    Integer g=<span class="hljs-number">128</span>;<br>    Integer h=<span class="hljs-number">128</span>;<br>    System.out.println(e==f);<span class="hljs-comment">//ture</span><br>    System.out.println(g==h);<span class="hljs-comment">//flase</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test6</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a=<span class="number">3</span>;</span><br><span class="line">    Integer b=<span class="number">3</span>;<span class="comment">//等于 Integer b=Integer.valueOf(3);</span></span><br><span class="line">    Integer c=<span class="keyword">new</span> Integer(<span class="number">3</span>);</span><br><span class="line">    Integer d=<span class="keyword">new</span> Integer(<span class="number">3</span>);</span><br><span class="line">    <span class="comment">//a在常量池 Integer会自动装箱拆箱 ==比较值</span></span><br><span class="line">    System.out.println(b.equals(a));<span class="comment">//true</span></span><br><span class="line">    System.out.println(a==b);<span class="comment">//ture</span></span><br><span class="line">    <span class="comment">//两个new出来的对象不会拆箱，==比较的是地址值</span></span><br><span class="line">    System.out.println(c==d);<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"============"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    Integer e=<span class="number">127</span>;</span><br><span class="line">    Integer f=<span class="number">127</span>;</span><br><span class="line"></span><br><span class="line">    Integer g=<span class="number">128</span>;</span><br><span class="line">    Integer h=<span class="number">128</span>;</span><br><span class="line">    System.out.println(e==f);<span class="comment">//ture</span></span><br><span class="line">    System.out.println(g==h);<span class="comment">//flase</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-{% asset_img 1.png  结果%}
+<img src="/2020/04/19/Integer/1.png" class="" title="结果">
 
 <p>看一下源码大家都会明白，对于-128到127之间的数，会进行缓存，Integer e = 127时，会将127进行缓存，下次再写Integer f = 127时，就会直接从缓存中取，就不会new了。而大于127或者小于-128的值就会重新new。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Integer <span class="hljs-title">valueOf</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)<br>        <span class="hljs-keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Integer(i);<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)</span><br><span class="line">        <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Integer(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -680,7 +682,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 

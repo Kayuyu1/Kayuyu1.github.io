@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -104,7 +104,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -386,21 +386,21 @@
       
 
       
-        <h1 id="MyBatis配置druid步骤"><a href="#MyBatis配置druid步骤" class="headerlink" title="MyBatis配置druid步骤"></a>MyBatis配置druid步骤</h1><h2 id="1-导入依赖"><a href="#1-导入依赖" class="headerlink" title="1.导入依赖"></a>1.导入依赖</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;dependency&gt;<br>    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;<br>    &lt;artifactId&gt;druid&lt;/artifactId&gt;<br>    &lt;version&gt;1.0.9&lt;/version&gt;<br>&lt;/dependency&gt;<br></code></pre></td></tr></table></figure>
+        <h1 id="MyBatis配置druid步骤"><a href="#MyBatis配置druid步骤" class="headerlink" title="MyBatis配置druid步骤"></a>MyBatis配置druid步骤</h1><h2 id="1-导入依赖"><a href="#1-导入依赖" class="headerlink" title="1.导入依赖"></a>1.导入依赖</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;druid&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0.9&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
 <h2 id="2-创建druid工厂类"><a href="#2-创建druid工厂类" class="headerlink" title="2.创建druid工厂类"></a>2.创建druid工厂类</h2><p>虽然Druid提供了一个同名的DruidDataSourceFactory类，但是不能在MyBatis中直接使用。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DruidUtils</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">PooledDataSourceFactory</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DruidUtils</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.dataSource = <span class="hljs-keyword">new</span> DruidDataSource();<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DruidUtils</span> <span class="keyword">extends</span> <span class="title">PooledDataSourceFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DruidUtils</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.dataSource = <span class="keyword">new</span> DruidDataSource();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-创建druid配置文件druid-properties"><a href="#3-创建druid配置文件druid-properties" class="headerlink" title="3.创建druid配置文件druid.properties"></a>3.创建druid配置文件druid.properties</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">username=root<br>password=<span class="hljs-number">123456</span><br>jdbcUrl=jdbc:mysql:<span class="hljs-comment">///mybatis?useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8</span><br>driverClass=com.mysql.jdbc.Driver<br></code></pre></td></tr></table></figure>
+<h2 id="3-创建druid配置文件druid-properties"><a href="#3-创建druid配置文件druid-properties" class="headerlink" title="3.创建druid配置文件druid.properties"></a>3.创建druid配置文件druid.properties</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">username=root</span><br><span class="line">password=<span class="number">123456</span></span><br><span class="line">jdbcUrl=jdbc:mysql:<span class="comment">///mybatis?useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8</span></span><br><span class="line">driverClass=com.mysql.jdbc.Driver</span><br></pre></td></tr></table></figure>
 
-<h2 id="4-设置mybatis-config-xml"><a href="#4-设置mybatis-config-xml" class="headerlink" title="4.设置mybatis-config.xml"></a>4.设置mybatis-config.xml</h2><h3 id="1-引入外部文件"><a href="#1-引入外部文件" class="headerlink" title="(1)引入外部文件"></a>(1)引入外部文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;!--引入外部配置文件--&gt;<br>&lt;properties resource=<span class="hljs-string">"druid.properties"</span>/&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="4-设置mybatis-config-xml"><a href="#4-设置mybatis-config-xml" class="headerlink" title="4.设置mybatis-config.xml"></a>4.设置mybatis-config.xml</h2><h3 id="1-引入外部文件"><a href="#1-引入外部文件" class="headerlink" title="(1)引入外部文件"></a>(1)引入外部文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--引入外部配置文件--&gt;</span><br><span class="line">&lt;properties resource=<span class="string">"druid.properties"</span>/&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-修改属性配置"><a href="#2-修改属性配置" class="headerlink" title="(2)修改属性配置"></a>(2)修改属性配置</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;dataSource type=<span class="hljs-string">"com.ky.utils.DruidUtils"</span>&gt;<br>    &lt;property name=<span class="hljs-string">"driverClass"</span> value=<span class="hljs-string">"$&#123;driverClass&#125;"</span>/&gt;<br>    &lt;property name=<span class="hljs-string">"jdbcUrl"</span> value=<span class="hljs-string">"$&#123;jdbcUrl&#125;"</span>/&gt;<br>    &lt;property name=<span class="hljs-string">"username"</span> value=<span class="hljs-string">"$&#123;username&#125;"</span>/&gt;<br>    &lt;property name=<span class="hljs-string">"password"</span> value=<span class="hljs-string">"$&#123;password&#125;"</span>/&gt;<br>&lt;/dataSource&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="2-修改属性配置"><a href="#2-修改属性配置" class="headerlink" title="(2)修改属性配置"></a>(2)修改属性配置</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dataSource type=<span class="string">"com.ky.utils.DruidUtils"</span>&gt;</span><br><span class="line">    &lt;property name=<span class="string">"driverClass"</span> value=<span class="string">"$&#123;driverClass&#125;"</span>/&gt;</span><br><span class="line">    &lt;property name=<span class="string">"jdbcUrl"</span> value=<span class="string">"$&#123;jdbcUrl&#125;"</span>/&gt;</span><br><span class="line">    &lt;property name=<span class="string">"username"</span> value=<span class="string">"$&#123;username&#125;"</span>/&gt;</span><br><span class="line">    &lt;property name=<span class="string">"password"</span> value=<span class="string">"$&#123;password&#125;"</span>/&gt;</span><br><span class="line">&lt;/dataSource&gt;</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意</strong>：因为在DruidAbstractDataSource的源码为</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">volatile</span> String jdbcUrl;<br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">volatile</span> String driverClass;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">volatile</span> String jdbcUrl;</span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">volatile</span> String driverClass;</span><br></pre></td></tr></table></figure>
 
 <p>所以设置property的时候尽量以driverClass和jdbcUrl命名，如果以默认driver命名（默认的url不改不会报错，不知道为啥）否则会报错</p>
 <p>Caused by: org.apache.ibatis.reflection.ReflectionException: Could not set property ‘driver’ of ‘class com.alibaba.druid.pool.DruidDataSource’ with value ‘com.mysql.jdbc.Driver’ Cause: java.lang.IllegalArgumentException: argument type mismatch </p>
@@ -691,7 +691,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 

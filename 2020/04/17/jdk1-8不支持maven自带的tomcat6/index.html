@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -106,7 +106,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -394,7 +394,7 @@
 
 <p>原因：我的maven所自带tomcat版本为6，jdk1.8不支持。</p>
 <p>解决：在pom文件中加入以下代码</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;plugin&gt;<br>  &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;<br>  &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;<br>  &lt;version&gt;2.2&lt;/version&gt;<br>  &lt;configuration&gt;<br>    &lt;uriEncoding&gt;UTF-8&lt;/uriEncoding&gt;<br>    &lt;path&gt;/bos&lt;/path&gt;<br>    &lt;port&gt;8888&lt;/port&gt;<br>  &lt;/configuration&gt;<br>&lt;/plugin&gt;<br></code></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">  &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;2.2&lt;/version&gt;</span><br><span class="line">  &lt;configuration&gt;</span><br><span class="line">    &lt;uriEncoding&gt;UTF-8&lt;/uriEncoding&gt;</span><br><span class="line">    &lt;path&gt;/bos&lt;/path&gt;</span><br><span class="line">    &lt;port&gt;8888&lt;/port&gt;</span><br><span class="line">  &lt;/configuration&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意：这段代码是下载tomcat7插件，所以启动的时候要用tomcat7：run命令</strong></p>
 
@@ -684,7 +684,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
