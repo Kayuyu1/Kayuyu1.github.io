@@ -5,6 +5,7 @@
     <url>/2020/05/02/Spring%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8Cxml%E9%85%8D%E7%BD%AEbean%E9%82%A3%E4%B8%80%E4%B8%AA%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98/</url>
     <content><![CDATA[<blockquote>
 <p>思考： 刚复习了注解，我就在想Spring的注解和xml配置bean那一个优先级更高？</p>
+<a id="more"></a>
 </blockquote>
 <p>测试：</p>
 <ol>
