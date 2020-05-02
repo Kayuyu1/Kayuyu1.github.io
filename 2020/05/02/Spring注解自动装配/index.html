@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="MyBatis," />
+  <meta name="keywords" content="Spring," />
 
 
 
@@ -86,19 +86,17 @@
 
 
 
-<meta name="description" content="1.多对一基本表一个老师多个学生">
+<meta name="description" content="1、Bean注解的自动装配简介 自动装配是使用spring满足bean依赖的一种方法 spring会在应用上下文中为某个bean寻找其依赖的bean  1.1、Spring中bean有三种装配机制分别是：  在xml中显式配置； 在java中显式配置； 隐式的bean发现机制和自动装配。  这里我们主要讲第三种：自动化的装配bean。 1.2、Spring的自动装配需要从两个角度来实现 组件扫描(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MyBatis一对多与多对一">
-<meta property="og:url" content="http://kayuyu1.github.io/2020/04/29/MyBatis%E4%B8%80%E5%AF%B9%E5%A4%9A%E4%B8%8E%E5%A4%9A%E5%AF%B9%E4%B8%80/index.html">
+<meta property="og:title" content="Spring注解自动装配">
+<meta property="og:url" content="http://kayuyu1.github.io/2020/05/02/Spring%E6%B3%A8%E8%A7%A3%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="1.多对一基本表一个老师多个学生">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/04/29/MyBatis%E4%B8%80%E5%AF%B9%E5%A4%9A%E4%B8%8E%E5%A4%9A%E5%AF%B9%E4%B8%80/1.png">
-<meta property="article:published_time" content="2020-04-29T03:32:52.000Z">
-<meta property="article:modified_time" content="2020-04-29T06:38:46.324Z">
+<meta property="og:description" content="1、Bean注解的自动装配简介 自动装配是使用spring满足bean依赖的一种方法 spring会在应用上下文中为某个bean寻找其依赖的bean  1.1、Spring中bean有三种装配机制分别是：  在xml中显式配置； 在java中显式配置； 隐式的bean发现机制和自动装配。  这里我们主要讲第三种：自动化的装配bean。 1.2、Spring的自动装配需要从两个角度来实现 组件扫描(">
+<meta property="article:published_time" content="2020-05-02T04:10:09.000Z">
+<meta property="article:modified_time" content="2020-05-02T05:18:09.080Z">
 <meta property="article:author" content="kuangyu">
-<meta property="article:tag" content="MyBatis">
+<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kayuyu1.github.io/2020/04/29/MyBatis%E4%B8%80%E5%AF%B9%E5%A4%9A%E4%B8%8E%E5%A4%9A%E5%AF%B9%E4%B8%80/1.png">
 
 
 
@@ -128,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://Kayuyu1.github.io/2020/04/29/MyBatis一对多与多对一/"/>
+  <link rel="canonical" href="http://Kayuyu1.github.io/2020/05/02/Spring注解自动装配/"/>
 
 
 
 
 
-  <title>MyBatis一对多与多对一 | 湖底幽魂</title>
+  <title>Spring注解自动装配 | 湖底幽魂</title>
   
 
 
@@ -285,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/04/29/MyBatis%E4%B8%80%E5%AF%B9%E5%A4%9A%E4%B8%8E%E5%A4%9A%E5%AF%B9%E4%B8%80/">
+    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/05/02/Spring%E6%B3%A8%E8%A7%A3%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kuangyu">
@@ -302,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MyBatis一对多与多对一</h1>
+          <h1 class="post-title" itemprop="name headline">Spring注解自动装配</h1>
         
 
         <div class="post-meta">
@@ -314,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-29T11:32:52+08:00">
-                2020-04-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-02T12:10:09+08:00">
+                2020-05-02
               </time>
             
 
@@ -351,7 +349,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  581
+                  1.4k
                 </span>
               
 
@@ -367,7 +365,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  6
                 </span>
               
             </div>
@@ -388,30 +386,123 @@
       
 
       
-        <h1 id="1-多对一"><a href="#1-多对一" class="headerlink" title="1.多对一"></a>1.多对一</h1><p>基本表一个老师多个学生</p>
-<a id="more"></a>
+        <h1 id="1、Bean注解的自动装配简介"><a href="#1、Bean注解的自动装配简介" class="headerlink" title="1、Bean注解的自动装配简介"></a>1、Bean注解的自动装配简介</h1><ul>
+<li>自动装配是使用spring满足bean依赖的一种方法</li>
+<li>spring会在应用上下文中为某个bean寻找其依赖的bean</li>
+</ul>
+<h2 id="1-1、Spring中bean有三种装配机制"><a href="#1-1、Spring中bean有三种装配机制" class="headerlink" title="1.1、Spring中bean有三种装配机制"></a>1.1、Spring中bean有三种装配机制</h2><p>分别是：</p>
+<ol>
+<li>在xml中显式配置；</li>
+<li>在java中显式配置；</li>
+<li>隐式的bean发现机制和自动装配。</li>
+</ol>
+<p>这里我们主要讲第三种：自动化的装配bean。</p>
+<h2 id="1-2、Spring的自动装配需要从两个角度来实现"><a href="#1-2、Spring的自动装配需要从两个角度来实现" class="headerlink" title="1.2、Spring的自动装配需要从两个角度来实现"></a>1.2、Spring的自动装配需要从两个角度来实现</h2><ol>
+<li>组件扫描(component scanning)：spring会自动发现应用上下文中所创建的bean；</li>
+<li>自动装配(autowiring)：spring自动满足bean之间的依赖，也就是我们说的IoC/DI；</li>
+</ol>
+<p>组件扫描和自动装配组合发挥巨大威力，使得显示的配置降低到最少。</p>
+<p><strong>推荐不使用自动装配xml配置 , 而使用注解 .</strong></p>
+<h2 id="2、测试"><a href="#2、测试" class="headerlink" title="2、测试"></a>2、测试</h2><h2 id="2-1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性"><a href="#2-1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性" class="headerlink" title="2.1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性"></a>2.1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"miao~"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<img src="/2020/04/29/MyBatis%E4%B8%80%E5%AF%B9%E5%A4%9A%E4%B8%8E%E5%A4%9A%E5%AF%B9%E4%B8%80/1.png" class="" title="表结构">
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"wang~"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="（1）第一种按照查询嵌套，子查询"><a href="#（1）第一种按照查询嵌套，子查询" class="headerlink" title="（1）第一种按照查询嵌套，子查询"></a>（1）第一种按照查询嵌套，子查询</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   &lt;!--按照查询嵌套，子查询--&gt;</span><br><span class="line">&lt;select id=<span class="string">"getStudentTeacher"</span>  resultMap=<span class="string">"StudentMap"</span>&gt;</span><br><span class="line">    select *from mybatis.student;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">    &lt;resultMap id=<span class="string">"StudentMap"</span> type=<span class="string">"Student"</span>&gt;</span><br><span class="line">        &lt;result column=<span class="string">"id"</span> property=<span class="string">"id"</span>/&gt;</span><br><span class="line">        &lt;result column=<span class="string">"name"</span> property=<span class="string">"name"</span>/&gt;</span><br><span class="line">        &lt;!--根据tid查询teacher--&gt;</span><br><span class="line">        &lt;association property=<span class="string">"teacher"</span> column=<span class="string">"tid"</span>  javaType=<span class="string">"Teacher"</span> select=<span class="string">"getTeacher"</span>/&gt;</span><br><span class="line">    &lt;/resultMap&gt;</span><br><span class="line">&lt;select id=<span class="string">"getTeacher"</span> resultType=<span class="string">"Teacher"</span>&gt;</span><br><span class="line">    select *from mybatis.teacher where #&#123;id&#125;;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> Cat cat;</span><br><span class="line">   <span class="keyword">private</span> Dog dog;</span><br><span class="line">   <span class="keyword">private</span> String str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>相当于以下sql：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> *<span class="keyword">from</span> mybatis.student <span class="keyword">where</span> tid <span class="keyword">in</span> (<span class="keyword">select</span> <span class="keyword">id</span> <span class="keyword">from</span> mybatis.teacher);</span><br></pre></td></tr></table></figure>
+<h2 id="2-2、编写配置文件"><a href="#2-2、编写配置文件" class="headerlink" title="2.2、编写配置文件"></a>2.2、编写配置文件</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">      xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">      xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="string">       http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span><br><span class="line"></span><br><span class="line">   &lt;bean id=<span class="string">"dog"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span><br><span class="line">   &lt;bean id=<span class="string">"cat"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span><br><span class="line"></span><br><span class="line">   &lt;bean id=<span class="string">"user"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.User"</span>&gt;</span><br><span class="line">       &lt;property name=<span class="string">"cat"</span> ref=<span class="string">"cat"</span>/&gt;</span><br><span class="line">       &lt;property name=<span class="string">"dog"</span> ref=<span class="string">"dog"</span>/&gt;</span><br><span class="line">       &lt;property name=<span class="string">"str"</span> value=<span class="string">"ky"</span>/&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
 
-<p><u><strong>注意</strong>：getTeacher中的#{id}是从getStudentTeacher中查询得到的tid</u></p>
-<h2 id="（2）第二种按照结果嵌套查询，关联查询"><a href="#（2）第二种按照结果嵌套查询，关联查询" class="headerlink" title="（2）第二种按照结果嵌套查询，关联查询"></a>（2）第二种按照结果嵌套查询，关联查询</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--按照结果嵌套,关联查询--&gt;</span><br><span class="line">&lt;select id=<span class="string">"getStudentTeacher2"</span> resultMap=<span class="string">"StudentMap2"</span>&gt;</span><br><span class="line">    select s.id sid,s.name sname,t.name tname,t.id tid</span><br><span class="line">    from mybatis.student s ,mybatis.teacher t</span><br><span class="line">    where s.tid=t.id;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line">&lt;resultMap id=<span class="string">"StudentMap2"</span> type=<span class="string">"Student"</span>&gt;</span><br><span class="line">    &lt;result column=<span class="string">"sid"</span> property=<span class="string">"id"</span>/&gt;</span><br><span class="line">    &lt;result column=<span class="string">"sname"</span> property=<span class="string">"name"</span>/&gt;</span><br><span class="line">    &lt;association property=<span class="string">"teacher"</span> javaType=<span class="string">"Teacher"</span>&gt;</span><br><span class="line">        &lt;result column=<span class="string">"tid"</span> property=<span class="string">"id"</span>/&gt;</span><br><span class="line">        &lt;result column=<span class="string">"tname"</span> property=<span class="string">"name"</span>/&gt;</span><br><span class="line">    &lt;/association&gt;</span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="2-3、测试"><a href="#2-3、测试" class="headerlink" title="2.3、测试"></a>2.3、测试</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethodAutowire</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       ApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"beans.xml"</span>);</span><br><span class="line">       User user = (User) context.getBean(<span class="string">"user"</span>);</span><br><span class="line">       user.getCat().shout();</span><br><span class="line">       user.getDog().shout();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> s.id <span class="keyword">sid</span>,s.name sname,t.name tname,t.id tid</span><br><span class="line">  <span class="keyword">from</span> mybatis.student s ,mybatis.teacher t</span><br><span class="line">  <span class="keyword">where</span> s.tid=t.id;</span><br></pre></td></tr></table></figure>
+<h2 id="2-4、byName"><a href="#2-4、byName" class="headerlink" title="2.4、byName"></a>2.4、byName</h2><p><strong>autowire byName (按名称自动装配)</strong></p>
+<p>使用byName要保证spring容器中id唯一</p>
+<p><strong>测试：</strong></p>
+<ol>
+<li><p>修改配置文件:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"user"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.User"</span> autowire=<span class="string">"byName"</span>&gt;</span><br><span class="line">        &lt;property name=<span class="string">"str"</span> value=<span class="string">"ky"</span>/&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再次测试，输出成功</p>
+</li>
+<li><p>修改setDog的方法名为setPig ，再测试发现报空指针异常</p>
+</li>
+</ol>
+<p><strong>小结：</strong></p>
+<p>当一个bean节点带有 autowire byName的属性时。</p>
+<ol>
+<li>将查找其类中所有的set方法名，例如setCat，获得将set去掉并且首字母小写的字符串，即cat。</li>
+<li>去spring容器中寻找是否有此字符串名称id的对象。</li>
+<li>如果有，就取出注入；如果没有，就报空指针异常。</li>
+</ol>
+<h2 id="2-5、byType"><a href="#2-5、byType" class="headerlink" title="2.5、byType"></a>2.5、byType</h2><p><strong>autowire byType (按类型自动装配)</strong></p>
+<p>使用byType 必须保证在spring容器中类型唯一，否则会报NoUniqueBeanDefinitionException</p>
+<p><strong>测试：</strong></p>
+<ol>
+<li><p>修改配置文件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"user"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.User"</span> autowire=<span class="string">"byName"</span>&gt;</span><br><span class="line">        &lt;property name=<span class="string">"str"</span> value=<span class="string">"ky"</span>/&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>再次测试，输出成功</p>
+</li>
+<li><p>注册一个cat2对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"cat2"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试，报错：NoUniqueBeanDefinitionException</p>
+</li>
+<li><p>删掉cat2，将cat的bean名称改掉！测试！因为是按类型装配，所以并不会报异常，也不影响最后的结果。甚至将id属性去掉，也不影响结果。</p>
+<p>这就是按照类型自动装配！</p>
+</li>
+</ol>
+<h2 id="2-6、-Autowired-Resource-Qualifier"><a href="#2-6、-Autowired-Resource-Qualifier" class="headerlink" title="2.6、@Autowired @Resource @Qualifier"></a>2.6、@Autowired @Resource @Qualifier</h2><h3 id="2-6-1、-Autowired"><a href="#2-6-1、-Autowired" class="headerlink" title="2.6.1、@Autowired"></a>2.6.1、@Autowired</h3><ul>
+<li>@Autowired是按类型自动转配的，不支持id匹配。</li>
+<li>需要导入 spring-aop的包！</li>
+</ul>
+<p>测试：</p>
+<p>1、将User类中的set方法去掉，使用@Autowired注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">   <span class="meta">@Autowired</span></span><br><span class="line">   <span class="keyword">private</span> Cat cat;</span><br><span class="line">   <span class="meta">@Autowired</span></span><br><span class="line">   <span class="keyword">private</span> Dog dog;</span><br><span class="line">   <span class="keyword">private</span> String str;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Cat <span class="title">getCat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> cat;</span><br><span class="line">  &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Dog <span class="title">getDog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> dog;</span><br><span class="line">  &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getStr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> str;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="2-一对多"><a href="#2-一对多" class="headerlink" title="2.一对多"></a>2.一对多</h1><h2 id="（1）第一种按照查询嵌套，子查询-1"><a href="#（1）第一种按照查询嵌套，子查询-1" class="headerlink" title="（1）第一种按照查询嵌套，子查询"></a>（1）第一种按照查询嵌套，子查询</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id="getTeacherAndStudent2" resultMap="TeacherAndStudent2" parameterType="_int"&gt;</span><br><span class="line"><span class="keyword">select</span> *<span class="keyword">from</span> mybatis.teacher <span class="keyword">where</span> <span class="keyword">id</span>=<span class="comment">#&#123;tid&#125;;</span></span><br><span class="line">&lt;/<span class="keyword">select</span>&gt;</span><br><span class="line">&lt;resultMap <span class="keyword">id</span>=<span class="string">"TeacherAndStudent2"</span> <span class="keyword">type</span>=<span class="string">"Teacher"</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">result</span> property=<span class="string">"id"</span> <span class="keyword">column</span>=<span class="string">"id"</span>/&gt;</span><br><span class="line">    &lt;<span class="keyword">result</span> property=<span class="string">"name"</span> <span class="keyword">column</span>=<span class="string">"name"</span>/&gt;</span><br><span class="line">    &lt;collection property=<span class="string">"students"</span> javaType=<span class="string">"ArrayList"</span> ofType=<span class="string">"Student"</span> <span class="keyword">column</span>=<span class="string">"id"</span> <span class="keyword">select</span>=<span class="string">"getStudent"</span>/&gt;</span><br><span class="line">&lt;/resultMap&gt;</span><br><span class="line">&lt;<span class="keyword">select</span> <span class="keyword">id</span>=<span class="string">"getStudent"</span> resultType=<span class="string">"Student"</span>&gt;</span><br><span class="line">    <span class="keyword">select</span> *<span class="keyword">from</span> mybatis.student <span class="keyword">where</span> tid=<span class="comment">#&#123;id&#125;;</span></span><br><span class="line">&lt;/<span class="keyword">select</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>2、此时配置文件内容</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dog"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"user"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.User"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><u><strong>注意</strong>：getStudent中的#{id}是从getTeacherAndStudent2中查询得到的tid并不是从方法传过来的参数</u></p>
-<h2 id="（2）第二种按照结果嵌套查询，关联查询-1"><a href="#（2）第二种按照结果嵌套查询，关联查询-1" class="headerlink" title="（2）第二种按照结果嵌套查询，关联查询"></a>（2）第二种按照结果嵌套查询，关联查询</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id="getTeacherAndStudent" resultMap="TeacherAndStudent" parameterType="_int"&gt;</span><br><span class="line"><span class="keyword">select</span> t.name tname,t.id,s.name sname,s.id <span class="keyword">sid</span></span><br><span class="line"><span class="keyword">from</span> mybatis.teacher t ,mybatis.student s</span><br><span class="line"><span class="keyword">where</span> s.tid=t.id <span class="keyword">and</span> t.id=<span class="comment">#&#123;tid&#125;;</span></span><br><span class="line">&lt;/<span class="keyword">select</span>&gt;</span><br><span class="line">&lt;resultMap <span class="keyword">id</span>=<span class="string">"TeacherAndStudent"</span> <span class="keyword">type</span>=<span class="string">"Teacher"</span>&gt;</span><br><span class="line">    &lt;<span class="keyword">result</span> property=<span class="string">"id"</span> <span class="keyword">column</span>=<span class="string">"id"</span>/&gt;</span><br><span class="line">    &lt;<span class="keyword">result</span> property=<span class="string">"name"</span> <span class="keyword">column</span>=<span class="string">"tname"</span>/&gt;</span><br><span class="line">    &lt;!<span class="comment">--泛型用ofType--&gt;</span></span><br><span class="line">    &lt;collection property=<span class="string">"students"</span> ofType=<span class="string">"Student"</span>&gt;</span><br><span class="line">        &lt;<span class="keyword">result</span> property=<span class="string">"id"</span> <span class="keyword">column</span>=<span class="string">"sid"</span>/&gt;</span><br><span class="line">        &lt;<span class="keyword">result</span> property=<span class="string">"name"</span> <span class="keyword">column</span>=<span class="string">"sname"</span>/&gt;</span><br><span class="line">        &lt;<span class="keyword">result</span> property=<span class="string">"tid"</span> <span class="keyword">column</span>=<span class="string">"tid"</span>/&gt;</span><br><span class="line">    &lt;/collection&gt;</span><br><span class="line">&lt;/resultMap&gt;</span><br></pre></td></tr></table></figure>
+<p>3、测试，成功输出结果！</p>
+<p>@Autowired(required=false)  说明：false，对象可以为null；true，对象必须存对象，不能为null。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果允许对象为null，设置required = false,默认为true</span></span><br><span class="line"><span class="meta">@Autowired</span>(required = <span class="keyword">false</span>)</span><br><span class="line"><span class="keyword">private</span> Cat cat;</span><br></pre></td></tr></table></figure>
 
-<h1 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h1><p>关联：association【多对一使用关键字】</p>
-<p>集合：collection【一对多关键字】</p>
-<p>javaType:用来指定实体类的指定类型</p>
-<p>ofType：用来指定集合中的约束类型，例如：List<Student>,  ofType就该等于”Student”</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h3 id="2-6-2、-Qualifier"><a href="#2-6-2、-Qualifier" class="headerlink" title="2.6.2、@Qualifier"></a>2.6.2、@Qualifier</h3><ul>
+<li>@Autowired是根据类型自动装配的，加上@Qualifier则可以根据byName的方式自动装配</li>
+<li>@Qualifier<strong>不能单独使用。</strong></li>
+</ul>
+<p>测试实验步骤：</p>
+<p>1、配置文件修改内容，保证类型存在对象。且名字不为类的默认名字！</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dog1"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dog2"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat1"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat2"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2、没有加Qualifier测试，直接报错</p>
+<p>3、在属性上添加Qualifier注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@Qualifier</span>(value = <span class="string">"cat2"</span>)</span><br><span class="line"><span class="keyword">private</span> Cat cat;</span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@Qualifier</span>(value = <span class="string">"dog2"</span>)</span><br><span class="line"><span class="keyword">private</span> Dog dog;</span><br></pre></td></tr></table></figure>
+
+<p>测试，成功输出！</p>
+<h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4><h3 id="2-6-3、-Resource"><a href="#2-6-3、-Resource" class="headerlink" title="2.6.3、@Resource"></a>2.6.3、@Resource</h3><ul>
+<li>@Resource如有指定的name属性，先按该属性进行byName方式查找装配；</li>
+<li>其次再进行默认的byName方式进行装配；</li>
+<li>如果以上都不成功，则按byType的方式自动装配。</li>
+<li>都不成功，则报异常。</li>
+</ul>
+<p>实体类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">   <span class="comment">//如果允许对象为null，设置required = false,默认为true</span></span><br><span class="line">   <span class="meta">@Resource</span>(name = <span class="string">"cat2"</span>)</span><br><span class="line">   <span class="keyword">private</span> Cat cat;</span><br><span class="line">   <span class="meta">@Resource</span></span><br><span class="line">   <span class="keyword">private</span> Dog dog;</span><br><span class="line">   <span class="keyword">private</span> String str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>beans.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dog"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat1"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat2"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"user"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.User"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>测试：结果OK</p>
+<p>配置文件2：beans.xml ， 删掉cat2</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dog"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat1"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>实体类上只保留注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> Cat cat;</span><br><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> Dog dog;</span><br></pre></td></tr></table></figure>
+
+<p>结果：OK</p>
+<p>结论：先进行byName查找，失败；再进行byType查找，成功。</p>
+<p><strong>小结：</strong></p>
+<p><strong>@Autowired 根据类型注入，</strong> </p>
+<p><strong>@Resource 默认根据名字注入，其次按照类型搜索</strong></p>
+<p><strong>@Autowired @Qualifie(“userService”) 两个结合起来可以根据名字和类型注入</strong></p>
 
       
     </div>
@@ -456,7 +547,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://kayuyu1.github.io/2020/04/29/MyBatis%E4%B8%80%E5%AF%B9%E5%A4%9A%E4%B8%8E%E5%A4%9A%E5%AF%B9%E4%B8%80/" title="MyBatis一对多与多对一">http://kayuyu1.github.io/2020/04/29/MyBatis%E4%B8%80%E5%AF%B9%E5%A4%9A%E4%B8%8E%E5%A4%9A%E5%AF%B9%E4%B8%80/</a>
+    <a href="http://kayuyu1.github.io/2020/05/02/Spring%E6%B3%A8%E8%A7%A3%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/" title="Spring注解自动装配">http://kayuyu1.github.io/2020/05/02/Spring%E6%B3%A8%E8%A7%A3%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -471,7 +562,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MyBatis/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>MyBatis</a>
+            <a href="/tags/Spring/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>Spring</a>
           
         </div>
       
@@ -484,8 +575,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/28/mybatis%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" rel="next" title="mybatis生命周期">
-                <i class="fa fa-chevron-left"></i> mybatis生命周期
+              <a href="/2020/05/01/Spring%E7%AE%80%E4%BB%8B%E4%B8%8EIOC%E6%80%9D%E6%83%B3/" rel="next" title="Spring">
+                <i class="fa fa-chevron-left"></i> Spring
               </a>
             
           </div>
@@ -493,10 +584,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/30/MyBatis%E7%BC%93%E5%AD%98/" rel="prev" title="MyBatis缓存">
-                MyBatis缓存 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -661,7 +748,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-多对一"><span class="nav-number">1.</span> <span class="nav-text">1.多对一</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（1）第一种按照查询嵌套，子查询"><span class="nav-number">1.1.</span> <span class="nav-text">（1）第一种按照查询嵌套，子查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（2）第二种按照结果嵌套查询，关联查询"><span class="nav-number">1.2.</span> <span class="nav-text">（2）第二种按照结果嵌套查询，关联查询</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-一对多"><span class="nav-number">2.</span> <span class="nav-text">2.一对多</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#（1）第一种按照查询嵌套，子查询-1"><span class="nav-number">2.1.</span> <span class="nav-text">（1）第一种按照查询嵌套，子查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#（2）第二种按照结果嵌套查询，关联查询-1"><span class="nav-number">2.2.</span> <span class="nav-text">（2）第二种按照结果嵌套查询，关联查询</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结："><span class="nav-number">3.</span> <span class="nav-text">小结：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、Bean注解的自动装配简介"><span class="nav-number">1.</span> <span class="nav-text">1、Bean注解的自动装配简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1、Spring中bean有三种装配机制"><span class="nav-number">1.1.</span> <span class="nav-text">1.1、Spring中bean有三种装配机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2、Spring的自动装配需要从两个角度来实现"><span class="nav-number">1.2.</span> <span class="nav-text">1.2、Spring的自动装配需要从两个角度来实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、测试"><span class="nav-number">1.3.</span> <span class="nav-text">2、测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性"><span class="nav-number">1.4.</span> <span class="nav-text">2.1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2、编写配置文件"><span class="nav-number">1.5.</span> <span class="nav-text">2.2、编写配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3、测试"><span class="nav-number">1.6.</span> <span class="nav-text">2.3、测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4、byName"><span class="nav-number">1.7.</span> <span class="nav-text">2.4、byName</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5、byType"><span class="nav-number">1.8.</span> <span class="nav-text">2.5、byType</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6、-Autowired-Resource-Qualifier"><span class="nav-number">1.9.</span> <span class="nav-text">2.6、@Autowired @Resource @Qualifier</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-1、-Autowired"><span class="nav-number">1.9.1.</span> <span class="nav-text">2.6.1、@Autowired</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">1.9.1.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-2、-Qualifier"><span class="nav-number">1.9.2.</span> <span class="nav-text">2.6.2、@Qualifier</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#-1"><span class="nav-number">1.9.2.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-3、-Resource"><span class="nav-number">1.9.3.</span> <span class="nav-text">2.6.3、@Resource</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
