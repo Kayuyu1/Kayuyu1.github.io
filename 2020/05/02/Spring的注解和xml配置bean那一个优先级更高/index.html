@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="maven," />
+  <meta name="keywords" content="Spring," />
 
 
 
@@ -86,19 +86,19 @@
 
 
 
-<meta name="description" content="又被坑了啊">
+<meta name="description" content="思考： 刚复习了注解，我就在想Spring的注解和xml配置bean那一个优先级更高？  测试：  实体类 12345678910111213@Component&#x2F;&#x2F;将User注册到IOC容器public class User &amp;#123;    @Value(&quot;kyky&quot;)&#x2F;&#x2F;给name赋值    private String name;    public String getName()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jdk1.8不支持maven自带的tomcat6">
-<meta property="og:url" content="http://kayuyu1.github.io/2020/04/17/jdk1-8%E4%B8%8D%E6%94%AF%E6%8C%81maven%E8%87%AA%E5%B8%A6%E7%9A%84tomcat6/index.html">
+<meta property="og:title" content="Spring的注解和xml配置bean那一个优先级更高">
+<meta property="og:url" content="http://kayuyu1.github.io/2020/05/02/Spring%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8Cxml%E9%85%8D%E7%BD%AEbean%E9%82%A3%E4%B8%80%E4%B8%AA%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="又被坑了啊">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/04/17/jdk1-8%E4%B8%8D%E6%94%AF%E6%8C%81maven%E8%87%AA%E5%B8%A6%E7%9A%84tomcat6/%E9%94%99%E8%AF%AF.png">
-<meta property="article:published_time" content="2020-04-17T09:51:57.000Z">
-<meta property="article:modified_time" content="2020-04-17T09:58:12.241Z">
+<meta property="og:description" content="思考： 刚复习了注解，我就在想Spring的注解和xml配置bean那一个优先级更高？  测试：  实体类 12345678910111213@Component&#x2F;&#x2F;将User注册到IOC容器public class User &amp;#123;    @Value(&quot;kyky&quot;)&#x2F;&#x2F;给name赋值    private String name;    public String getName()">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/05/02/Spring%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8Cxml%E9%85%8D%E7%BD%AEbean%E9%82%A3%E4%B8%80%E4%B8%AA%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98/1.png">
+<meta property="article:published_time" content="2020-05-02T09:30:35.000Z">
+<meta property="article:modified_time" content="2020-05-02T09:40:19.688Z">
 <meta property="article:author" content="kuangyu">
-<meta property="article:tag" content="maven">
+<meta property="article:tag" content="Spring">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kayuyu1.github.io/2020/04/17/jdk1-8%E4%B8%8D%E6%94%AF%E6%8C%81maven%E8%87%AA%E5%B8%A6%E7%9A%84tomcat6/%E9%94%99%E8%AF%AF.png">
+<meta name="twitter:image" content="http://kayuyu1.github.io/2020/05/02/Spring%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8Cxml%E9%85%8D%E7%BD%AEbean%E9%82%A3%E4%B8%80%E4%B8%AA%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98/1.png">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://Kayuyu1.github.io/2020/04/17/jdk1-8不支持maven自带的tomcat6/"/>
+  <link rel="canonical" href="http://Kayuyu1.github.io/2020/05/02/Spring的注解和xml配置bean那一个优先级更高/"/>
 
 
 
 
 
-  <title>jdk1.8不支持maven自带的tomcat6 | 湖底幽魂</title>
+  <title>Spring的注解和xml配置bean那一个优先级更高 | 湖底幽魂</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/04/17/jdk1-8%E4%B8%8D%E6%94%AF%E6%8C%81maven%E8%87%AA%E5%B8%A6%E7%9A%84tomcat6/">
+    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/05/02/Spring%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8Cxml%E9%85%8D%E7%BD%AEbean%E9%82%A3%E4%B8%80%E4%B8%AA%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kuangyu">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">jdk1.8不支持maven自带的tomcat6</h1>
+          <h1 class="post-title" itemprop="name headline">Spring的注解和xml配置bean那一个优先级更高</h1>
         
 
         <div class="post-meta">
@@ -314,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-17T17:51:57+08:00">
-                2020-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-02T17:30:35+08:00">
+                2020-05-02
               </time>
             
 
@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  121
+                  277
                 </span>
               
 
@@ -388,15 +388,35 @@
       
 
       
-        <h1 id="又被坑了啊"><a href="#又被坑了啊" class="headerlink" title="又被坑了啊"></a>又被坑了啊</h1><a id="more"></a>
+        <blockquote>
+<p>思考： 刚复习了注解，我就在想Spring的注解和xml配置bean那一个优先级更高？</p>
+</blockquote>
+<p>测试：</p>
+<ol>
+<li><p>实体类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span><span class="comment">//将User注册到IOC容器</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"kyky"</span>)<span class="comment">//给name赋值</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<img src="/2020/04/17/jdk1-8%E4%B8%8D%E6%94%AF%E6%8C%81maven%E8%87%AA%E5%B8%A6%E7%9A%84tomcat6/%E9%94%99%E8%AF%AF.png" class="" title="错误">
 
-<p>原因：我的maven所自带tomcat版本为6，jdk1.8不支持。</p>
-<p>解决：在pom文件中加入以下代码</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">  &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;2.2&lt;/version&gt;</span><br><span class="line">  &lt;configuration&gt;</span><br><span class="line">    &lt;uriEncoding&gt;UTF-8&lt;/uriEncoding&gt;</span><br><span class="line">    &lt;path&gt;/bos&lt;/path&gt;</span><br><span class="line">    &lt;port&gt;8888&lt;/port&gt;</span><br><span class="line">  &lt;/configuration&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure>
 
-<p><strong>注意：这段代码是下载tomcat7插件，所以启动的时候要用tomcat7：run命令</strong></p>
+</li>
+</ol>
+<ol start="2">
+<li><p>xml配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">        https://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="tag"><span class="string">        https://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--开启注解支持并且开启包扫描--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.ky.pojo"</span>/&gt;</span></span><br><span class="line">    </span><br><span class="line">       <span class="comment">&lt;!--在xml注册一个同名的user对象但name不同--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"user"</span> <span class="attr">class</span>=<span class="string">"com.ky.pojo.User"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"kykyky"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">       ApplicationContext applicationContext = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">        User user = applicationContext.getBean(<span class="string">"user"</span>, User<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">        System.out.println(user.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/05/02/Spring%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8Cxml%E9%85%8D%E7%BD%AEbean%E9%82%A3%E4%B8%80%E4%B8%AA%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98/1.png" class="" title="测试结果">
+
+</li>
+</ol>
+<p><strong>结论：</strong>xml配置比注解配置bean的属性优先级高，原因是XML是可以随时修改的，即插即用，不用重新编译！！</p>
 
       
     </div>
@@ -441,7 +461,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://kayuyu1.github.io/2020/04/17/jdk1-8%E4%B8%8D%E6%94%AF%E6%8C%81maven%E8%87%AA%E5%B8%A6%E7%9A%84tomcat6/" title="jdk1.8不支持maven自带的tomcat6">http://kayuyu1.github.io/2020/04/17/jdk1-8%E4%B8%8D%E6%94%AF%E6%8C%81maven%E8%87%AA%E5%B8%A6%E7%9A%84tomcat6/</a>
+    <a href="http://kayuyu1.github.io/2020/05/02/Spring%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8Cxml%E9%85%8D%E7%BD%AEbean%E9%82%A3%E4%B8%80%E4%B8%AA%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98/" title="Spring的注解和xml配置bean那一个优先级更高">http://kayuyu1.github.io/2020/05/02/Spring%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8Cxml%E9%85%8D%E7%BD%AEbean%E9%82%A3%E4%B8%80%E4%B8%AA%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -456,7 +476,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/maven/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>maven</a>
+            <a href="/tags/Spring/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>Spring</a>
           
         </div>
       
@@ -469,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/17/redis/" rel="next" title="redis">
-                <i class="fa fa-chevron-left"></i> redis
+              <a href="/2020/05/02/Spring%E6%B3%A8%E8%A7%A3%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/" rel="next" title="Spring注解自动装配">
+                <i class="fa fa-chevron-left"></i> Spring注解自动装配
               </a>
             
           </div>
@@ -478,10 +498,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/19/Integer/" rel="prev" title="Integer">
-                Integer <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -533,17 +549,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -636,22 +643,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#又被坑了啊"><span class="nav-number">1.</span> <span class="nav-text">又被坑了啊</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
