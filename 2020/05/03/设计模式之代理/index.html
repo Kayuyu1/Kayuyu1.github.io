@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Spring," />
+  <meta name="keywords" content="设计模式1," />
 
 
 
@@ -86,17 +86,22 @@
 
 
 
-<meta name="description" content="1、Bean注解的自动装配简介 自动装配是使用spring满足bean依赖的一种方法 spring会在应用上下文中为某个bean寻找其依赖的bean">
+<meta name="description" content="1、代理模式简介代理模式的定义：代理模式给某一个对象提供一个代理对象，并由代理对象控制对原对象的引用。通俗的来讲代理模式就是我们生活中常见的中介。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring注解自动装配">
-<meta property="og:url" content="http://kayuyu1.github.io/2020/05/02/Spring%E6%B3%A8%E8%A7%A3%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/index.html">
+<meta property="og:title" content="设计模式之代理">
+<meta property="og:url" content="http://kayuyu1.github.io/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="1、Bean注解的自动装配简介 自动装配是使用spring满足bean依赖的一种方法 spring会在应用上下文中为某个bean寻找其依赖的bean">
-<meta property="article:published_time" content="2020-05-02T04:10:09.000Z">
-<meta property="article:modified_time" content="2020-05-02T08:12:13.753Z">
+<meta property="og:description" content="1、代理模式简介代理模式的定义：代理模式给某一个对象提供一个代理对象，并由代理对象控制对原对象的引用。通俗的来讲代理模式就是我们生活中常见的中介。">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/2.png">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/1.png">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/3.png">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/3.png">
+<meta property="article:published_time" content="2020-05-03T04:52:35.000Z">
+<meta property="article:modified_time" content="2020-05-03T06:08:13.743Z">
 <meta property="article:author" content="kuangyu">
-<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="设计模式1">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kayuyu1.github.io/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/2.png">
 
 
 
@@ -126,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://Kayuyu1.github.io/2020/05/02/Spring注解自动装配/"/>
+  <link rel="canonical" href="http://Kayuyu1.github.io/2020/05/03/设计模式之代理/"/>
 
 
 
 
 
-  <title>Spring注解自动装配 | 湖底幽魂</title>
+  <title>设计模式之代理 | 湖底幽魂</title>
   
 
 
@@ -283,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/05/02/Spring%E6%B3%A8%E8%A7%A3%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/">
+    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kuangyu">
@@ -300,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring注解自动装配</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式之代理</h1>
         
 
         <div class="post-meta">
@@ -312,8 +317,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-02T12:10:09+08:00">
-                2020-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-03T12:52:35+08:00">
+                2020-05-03
               </time>
             
 
@@ -349,7 +354,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k
+                  869
                 </span>
               
 
@@ -365,7 +370,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  3
                 </span>
               
             </div>
@@ -386,125 +391,70 @@
       
 
       
-        <h1 id="1、Bean注解的自动装配简介"><a href="#1、Bean注解的自动装配简介" class="headerlink" title="1、Bean注解的自动装配简介"></a>1、Bean注解的自动装配简介</h1><ul>
-<li>自动装配是使用spring满足bean依赖的一种方法</li>
-<li>spring会在应用上下文中为某个bean寻找其依赖的bean</li>
-</ul>
+        <h1 id="1、代理模式简介"><a href="#1、代理模式简介" class="headerlink" title="1、代理模式简介"></a>1、代理模式简介</h1><p><strong>代理模式的定义：</strong>代理模式给某一个对象提供一个代理对象，并由代理对象控制对原对象的引用。通俗的来讲代理模式就是我们生活中常见的中介。</p>
 <a id="more"></a>
 
-<h2 id="1-1、Spring中bean有三种装配机制"><a href="#1-1、Spring中bean有三种装配机制" class="headerlink" title="1.1、Spring中bean有三种装配机制"></a>1.1、Spring中bean有三种装配机制</h2><p>分别是：</p>
-<ol>
-<li>在xml中显式配置；</li>
-<li>在java中显式配置；</li>
-<li>隐式的bean发现机制和自动装配。</li>
-</ol>
-<p>这里我们主要讲第三种：自动化的装配bean。</p>
-<h2 id="1-2、Spring的自动装配需要从两个角度来实现"><a href="#1-2、Spring的自动装配需要从两个角度来实现" class="headerlink" title="1.2、Spring的自动装配需要从两个角度来实现"></a>1.2、Spring的自动装配需要从两个角度来实现</h2><ol>
-<li>组件扫描(component scanning)：spring会自动发现应用上下文中所创建的bean；</li>
-<li>自动装配(autowiring)：spring自动满足bean之间的依赖，也就是我们说的IoC/DI；</li>
-</ol>
-<p>组件扫描和自动装配组合发挥巨大威力，使得显示的配置降低到最少。</p>
-<p><strong>推荐不使用自动装配xml配置 , 而使用注解 .</strong></p>
-<h2 id="2、测试"><a href="#2、测试" class="headerlink" title="2、测试"></a>2、测试</h2><h2 id="2-1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性"><a href="#2-1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性" class="headerlink" title="2.1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性"></a>2.1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"miao~"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/2.png" class="" title="代理模式">
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"wang~"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> Cat cat;</span><br><span class="line">   <span class="keyword">private</span> Dog dog;</span><br><span class="line">   <span class="keyword">private</span> String str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-2、编写配置文件"><a href="#2-2、编写配置文件" class="headerlink" title="2.2、编写配置文件"></a>2.2、编写配置文件</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">      xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">      xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="string">       http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span><br><span class="line"></span><br><span class="line">   &lt;bean id=<span class="string">"dog"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span><br><span class="line">   &lt;bean id=<span class="string">"cat"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span><br><span class="line"></span><br><span class="line">   &lt;bean id=<span class="string">"user"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.User"</span>&gt;</span><br><span class="line">       &lt;property name=<span class="string">"cat"</span> ref=<span class="string">"cat"</span>/&gt;</span><br><span class="line">       &lt;property name=<span class="string">"dog"</span> ref=<span class="string">"dog"</span>/&gt;</span><br><span class="line">       &lt;property name=<span class="string">"str"</span> value=<span class="string">"ky"</span>/&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-3、测试"><a href="#2-3、测试" class="headerlink" title="2.3、测试"></a>2.3、测试</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTest</span> </span>&#123;</span><br><span class="line">   <span class="meta">@Test</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethodAutowire</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       ApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"beans.xml"</span>);</span><br><span class="line">       User user = (User) context.getBean(<span class="string">"user"</span>);</span><br><span class="line">       user.getCat().shout();</span><br><span class="line">       user.getDog().shout();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-4、byName"><a href="#2-4、byName" class="headerlink" title="2.4、byName"></a>2.4、byName</h2><p><strong>autowire byName (按名称自动装配)</strong></p>
-<p>使用byName要保证spring容器中id唯一</p>
-<p><strong>测试：</strong></p>
-<ol>
-<li><p>修改配置文件:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"user"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.User"</span> autowire=<span class="string">"byName"</span>&gt;</span><br><span class="line">        &lt;property name=<span class="string">"str"</span> value=<span class="string">"ky"</span>/&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>再次测试，输出成功</p>
-</li>
-<li><p>修改setDog的方法名为setPig ，再测试发现报空指针异常</p>
-</li>
-</ol>
-<p><strong>小结：</strong></p>
-<p>当一个bean节点带有 autowire byName的属性时。</p>
-<ol>
-<li>将查找其类中所有的set方法名，例如setCat，获得将set去掉并且首字母小写的字符串，即cat。</li>
-<li>去spring容器中寻找是否有此字符串名称id的对象。</li>
-<li>如果有，就取出注入；如果没有，就报空指针异常。</li>
-</ol>
-<h2 id="2-5、byType"><a href="#2-5、byType" class="headerlink" title="2.5、byType"></a>2.5、byType</h2><p><strong>autowire byType (按类型自动装配)</strong></p>
-<p>使用byType 必须保证在spring容器中类型唯一，否则会报NoUniqueBeanDefinitionException</p>
-<p><strong>测试：</strong></p>
-<ol>
-<li><p>修改配置文件：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"user"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.User"</span> autowire=<span class="string">"byName"</span>&gt;</span><br><span class="line">        &lt;property name=<span class="string">"str"</span> value=<span class="string">"ky"</span>/&gt;</span><br><span class="line">   &lt;/bean&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>再次测试，输出成功</p>
-</li>
-<li><p>注册一个cat2对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"cat2"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>测试，报错：NoUniqueBeanDefinitionException</p>
-</li>
-<li><p>删掉cat2，将cat的bean名称改掉！测试！因为是按类型装配，所以并不会报异常，也不影响最后的结果。甚至将id属性去掉，也不影响结果。</p>
-<p>这就是按照类型自动装配！</p>
-</li>
-</ol>
-<h2 id="2-6、-Autowired-Resource-Qualifier"><a href="#2-6、-Autowired-Resource-Qualifier" class="headerlink" title="2.6、@Autowired @Resource @Qualifier"></a>2.6、@Autowired @Resource @Qualifier</h2><h3 id="2-6-1、-Autowired"><a href="#2-6-1、-Autowired" class="headerlink" title="2.6.1、@Autowired"></a>2.6.1、@Autowired</h3><ul>
-<li>@Autowired是按类型自动转配的，不支持id匹配。</li>
-<li>需要导入 spring-aop的包！</li>
+<p>代理模式分为两大类：</p>
+<ul>
+<li>静态代理：由一个类文件描述代理</li>
+<li>动态代理：在内存中形成代理类</li>
 </ul>
-<p>测试：</p>
-<p>1、将User类中的set方法去掉，使用@Autowired注解</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">   <span class="meta">@Autowired</span></span><br><span class="line">   <span class="keyword">private</span> Cat cat;</span><br><span class="line">   <span class="meta">@Autowired</span></span><br><span class="line">   <span class="keyword">private</span> Dog dog;</span><br><span class="line">   <span class="keyword">private</span> String str;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Cat <span class="title">getCat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> cat;</span><br><span class="line">  &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Dog <span class="title">getDog</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> dog;</span><br><span class="line">  &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getStr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">return</span> str;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="2、静态代理："><a href="#2、静态代理：" class="headerlink" title="2、静态代理："></a>2、静态代理：</h1><img src="/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/1.png" class="" title="租房">
 
-<p>2、此时配置文件内容</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dog"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"user"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.User"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>实现以上场景</p>
+<p>功能接口：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Rent</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Rent</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>3、测试，成功输出结果！</p>
-<p>@Autowired(required=false)  说明：false，对象可以为null；true，对象必须存对象，不能为null。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//如果允许对象为null，设置required = false,默认为true</span></span><br><span class="line"><span class="meta">@Autowired</span>(required = <span class="keyword">false</span>)</span><br><span class="line"><span class="keyword">private</span> Cat cat;</span><br></pre></td></tr></table></figure>
+<p>真实对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Host</span> <span class="keyword">implements</span> <span class="title">Rent</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Rent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"出租房子"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h3 id="2-6-2、-Qualifier"><a href="#2-6-2、-Qualifier" class="headerlink" title="2.6.2、@Qualifier"></a>2.6.2、@Qualifier</h3><ul>
-<li>@Autowired是根据类型自动装配的，加上@Qualifier则可以根据byName的方式自动装配</li>
-<li>@Qualifier<strong>不能单独使用。</strong></li>
+<p>代理对象：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Proxy</span> <span class="keyword">implements</span> <span class="title">Rent</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Host host;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Proxy</span><span class="params">(Host host)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.host = host;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Proxy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Rent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        seeHouse();</span><br><span class="line">        host.Rent();</span><br><span class="line">        hetong();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">seeHouse</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"看房"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hetong</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"签合同"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用户租房子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Host host = <span class="keyword">new</span> Host();</span><br><span class="line">        Proxy proxy = <span class="keyword">new</span> Proxy(host);</span><br><span class="line">        proxy.Rent();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/3.png" class="" title="功能实现">
+
+<p><strong>分析：</strong>在以上代码中，我们并没有直接接触房东，而是通过中介完成了租房工作，这就是代理模式。</p>
+<p>优点：</p>
+<ul>
+<li>可以使得我们的真实角色更加纯粹 . 不再去关注一些公共的事情 .</li>
+<li>公共的业务由代理来完成 . 实现了业务的分工 ,</li>
+<li>公共业务发生扩展时变得更加集中和方便 .</li>
 </ul>
-<p>测试实验步骤：</p>
-<p>1、配置文件修改内容，保证类型存在对象。且名字不为类的默认名字！</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dog1"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dog2"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat1"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat2"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>2、没有加Qualifier测试，直接报错</p>
-<p>3、在属性上添加Qualifier注解</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@Qualifier</span>(value = <span class="string">"cat2"</span>)</span><br><span class="line"><span class="keyword">private</span> Cat cat;</span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="meta">@Qualifier</span>(value = <span class="string">"dog2"</span>)</span><br><span class="line"><span class="keyword">private</span> Dog dog;</span><br></pre></td></tr></table></figure>
-
-<p>测试，成功输出！</p>
-<h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4><h3 id="2-6-3、-Resource"><a href="#2-6-3、-Resource" class="headerlink" title="2.6.3、@Resource"></a>2.6.3、@Resource</h3><ul>
-<li>@Resource如有指定的name属性，先按该属性进行byName方式查找装配；</li>
-<li>其次再进行默认的byName方式进行装配；</li>
-<li>如果以上都不成功，则按byType的方式自动装配。</li>
-<li>都不成功，则报异常。</li>
+<p>缺点 :</p>
+<ul>
+<li>类多了 , 多了代理类 , 工作量变大了 . 开发效率降低 .</li>
 </ul>
-<p>实体类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">   <span class="comment">//如果允许对象为null，设置required = false,默认为true</span></span><br><span class="line">   <span class="meta">@Resource</span>(name = <span class="string">"cat2"</span>)</span><br><span class="line">   <span class="keyword">private</span> Cat cat;</span><br><span class="line">   <span class="meta">@Resource</span></span><br><span class="line">   <span class="keyword">private</span> Dog dog;</span><br><span class="line">   <span class="keyword">private</span> String str;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们想要静态代理的好处，又不想要静态代理的缺点，所以 , 就有了动态代理 !</p>
+<h1 id="3、动态代理"><a href="#3、动态代理" class="headerlink" title="3、动态代理"></a>3、动态代理</h1><p>功能接口和真实对象与上面相同</p>
+<p>获取代理对象的类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyHost</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Rent <span class="title">getProxy</span><span class="params">(Host host)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 三个参数：</span></span><br><span class="line"><span class="comment">         * 1.真实类的类加载器</span></span><br><span class="line"><span class="comment">         * 2.真实类实现的接口</span></span><br><span class="line"><span class="comment">         * 3.处理器InvocationHandler</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        Rent proxy = (Rent) Proxy.newProxyInstance(host.getClass().getClassLoader(), host.getClass().getInterfaces(), <span class="keyword">new</span> InvocationHandler() &#123;</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * 代理逻辑编写的代码部分，代理对象调用所有的方法都会触发改方法执行</span></span><br><span class="line"><span class="comment">             * 参数：</span></span><br><span class="line"><span class="comment">             *  1.proxy 代理对象</span></span><br><span class="line"><span class="comment">             *  2.代理对象调用的方法</span></span><br><span class="line"><span class="comment">             *  3.代理对象调用方法所传参数</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (method.getName().equals(<span class="string">"Rent"</span>))</span><br><span class="line">                &#123;</span><br><span class="line">                    System.out.println(<span class="string">"看房"</span>);</span><br><span class="line">                    method.invoke(host, args);</span><br><span class="line">                    System.out.println(<span class="string">"签合同"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> proxy;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>beans.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dog"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat1"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat2"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"user"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.User"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>用户：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Host host = <span class="keyword">new</span> Host();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获得代理对象</span></span><br><span class="line">        Rent proxy = ProxyHost.getProxy(host);</span><br><span class="line"></span><br><span class="line">        proxy.Rent();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>测试：结果OK</p>
-<p>配置文件2：beans.xml ， 删掉cat2</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dog"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Dog"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"cat1"</span> <span class="attr">class</span>=<span class="string">"com.kuang.pojo.Cat"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<img src="/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/3.png" class="" title="功能实现">
 
-<p>实体类上只保留注解</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> Cat cat;</span><br><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> Dog dog;</span><br></pre></td></tr></table></figure>
+<p>优点：</p>
+<p>静态代理有的它都有，静态代理没有的，它也有！</p>
+<ul>
+<li>可以使得我们的真实角色更加纯粹 . 不再去关注一些公共的事情 .</li>
+<li>公共的业务由代理来完成 . 实现了业务的分工 ,</li>
+<li>公共业务发生扩展时变得更加集中和方便 .</li>
+<li>一个动态代理 , 一般代理某一类业务</li>
+<li>一个动态代理可以代理多个类，代理的是接口！</li>
+</ul>
+<h1 id="4、编写一个模板动态代理类"><a href="#4、编写一个模板动态代理类" class="headerlink" title="4、编写一个模板动态代理类"></a>4、编写一个模板动态代理类</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: SpringDemo</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 动态代理工具类</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Mr.Kuang</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2020-05-03 13:51</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyUtils</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//需要被代理的接口</span></span><br><span class="line">    <span class="keyword">private</span> Object target;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTarget</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getObjectProxy</span><span class="params">(Object target)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"></span><br><span class="line">        Object proxy = Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), <span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> proxy;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="comment">//填写要处理的的代码</span></span><br><span class="line">        </span><br><span class="line">        Object invoke = method.invoke(target, args);</span><br><span class="line">        <span class="keyword">return</span> invoke;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>结果：OK</p>
-<p>结论：先进行byName查找，失败；再进行byType查找，成功。</p>
-<p><strong>小结：</strong></p>
-<p><strong>@Autowired 根据类型注入，</strong> </p>
-<p><strong>@Resource 默认根据名字注入，其次按照类型搜索</strong></p>
-<p><strong>@Autowired @Qualifie(“userService”) 两个结合起来可以根据名字和类型注入</strong></p>
+<p>分析：两个核心</p>
+<ul>
+<li>Proxy.newProxyInstance  创建一个代理对象</li>
+<li>Object invoke  处理代理对象如何代理</li>
+</ul>
 
       
     </div>
@@ -549,7 +499,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://kayuyu1.github.io/2020/05/02/Spring%E6%B3%A8%E8%A7%A3%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/" title="Spring注解自动装配">http://kayuyu1.github.io/2020/05/02/Spring%E6%B3%A8%E8%A7%A3%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/</a>
+    <a href="http://kayuyu1.github.io/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/" title="设计模式之代理">http://kayuyu1.github.io/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -564,7 +514,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Spring/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>Spring</a>
+            <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F1/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>设计模式1</a>
           
         </div>
       
@@ -577,8 +527,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/01/Spring%E7%AE%80%E4%BB%8B%E4%B8%8EIOC%E6%80%9D%E6%83%B3/" rel="next" title="Spring">
-                <i class="fa fa-chevron-left"></i> Spring
+              <a href="/2020/05/02/Spring%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8Cxml%E9%85%8D%E7%BD%AEbean%E9%82%A3%E4%B8%80%E4%B8%AA%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98/" rel="next" title="Spring的注解和xml配置bean那一个优先级更高">
+                <i class="fa fa-chevron-left"></i> Spring的注解和xml配置bean那一个优先级更高
               </a>
             
           </div>
@@ -586,10 +536,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/05/02/Spring%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8Cxml%E9%85%8D%E7%BD%AEbean%E9%82%A3%E4%B8%80%E4%B8%AA%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98/" rel="prev" title="Spring的注解和xml配置bean那一个优先级更高">
-                Spring的注解和xml配置bean那一个优先级更高 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -755,7 +701,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、Bean注解的自动装配简介"><span class="nav-number">1.</span> <span class="nav-text">1、Bean注解的自动装配简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1、Spring中bean有三种装配机制"><span class="nav-number">1.1.</span> <span class="nav-text">1.1、Spring中bean有三种装配机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2、Spring的自动装配需要从两个角度来实现"><span class="nav-number">1.2.</span> <span class="nav-text">1.2、Spring的自动装配需要从两个角度来实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、测试"><span class="nav-number">1.3.</span> <span class="nav-text">2、测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性"><span class="nav-number">1.4.</span> <span class="nav-text">2.1、创建三个实体类Cat，Dog，User，其中User有cat，dog属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2、编写配置文件"><span class="nav-number">1.5.</span> <span class="nav-text">2.2、编写配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3、测试"><span class="nav-number">1.6.</span> <span class="nav-text">2.3、测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4、byName"><span class="nav-number">1.7.</span> <span class="nav-text">2.4、byName</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5、byType"><span class="nav-number">1.8.</span> <span class="nav-text">2.5、byType</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6、-Autowired-Resource-Qualifier"><span class="nav-number">1.9.</span> <span class="nav-text">2.6、@Autowired @Resource @Qualifier</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-1、-Autowired"><span class="nav-number">1.9.1.</span> <span class="nav-text">2.6.1、@Autowired</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">1.9.1.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-2、-Qualifier"><span class="nav-number">1.9.2.</span> <span class="nav-text">2.6.2、@Qualifier</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#-1"><span class="nav-number">1.9.2.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-3、-Resource"><span class="nav-number">1.9.3.</span> <span class="nav-text">2.6.3、@Resource</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、代理模式简介"><span class="nav-number">1.</span> <span class="nav-text">1、代理模式简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、静态代理："><span class="nav-number">2.</span> <span class="nav-text">2、静态代理：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、动态代理"><span class="nav-number">3.</span> <span class="nav-text">3、动态代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、编写一个模板动态代理类"><span class="nav-number">4.</span> <span class="nav-text">4、编写一个模板动态代理类</span></a></li></ol></div>
             
 
           </div>

@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>设计模式之代理</title>
+    <url>/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<h1 id="1、代理模式简介"><a href="#1、代理模式简介" class="headerlink" title="1、代理模式简介"></a>1、代理模式简介</h1><p><strong>代理模式的定义：</strong>代理模式给某一个对象提供一个代理对象，并由代理对象控制对原对象的引用。通俗的来讲代理模式就是我们生活中常见的中介。</p>
+<a id="more"></a>
+
+<img src="/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/2.png" class="" title="代理模式">
+
+<p>代理模式分为两大类：</p>
+<ul>
+<li>静态代理：由一个类文件描述代理</li>
+<li>动态代理：在内存中形成代理类</li>
+</ul>
+<h1 id="2、静态代理："><a href="#2、静态代理：" class="headerlink" title="2、静态代理："></a>2、静态代理：</h1><img src="/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/1.png" class="" title="租房">
+
+<p>实现以上场景</p>
+<p>功能接口：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Rent</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Rent</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>真实对象：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Host</span> <span class="keyword">implements</span> <span class="title">Rent</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Rent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"出租房子"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代理对象：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Proxy</span> <span class="keyword">implements</span> <span class="title">Rent</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Host host;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Proxy</span><span class="params">(Host host)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.host = host;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Proxy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Rent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        seeHouse();</span><br><span class="line">        host.Rent();</span><br><span class="line">        hetong();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">seeHouse</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"看房"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hetong</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"签合同"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用户租房子：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Host host = <span class="keyword">new</span> Host();</span><br><span class="line">        Proxy proxy = <span class="keyword">new</span> Proxy(host);</span><br><span class="line">        proxy.Rent();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/3.png" class="" title="功能实现">
+
+<p><strong>分析：</strong>在以上代码中，我们并没有直接接触房东，而是通过中介完成了租房工作，这就是代理模式。</p>
+<p>优点：</p>
+<ul>
+<li>可以使得我们的真实角色更加纯粹 . 不再去关注一些公共的事情 .</li>
+<li>公共的业务由代理来完成 . 实现了业务的分工 ,</li>
+<li>公共业务发生扩展时变得更加集中和方便 .</li>
+</ul>
+<p>缺点 :</p>
+<ul>
+<li>类多了 , 多了代理类 , 工作量变大了 . 开发效率降低 .</li>
+</ul>
+<p>我们想要静态代理的好处，又不想要静态代理的缺点，所以 , 就有了动态代理 !</p>
+<h1 id="3、动态代理"><a href="#3、动态代理" class="headerlink" title="3、动态代理"></a>3、动态代理</h1><p>功能接口和真实对象与上面相同</p>
+<p>获取代理对象的类：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyHost</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Rent <span class="title">getProxy</span><span class="params">(Host host)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 三个参数：</span></span><br><span class="line"><span class="comment">         * 1.真实类的类加载器</span></span><br><span class="line"><span class="comment">         * 2.真实类实现的接口</span></span><br><span class="line"><span class="comment">         * 3.处理器InvocationHandler</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        Rent proxy = (Rent) Proxy.newProxyInstance(host.getClass().getClassLoader(), host.getClass().getInterfaces(), <span class="keyword">new</span> InvocationHandler() &#123;</span><br><span class="line">            <span class="comment">/**</span></span><br><span class="line"><span class="comment">             * 代理逻辑编写的代码部分，代理对象调用所有的方法都会触发改方法执行</span></span><br><span class="line"><span class="comment">             * 参数：</span></span><br><span class="line"><span class="comment">             *  1.proxy 代理对象</span></span><br><span class="line"><span class="comment">             *  2.代理对象调用的方法</span></span><br><span class="line"><span class="comment">             *  3.代理对象调用方法所传参数</span></span><br><span class="line"><span class="comment">             */</span></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (method.getName().equals(<span class="string">"Rent"</span>))</span><br><span class="line">                &#123;</span><br><span class="line">                    System.out.println(<span class="string">"看房"</span>);</span><br><span class="line">                    method.invoke(host, args);</span><br><span class="line">                    System.out.println(<span class="string">"签合同"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> proxy;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用户：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Host host = <span class="keyword">new</span> Host();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获得代理对象</span></span><br><span class="line">        Rent proxy = ProxyHost.getProxy(host);</span><br><span class="line"></span><br><span class="line">        proxy.Rent();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/05/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E4%BB%A3%E7%90%86/3.png" class="" title="功能实现">
+
+<p>优点：</p>
+<p>静态代理有的它都有，静态代理没有的，它也有！</p>
+<ul>
+<li>可以使得我们的真实角色更加纯粹 . 不再去关注一些公共的事情 .</li>
+<li>公共的业务由代理来完成 . 实现了业务的分工 ,</li>
+<li>公共业务发生扩展时变得更加集中和方便 .</li>
+<li>一个动态代理 , 一般代理某一类业务</li>
+<li>一个动态代理可以代理多个类，代理的是接口！</li>
+</ul>
+<h1 id="4、编写一个模板动态代理类"><a href="#4、编写一个模板动态代理类" class="headerlink" title="4、编写一个模板动态代理类"></a>4、编写一个模板动态代理类</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: SpringDemo</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 动态代理工具类</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Mr.Kuang</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2020-05-03 13:51</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyUtils</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//需要被代理的接口</span></span><br><span class="line">    <span class="keyword">private</span> Object target;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTarget</span><span class="params">(Object target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.target = target;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">getObjectProxy</span><span class="params">(Object target)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line"></span><br><span class="line">        Object proxy = Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), <span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> proxy;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        <span class="comment">//填写要处理的的代码</span></span><br><span class="line">        </span><br><span class="line">        Object invoke = method.invoke(target, args);</span><br><span class="line">        <span class="keyword">return</span> invoke;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>分析：两个核心</p>
+<ul>
+<li>Proxy.newProxyInstance  创建一个代理对象</li>
+<li>Object invoke  处理代理对象如何代理</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>设计模式1</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Spring的注解和xml配置bean那一个优先级更高</title>
     <url>/2020/05/02/Spring%E7%9A%84%E6%B3%A8%E8%A7%A3%E5%92%8Cxml%E9%85%8D%E7%BD%AEbean%E9%82%A3%E4%B8%80%E4%B8%AA%E4%BC%98%E5%85%88%E7%BA%A7%E6%9B%B4%E9%AB%98/</url>
     <content><![CDATA[<blockquote>
