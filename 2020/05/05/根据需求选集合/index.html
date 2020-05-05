@@ -86,17 +86,19 @@
 
 
 
-<meta name="description" content="内部类总结1.普通内部类相当于外部类的一个成员变量，因此内部类可以直接访问外部类的成员，\包括私有**。">
+<meta name="description" content="根据需求选用合适的集合">
 <meta property="og:type" content="article">
-<meta property="og:title" content="内部类">
-<meta property="og:url" content="http://kayuyu1.github.io/2020/04/20/%E5%86%85%E9%83%A8%E7%B1%BB/index.html">
+<meta property="og:title" content="根据需求选集合">
+<meta property="og:url" content="http://kayuyu1.github.io/2020/05/05/%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E9%80%89%E9%9B%86%E5%90%88/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="内部类总结1.普通内部类相当于外部类的一个成员变量，因此内部类可以直接访问外部类的成员，\包括私有**。">
-<meta property="article:published_time" content="2020-04-20T11:59:16.000Z">
-<meta property="article:modified_time" content="2020-04-28T07:50:19.763Z">
+<meta property="og:description" content="根据需求选用合适的集合">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/05/05/%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E9%80%89%E9%9B%86%E5%90%88/%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E9%80%89%E9%9B%86%E5%90%88.png">
+<meta property="article:published_time" content="2020-05-05T02:46:37.000Z">
+<meta property="article:modified_time" content="2020-05-05T02:51:23.877Z">
 <meta property="article:author" content="kuangyu">
 <meta property="article:tag" content="javase">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kayuyu1.github.io/2020/05/05/%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E9%80%89%E9%9B%86%E5%90%88/%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E9%80%89%E9%9B%86%E5%90%88.png">
 
 
 
@@ -126,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://Kayuyu1.github.io/2020/04/20/内部类/"/>
+  <link rel="canonical" href="http://Kayuyu1.github.io/2020/05/05/根据需求选集合/"/>
 
 
 
 
 
-  <title>内部类 | 湖底幽魂</title>
+  <title>根据需求选集合 | 湖底幽魂</title>
   
 
 
@@ -283,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/04/20/%E5%86%85%E9%83%A8%E7%B1%BB/">
+    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/05/05/%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E9%80%89%E9%9B%86%E5%90%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kuangyu">
@@ -300,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">内部类</h1>
+          <h1 class="post-title" itemprop="name headline">根据需求选集合</h1>
         
 
         <div class="post-meta">
@@ -312,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-20T19:59:16+08:00">
-                2020-04-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-05T10:46:37+08:00">
+                2020-05-05
               </time>
             
 
@@ -349,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  466
+                  11
                 </span>
               
 
@@ -386,18 +388,10 @@
       
 
       
-        <h1 id="内部类总结"><a href="#内部类总结" class="headerlink" title="内部类总结"></a>内部类总结</h1><p>1.普通内部类相当于外部类的一个成员变量，因此内部类可以直接访问外部类的成员，<strong><em>\</em>包括私有**</strong>。</p>
+        <p>根据需求选用合适的集合</p>
 <a id="more"></a>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	        <span class="comment">//外部类名.内部类名 = 外部类对象.内部类对象</span></span><br><span class="line">	        Outer.Inner oi = <span class="keyword">new</span> Outer().<span class="keyword">new</span> Inner();            <span class="comment">//创建内部类对象</span></span><br><span class="line">	        oi.method();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>2.内部类有静态方法那么内部类必须是静态的。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> num=<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span><span class="comment">//报错原因 ：内部类不是静态的而方法是静态的 ，相当于盒子里有糖，但盒子却没有打开的方法（static的属性，从属于类）</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>3.局部变量必须加final修饰符。（随着方法运行完毕，局部变量会被释放，如果此时一个内部类还引用该变量则会报错。说到底就是变量的生命周期比内部类实例要短。而final保证这个变量始终指向一个对象，内部类就可以放心大胆地引用了。其实犯了和C++一样的毛病：返回了局部变量的引用）<br><strong><em>注意:在JDK8版本之中,方法内部类中调用方法中的局部变量,可以不需要修饰为 final,匿名内部类也是一样的，主要是JDK8之后增加了 Effectively final 功能\</em></strong>    </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;	</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num =<span class="number">20</span>;</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			System.out.println(num);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>4.面试题</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//要求：使用已知的变量，在控制台输出30，20，10。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;	</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> num=<span class="number">10</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">int</span> num =<span class="number">20</span>;</span><br><span class="line">		<span class="class"><span class="keyword">class</span> <span class="title">Inner</span></span>&#123;</span><br><span class="line">			<span class="keyword">int</span> num=<span class="number">30</span>;</span><br><span class="line">			<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span></span><br><span class="line"><span class="function">			</span>&#123;</span><br><span class="line">			System.out.println(num);</span><br><span class="line">			System.out.println(<span class="keyword">this</span>.num);</span><br><span class="line">			System.out.println(Outer.<span class="keyword">this</span>.num);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<img src="/2020/05/05/%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E9%80%89%E9%9B%86%E5%90%88/%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E9%80%89%E9%9B%86%E5%90%88.png" class="" title="根据需求选集合">
       
     </div>
     
@@ -441,7 +435,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://kayuyu1.github.io/2020/04/20/%E5%86%85%E9%83%A8%E7%B1%BB/" title="内部类">http://kayuyu1.github.io/2020/04/20/%E5%86%85%E9%83%A8%E7%B1%BB/</a>
+    <a href="http://kayuyu1.github.io/2020/05/05/%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E9%80%89%E9%9B%86%E5%90%88/" title="根据需求选集合">http://kayuyu1.github.io/2020/05/05/%E6%A0%B9%E6%8D%AE%E9%9C%80%E6%B1%82%E9%80%89%E9%9B%86%E5%90%88/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -469,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/19/Integer/" rel="next" title="Integer">
-                <i class="fa fa-chevron-left"></i> Integer
+              <a href="/2020/05/04/Spring%E6%95%B4%E5%90%88MyBatis/" rel="next" title="Spring整合MyBatis">
+                <i class="fa fa-chevron-left"></i> Spring整合MyBatis
               </a>
             
           </div>
@@ -478,10 +472,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/21/%E6%9E%84%E9%80%A0%E4%BB%A3%E7%A0%81%E5%9D%97%E4%B8%8E%E6%9E%84%E9%80%A0%E5%99%A8%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/" rel="prev" title="构造代码块与构造器执行顺序">
-                构造代码块与构造器执行顺序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -533,17 +523,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -637,22 +618,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内部类总结"><span class="nav-number">1.</span> <span class="nav-text">内部类总结</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
