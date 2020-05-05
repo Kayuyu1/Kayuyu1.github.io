@@ -399,7 +399,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Spring</title>
+    <title>Spring简介与IOC思想</title>
     <url>/2020/05/01/Spring%E7%AE%80%E4%BB%8B%E4%B8%8EIOC%E6%80%9D%E6%83%B3/</url>
     <content><![CDATA[<h1 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h1><h2 id="1-1、什么是Spring"><a href="#1-1、什么是Spring" class="headerlink" title="1.1、什么是Spring"></a>1.1、什么是Spring</h2><p>Spring框架是一个开放源代码的<a href="https://baike.baidu.com/item/J2EE/110838" target="_blank" rel="noopener">J2EE</a>应用程序框架，为了解决企业应用开发的复杂性而创建的，由[Rod Johnson](<a href="https://baike.baidu.com/item/Rod" target="_blank" rel="noopener">https://baike.baidu.com/item/Rod</a> Johnson/1423612)发起。</p>
 <a id="more"></a>
@@ -490,7 +490,7 @@
 <ul>
 <li>控制：传统应用程序的对象是由程序本身创建控制，使用Spring后，对象是Spring创建控制</li>
 <li>反转：程序本身不创建对象，变成了被动接受对象</li>
-<li>依赖：依赖与Spring创建bean对象</li>
+<li>依赖：依赖于Spring创建bean对象</li>
 <li>注入：就是利用set方法来进行对象bean的属性动态注入</li>
 </ul>
 </blockquote>
