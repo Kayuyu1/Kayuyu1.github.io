@@ -1,6 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>有关流的细节</title>
+    <url>/2020/05/09/%E6%9C%89%E5%85%B3%E6%B5%81%E7%9A%84%E7%BB%86%E8%8A%82/</url>
+    <content><![CDATA[<h1 id="1-flush-与close的区别"><a href="#1-flush-与close的区别" class="headerlink" title="1.flush()与close的区别"></a>1.flush()与close的区别</h1><p>因为内置缓冲区的原因，如果不关闭输出流，无法写出字符到文件中。但是关闭的流对象，是无法继续写出数据的。如果我们既想写出数据，又想继续使用流，就需要<code>flush</code> 方法了。</p>
+<a id="more"></a>
+
+<ul>
+<li><code>flush</code> ：刷新缓冲区到目的文件，流对象可以继续使用。</li>
+<li><code>close</code>:先刷新缓冲区到目的文件，然后通知系统释放资源。流对象不可以再被使用了。</li>
+</ul>
+<h1 id="2-流体系"><a href="#2-流体系" class="headerlink" title="2.流体系"></a>2.流体系</h1><img src="/2020/05/09/%E6%9C%89%E5%85%B3%E6%B5%81%E7%9A%84%E7%BB%86%E8%8A%82/1.png" class="" title="流体系">
+
+<h2 id="2-1-缓冲流概述"><a href="#2-1-缓冲流概述" class="headerlink" title="2.1 .缓冲流概述"></a>2.1 .缓冲流概述</h2><p>缓冲流,也叫高效流，是对4个基本的<code>FileXxx</code> 流的增强，所以也是4个流，按照数据类型分类：</p>
+<ul>
+<li><strong>字节缓冲流</strong>：<code>BufferedInputStream</code>，<code>BufferedOutputStream</code> </li>
+<li><strong>字符缓冲流</strong>：<code>BufferedReader</code>，<code>BufferedWriter</code></li>
+</ul>
+<p>缓冲流的基本原理，是在创建流对象时，会创建一个内置的默认大小的缓冲区数组，通过缓冲区读写，减少系统IO次数，从而提高读写的效率。</p>
+<h2 id="2-3-转换流"><a href="#2-3-转换流" class="headerlink" title="2.3.转换流"></a>2.3.转换流</h2>
+
+<p>转换流<code>java.io.InputStreamReader</code>，是Reader的子类，是从字节流到字符流的桥梁。它读取字节，并使用指定的字符集将其解码为字符。它的字符集可以由名称指定，也可以接受平台的默认字符集。 </p>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ul>
+<li><code>InputStreamReader(InputStream in)</code>: 创建一个使用默认字符集的字符流。 </li>
+<li><code>InputStreamReader(InputStream in, String charsetName)</code>: 创建一个指定字符集的字符流。</li>
+</ul>
+<p>转换流<code>java.io.OutputStreamWriter</code> ，是Writer的子类，是从字符流到字节流的桥梁。使用指定的字符集将字符编码为字节。它的字符集可以由名称指定，也可以接受平台的默认字符集。 </p>
+<h3 id="构造方法-1"><a href="#构造方法-1" class="headerlink" title="构造方法"></a>构造方法</h3><ul>
+<li><code>OutputStreamWriter(OutputStream in)</code>: 创建一个使用默认字符集的字符流。 </li>
+<li><code>OutputStreamWriter(OutputStream in, String charsetName)</code>: 创建一个指定字符集的字符流。</li>
+</ul>
+<h2 id="2-4-序列化"><a href="#2-4-序列化" class="headerlink" title="2.4.序列化"></a>2.4.序列化</h2><p>Java 提供了一种对象<strong>序列化</strong>的机制。用一个字节序列可以表示一个对象，该字节序列包含该<code>对象的数据</code>、<code>对象的类型</code>和<code>对象中存储的属性</code>等信息。字节序列写出到文件之后，相当于文件中<strong>持久保存</strong>了一个对象的信息。 </p>
+<p>反之，该字节序列还可以从文件中读取回来，重构对象，对它进行<strong>反序列化</strong>。<code>对象的数据</code>、<code>对象的类型</code>和<code>对象中存储的数据</code>信息，都可以用来在内存中创建对象。看图理解序列化</p>
+
+
+<h2 id="2-5-补充java转义"><a href="#2-5-补充java转义" class="headerlink" title="2.5.补充java转义"></a>2.5.补充java转义</h2><ul>
+<li>为什么需要转义：避免二义性，因为java不认识你这个是字符串，还是特殊字符</li>
+<li>转义符号:\</li>
+</ul>
+<p>在Java中，不管是String.split()，还是正则表达式，有一些特殊字符需要转义，</p>
+<p>这些字符是</p>
+<p><strong><em>\</em>(   [   {   /   ^   -   $   ¦   }   ]   )   ?   *   +   .**</strong> </p>
+]]></content>
+      <tags>
+        <tag>javase</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSM配置文件整合</title>
+    <url>/2020/05/08/SSM%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%95%B4%E5%90%88/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>SSM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>out中的lib没有jar包的问题</title>
+    <url>/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>在idea中的out目录中我们可以看到部署到tomcat的web项目</p>
+<a id="more"></a>
+
+<img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/1.png" class="" title="结构">
+
+<p>有时候我们明明通过maven配置了相关的jar包，但部署到tomcat的项目的lib下却没有</p>
+<p>如下：</p>
+<img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/2.png" class="" title="maven">
+
+<p>甚至连lib都没有</p>
+<img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/3.png" class="" title="lib">
+
+<p>这时候我们就要打开Project Settings-&gt;Artifacts</p>
+<p>选择没有lib的项目点击创建</p>
+ <img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/4.png" class="" title="lib">
+
+<p>导入jar包</p>
+ <img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/5.png" class="" title="jar">
+
+<p>再次启动tomcat或者idea就能看到lib和里面的jar包了</p>
+<img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/6.png" class="" title="出现了">]]></content>
+      <tags>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为什么web-inf下的资源不能重定向</title>
     <url>/2020/05/06/%E4%B8%BA%E4%BB%80%E4%B9%88web-inf%E4%B8%8B%E7%9A%84%E8%B5%84%E6%BA%90%E4%B8%8D%E8%83%BD%E9%87%8D%E5%AE%9A%E5%90%91/</url>
     <content><![CDATA[<h1 id="为什么web-inf下的资源不能重定向"><a href="#为什么web-inf下的资源不能重定向" class="headerlink" title="为什么web-inf下的资源不能重定向?"></a>为什么web-inf下的资源不能重定向?</h1><blockquote>
