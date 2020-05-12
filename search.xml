@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Vue组件事件绑定Vue实例组件</title>
+    <title>Vue组件事件绑定Vue实例事件</title>
     <url>/2020/05/12/Vue%E7%BB%84%E4%BB%B6%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9AVue%E5%AE%9E%E4%BE%8B%E7%BB%84%E4%BB%B6/</url>
     <content><![CDATA[<p><strong>首先，我们要知道Vue中的组件不能直接绑定Vue实例的事件，只能间接的绑定</strong><a id="more"></a></p>
 <ul>
