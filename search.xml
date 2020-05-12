@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Vue组件事件绑定Vue实例组件</title>
+    <url>/2020/05/12/Vue%E7%BB%84%E4%BB%B6%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9AVue%E5%AE%9E%E4%BE%8B%E7%BB%84%E4%BB%B6/</url>
+    <content><![CDATA[<p><strong>首先，我们要知道Vue中的组件不能直接绑定Vue实例的事件，只能间接的绑定</strong><a id="more"></a></p>
+<ul>
+<li>代码：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;vue9&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;todiv&gt;</span><br><span class="line">        &lt;totitle slot&#x3D;&quot;totitle&quot; :title&#x3D;&quot;tilte&quot;&gt;&lt;&#x2F;totitle&gt;</span><br><span class="line">        &lt;todata slot&#x3D;&quot;todata&quot; v-for&#x3D;&quot;(item,index) in items&quot;</span><br><span class="line">                :item&#x3D;&quot;item&quot; :index&#x3D;&quot;index&quot;</span><br><span class="line">                v-on:remove&#x3D;&quot;removeItem(index)&quot; &gt;&lt;&#x2F;todata&gt;</span><br><span class="line">    &lt;&#x2F;todiv&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;vue@2.5.21&#x2F;dist&#x2F;vue.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    Vue.component(&quot;todiv&quot;, &#123;</span><br><span class="line">        template: &#39;&lt;div&gt;&#39; +</span><br><span class="line">            &#39;&lt;slot name&#x3D;&quot;totitle&quot;&gt;&lt;&#x2F;slot&gt;&#39; +</span><br><span class="line">            &#39;&lt;ul&gt;&#39; +</span><br><span class="line">            &#39;&lt;slot name&#x3D;&quot;todata&quot;&gt;&lt;&#x2F;slot&gt;&#39; +</span><br><span class="line">            &#39;&lt;&#x2F;ul&gt;&#39; +</span><br><span class="line">            &#39;&lt;&#x2F;div&gt;&#39;</span><br><span class="line">    &#125;);</span><br><span class="line">    Vue.component(&quot;totitle&quot;, &#123;</span><br><span class="line">        props: [&#39;tilte&#39;],</span><br><span class="line">        template: &#39;&lt;div&gt;&#123;&#123;tilte&#125;&#125;&lt;&#x2F;div&gt;&#39;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    Vue.component(&quot;todata&quot;, &#123;</span><br><span class="line">        props: [&#39;item&#39;,&#39;index&#39;],</span><br><span class="line">        template: &#39;&lt;li&gt;&#123;&#123;item&#125;&#125;&lt;button @click&#x3D;&quot;remove&quot;&gt;删除&lt;&#x2F;button&gt;&lt;&#x2F;li&gt;&#39;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            remove:function () &#123;</span><br><span class="line">                this.$emit(&#39;remove&#39;)&#x2F;&#x2F;触发自定义事件</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    var vm &#x3D; new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            tilte: &quot;ky写java&quot;,</span><br><span class="line">            items: [&quot;java&quot;, &quot;运维&quot;, &quot;linux&quot;]</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            removeItem:function (index) &#123;</span><br><span class="line">                console.log(&quot;删除了&quot;+index)</span><br><span class="line">                this.items.splice(index,1)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>组件布局</li>
+</ul>
+<img src="/2020/05/12/Vue%E7%BB%84%E4%BB%B6%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9AVue%E5%AE%9E%E4%BE%8B%E7%BB%84%E4%BB%B6/1.png" class="" title="组件布局">
+
+<ul>
+<li><img src="/2020/05/12/Vue%E7%BB%84%E4%BB%B6%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9AVue%E5%AE%9E%E4%BE%8B%E7%BB%84%E4%BB%B6/2.png" class="" title="自定义事件分发绑定"></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>jvm探究</title>
+    <url>/2020/05/12/jvm%E6%8E%A2%E7%A9%B6/</url>
+    <content><![CDATA[<h1 id="面试提问"><a href="#面试提问" class="headerlink" title="面试提问"></a>面试提问</h1><ul>
+<li>什么是OOM，什么是栈溢出StackOverFlowError？怎么分析？</li>
+<li>JVM的常用调优参数有哪些？</li>
+<li>内存的快照如何抓取，怎么分析Dump文件？知道吗？</li>
+<li>谈谈JVM中，类加载器？<a id="more"></a></li>
+</ul>
+<h1 id="JVM探究"><a href="#JVM探究" class="headerlink" title="JVM探究"></a>JVM探究</h1><ol>
+<li><p>JVM的位置</p>
+<img src="/2020/05/12/jvm%E6%8E%A2%E7%A9%B6/1.png" class="" title="JVM位置">
+
+<blockquote>
+<p>jvm是运行class文件的虚拟进程</p>
+</blockquote>
+</li>
+<li><p>JVM的体系结构</p>
+<img src="/2020/05/12/jvm%E6%8E%A2%E7%A9%B6/2.png" class="" title="JVM的体系结构">
+</li>
+<li><p>类加载器</p>
+</li>
+<li><p>双亲委派机制</p>
+</li>
+<li><p>沙箱安全机制</p>
+</li>
+<li><p>Native</p>
+</li>
+<li><p>PC寄存器</p>
+</li>
+<li><p>方法区</p>
+</li>
+<li><p>栈</p>
+</li>
+<li><p>三种JVM</p>
+</li>
+<li><p>堆</p>
+</li>
+<li><p>新生区，老年区</p>
+</li>
+<li><p>永久区</p>
+</li>
+<li><p>堆内存调优</p>
+</li>
+<li><p>GC</p>
+<ol>
+<li>常用算法</li>
+</ol>
+</li>
+<li><p>JMM</p>
+</li>
+<li><p>总结</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>JVM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基本类型和引用类型传参区别</title>
     <url>/2020/05/11/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E4%BC%A0%E5%8F%82%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h1 id="基本数据类型和引用数据类型作为参数的区别"><a href="#基本数据类型和引用数据类型作为参数的区别" class="headerlink" title="基本数据类型和引用数据类型作为参数的区别"></a>基本数据类型和引用数据类型作为参数的区别</h1><p>基本数据类型的变量中直接存放数据值本身，所以改的时候改的是数据值本身；<br>但是引用类型不同的地方在于真正的数据并没有在栈区的变量中保存，而是在堆区里面保存着，所以虽然也拷贝了一份，也是副本，但是二者指向的是同一块堆区。</p>
