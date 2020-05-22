@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>什么是RPC</title>
+    <url>/2020/05/22/%E4%BB%80%E4%B9%88%E6%98%AFRPC/</url>
+    <content><![CDATA[<h1 id="借用别人的文章《如何给老婆解释RPC》"><a href="#借用别人的文章《如何给老婆解释RPC》" class="headerlink" title="借用别人的文章《如何给老婆解释RPC》"></a>借用别人的文章《如何给老婆解释RPC》</h1><blockquote>
+<p>文章后续看的不是明白，但这个故事，我笑着笑着就哭了！</p>
+</blockquote>
+<p>一个阳光明媚的早晨，老婆又在翻看我订阅的技术杂志。</p>
+<p>“老公，什么是RPC呀，为什么你们程序员那么多黑话！”，老婆还是一如既往的好奇。<a id="more"></a></p>
+<p>“RPC，就是<strong>Remote Procedure Call</strong>的简称呀，翻译成中文就是<strong>远程过程调用</strong>嘛”，我一边看着书，一边漫不经心的回答着。<br>“啥？你在说啥？谁不知道翻译成中文是什么意思？你个废柴，快给我滚去洗碗！”<br>“我去。。。”，我如梦初醒，我对面坐着的可不是一个程序员，为了不去洗碗，我瞬间调动起全部脑细胞，星辰大海在我脑中汇聚，灵感涌现……</p>
+<p>“是这样，远程过程调用，自然是相对于本地过程调用来说的嘛。”<br>“嗯哼，那先给老娘讲讲，本地过程调用是啥子？”<br>“本地过程调用，就好比你现在在家里，你要想洗碗，那你直接把碗放进洗碗机，打开洗碗机开关就可以洗了。这就叫本地过程调用。”</p>
+<p>“哎呦，我可不干，那啥是远程过程调用？”<br>“远程嘛，那就是你现在不在家，跟姐妹们浪去了，突然发现碗还没洗，打了个电话过来，叫我去洗碗，这就是远程过程调用啦”，多么通俗易懂的解释，我真是天才！</p>
+<p>“哦！我明白了”，说着，老婆开始收拾包包。<br>“你这是干啥去哦”<br>“我？我要出门浪去呀，待会记得接收我的远程调用哦，哦不，咱们要专业点，应该说，待会记得接收我的RPC哦！”</p>
+<p>后续：<a href="https://zhuanlan.zhihu.com/p/36427583" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/36427583</a></p>
+]]></content>
+      <tags>
+        <tag>分布式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpringBoot自动装配原理</title>
     <url>/2020/05/16/SpringBoot%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86/</url>
     <content><![CDATA[]]></content>
@@ -69,11 +87,9 @@
 <p>趋势：现在用Native的越来越少了，除了硬件功能的调用如java程序驱动打印机还在使用，在企业级应用中都很少见了</p>
 <p>因为现在异构领域的通信都很发达，如Socket等。</p>
 </li>
-<li><p>PC寄存器</p>
-<p>每个线程都有一个程序计数器，是线程私有的,就是一个指针，指向方法区中的方法字节码（用来存储指向下一条指令的地址,也即将要执行的指令代码），由执行引擎读取下一条指令，是一个非常小的内存空间，几乎可以忽略不记。</p>
+<li><h3 id="PC寄存器"><a href="#PC寄存器" class="headerlink" title="PC寄存器"></a>PC寄存器</h3><p>每个线程都有一个程序计数器，是线程私有的,就是一个指针，指向方法区中的方法字节码（用来存储指向下一条指令的地址,也即将要执行的指令代码），由执行引擎读取下一条指令，是一个非常小的内存空间，几乎可以忽略不记。</p>
 </li>
-<li><p>方法区</p>
-<p>方法区被所有线程共享，它存放了类的字节码，静态方法，静态变量，和常量池，但是实例变量任然存在堆中，与类无关</p>
+<li><h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>方法区被所有线程共享，它存放了类的字节码，静态方法，静态变量，和常量池，但是实例变量任然存在堆中，与类无关</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String name=<span class="string">"ky"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student = <span class="keyword">new</span> Student();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <img src="/2020/05/16/JVM%E5%88%9D%E6%8E%A2/7.png" class="" title="第一种">
@@ -86,16 +102,18 @@
 <p>intern方法，这个方法首先在常量池中查找是否存在一份equal相等的字符串如果有的话就返回该字符串的引用，没有的话就将它加入到字符串常量池中。</p>
 </blockquote>
 </li>
-<li><p>栈</p>
-<p>在java中，栈主管程序的运行，一个栈对应一个线程，栈生命周期与程序的线程相同。<strong>对于栈来说，不存在垃圾回收</strong>。栈中存放了基本数据类型，和引用数据类型的引用地址，以及方法</p>
+<li><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>在java中，栈主管程序的运行，一个栈对应一个线程，栈生命周期与程序的线程相同。<strong>对于栈来说，不存在垃圾回收</strong>。栈中存放了基本数据类型，和引用数据类型的引用地址，以及方法的引用</p>
 </li>
-<li><p>三种JVM</p>
-</li>
+</ol>
+<ol start="9">
 <li><p>堆</p>
+<p>堆主要存放类实例化的真实对象。堆里面又分为新生代，老年代，和永久代（jdk1.8后改为元空间），垃圾回收主要发生在新生代和老年代。</p>
 </li>
-<li><p>新生区，老年区</p>
-</li>
-<li><p>永久区</p>
+<li><p>新生代，老年代，永久代（元空间）</p>
+<p>新生代：一般对象的诞生的地方</p>
+<p>老年代：对象躲过15次GC（一般默认15次，可以自己设置）之后进入的地方</p>
+<p>永久代（元空间）：java8后用元空间替代了永久代。元空间的本质和永久代类似，都是对JVM规范中方法区的实现。不过元空间与永久代之间最大的区别在于：<strong>元空间并不在虚拟机中，而是使用本地内存</strong>。</p>
+<img src="/2020/05/16/JVM%E5%88%9D%E6%8E%A2/9.png" class="" title="堆模型">
 </li>
 <li><p>堆内存调优</p>
 </li>
