@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="随笔," />
+  <meta name="keywords" content="javase," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="1、newFixedThreadPool  定长线程池一个有指定的线程数的线程池，有核心的线程，里面有固定的线程数量，响应的速度快。正规的并发线程，多用于服务器。固定的线程数由系统资源设置。核心线程是没有超时机制的，队列大小没有限制，除非线程池关闭了核心线程才会被回收。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://kayuyu1.github.io/2020/04/03/hello-world/index.html">
+<meta property="og:title" content="常见的4种线程池">
+<meta property="og:url" content="http://kayuyu1.github.io/2020/05/23/%E5%B8%B8%E8%A7%81%E7%9A%844%E7%A7%8D%E7%BA%BF%E7%A8%8B%E6%B1%A0/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="article:published_time" content="2020-04-03T08:43:13.270Z">
-<meta property="article:modified_time" content="2020-04-03T13:20:24.082Z">
+<meta property="og:description" content="1、newFixedThreadPool  定长线程池一个有指定的线程数的线程池，有核心的线程，里面有固定的线程数量，响应的速度快。正规的并发线程，多用于服务器。固定的线程数由系统资源设置。核心线程是没有超时机制的，队列大小没有限制，除非线程池关闭了核心线程才会被回收。">
+<meta property="article:published_time" content="2020-05-23T08:46:00.000Z">
+<meta property="article:modified_time" content="2020-05-23T08:50:49.497Z">
 <meta property="article:author" content="kuangyu">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="javase">
 <meta name="twitter:card" content="summary">
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://Kayuyu1.github.io/2020/04/03/hello-world/"/>
+  <link rel="canonical" href="http://Kayuyu1.github.io/2020/05/23/常见的4种线程池/"/>
 
 
 
 
 
-  <title>Hello World | 湖底幽魂</title>
+  <title>常见的4种线程池 | 湖底幽魂</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/04/03/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/05/23/%E5%B8%B8%E8%A7%81%E7%9A%844%E7%A7%8D%E7%BA%BF%E7%A8%8B%E6%B1%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kuangyu">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">常见的4种线程池</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-03T16:43:13+08:00">
-                2020-04-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-23T16:46:00+08:00">
+                2020-05-23
               </time>
             
 
@@ -349,7 +349,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  74
+                  399
                 </span>
               
 
@@ -386,20 +386,13 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h4 id="1、newFixedThreadPool-定长线程池"><a href="#1、newFixedThreadPool-定长线程池" class="headerlink" title="1、newFixedThreadPool  定长线程池"></a>1、newFixedThreadPool  定长线程池</h4><p>一个有指定的线程数的线程池，有核心的线程，里面有固定的线程数量，响应的速度快。正规的并发线程，多用于服务器。固定的线程数由系统资源设置。核心线程是没有超时机制的，队列大小没有限制，除非线程池关闭了核心线程才会被回收。</p>
+<a id="more"></a>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h4 id="2、newCachedThreadPool-可缓冲线程池"><a href="#2、newCachedThreadPool-可缓冲线程池" class="headerlink" title="2、newCachedThreadPool 可缓冲线程池"></a>2、newCachedThreadPool 可缓冲线程池</h4><p>只有非核心线程，最大线程数很大，每新来一个任务，当没有空余线程的时候就会重新创建一个线程，这边有一个超时机制，当空闲的线程超过60s内没有用到的话，就会被回收，它可以一定程序减少频繁创建/销毁线程,减少系统开销，适用于执行时间短并且数量多的任务场景。</p>
+<h4 id="3、ScheduledThreadPool-周期线程池"><a href="#3、ScheduledThreadPool-周期线程池" class="headerlink" title="3、ScheduledThreadPool  周期线程池"></a>3、ScheduledThreadPool  周期线程池</h4><p>创建一个定长线程池，支持定时及周期性任务执行，通过过schedule方法可以设置任务的周期执行</p>
+<h4 id="4、newSingleThreadExecutor-单任务线程池"><a href="#4、newSingleThreadExecutor-单任务线程池" class="headerlink" title="4、newSingleThreadExecutor 单任务线程池"></a>4、newSingleThreadExecutor 单任务线程池</h4><p>创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行，每次任务到来后都会进入阻塞队列，然后按指定顺序执行。</p>
+<p>作者：维特无忧堡<br>链接：<a href="https://www.jianshu.com/p/6eb9217a2af9" target="_blank" rel="noopener">https://www.jianshu.com/p/6eb9217a2af9</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
       
     </div>
@@ -444,7 +437,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://kayuyu1.github.io/2020/04/03/hello-world/" title="Hello World">http://kayuyu1.github.io/2020/04/03/hello-world/</a>
+    <a href="http://kayuyu1.github.io/2020/05/23/%E5%B8%B8%E8%A7%81%E7%9A%844%E7%A7%8D%E7%BA%BF%E7%A8%8B%E6%B1%A0/" title="常见的4种线程池">http://kayuyu1.github.io/2020/05/23/%E5%B8%B8%E8%A7%81%E7%9A%844%E7%A7%8D%E7%BA%BF%E7%A8%8B%E6%B1%A0/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -459,7 +452,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>随笔</a>
+            <a href="/tags/javase/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>javase</a>
           
         </div>
       
@@ -472,14 +465,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/05/22/%E4%BB%80%E4%B9%88%E6%98%AFRPC/" rel="next" title="什么是RPC">
+                <i class="fa fa-chevron-left"></i> 什么是RPC
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/03/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" rel="prev" title="我的第一篇博客文章">
-                我的第一篇博客文章 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/05/24/hashmap%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" rel="prev" title="hashmap普通分析">
+                hashmap普通分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -646,7 +643,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、newFixedThreadPool-定长线程池"><span class="nav-number">1.</span> <span class="nav-text">1、newFixedThreadPool  定长线程池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、newCachedThreadPool-可缓冲线程池"><span class="nav-number">2.</span> <span class="nav-text">2、newCachedThreadPool 可缓冲线程池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、ScheduledThreadPool-周期线程池"><span class="nav-number">3.</span> <span class="nav-text">3、ScheduledThreadPool  周期线程池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、newSingleThreadExecutor-单任务线程池"><span class="nav-number">4.</span> <span class="nav-text">4、newSingleThreadExecutor 单任务线程池</span></a></li></ol></div>
             
 
           </div>

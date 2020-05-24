@@ -1,6 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hashmap普通分析</title>
+    <url>/2020/05/24/hashmap%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<blockquote>
+<p>HashMap是面试的重点，老是一个HashMap能讲一个小时，估计就稳了哦（听某大佬说的）</p>
+</blockquote>
+<h1 id="1-提问"><a href="#1-提问" class="headerlink" title="1.提问"></a>1.提问</h1><ul>
+<li><p>HashMap的初始化容量为多少?</p>
+</li>
+<li><p>HashMap的初始化容量又为什么是2的幂次方？</p>
+</li>
+<li><p>HashMap的负载因子为什么为0.75？</p>
+</li>
+<li><p>JDK1.7中的HashMap有什么安全隐患？</p>
+</li>
+<li><p>JDK1.8中的HashMap与JDK1.7中的HashMap有啥不同？</p>
+<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="HashMap的初始化容量？"><a href="#HashMap的初始化容量？" class="headerlink" title="HashMap的初始化容量？"></a>HashMap的初始化容量？</h2><p>查看源码得知初始值为16，且<strong>MUST be a power of two.</strong> 必须是2的幂次方</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   * The default initial capacity - MUST be a power of two.</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> DEFAULT_INITIAL_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">4</span>; <span class="comment">// aka 16</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="HashMap的初始化容量又为什么必须是2的幂次方？"><a href="#HashMap的初始化容量又为什么必须是2的幂次方？" class="headerlink" title="HashMap的初始化容量又为什么必须是2的幂次方？"></a>HashMap的初始化容量又为什么必须是2的幂次方？</h2><p>首先我们要知道HashMap是通过对键对象的hash值来计算要放的位置的索引的。上源码</p>
+<img src="/2020/05/24/hashmap%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/1.png" class="" title="putval方法">
+
+<p>因为n永远是2的次幂，所以n的二进制表达式就为100000或者1000，而n-1的二进制表达式就为11111或者111</p>
+<p><strong>重点来了</strong><code>(n - 1) &amp; hash]</code>我们设置n为16，它的二进制是10000，接下来于不同的hash值做与运算</p>
+<img src="/2020/05/24/hashmap%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/2.png" class="" title="hash运算">
+
+<p>上面四种情况我们可以看出，不同的hash值，和(n-1)进行位运算后，能够得出不同的值，使得添加的元素能够均匀分布在集合中不同的位置上，避免hash碰撞。</p>
+<p>下面就来看一下HashMap的容量不是2的n次幂的情况，当容量为10时，二进制为01010，(n-1)的二进制是01001，向里面添加同样的元素，结果为：</p>
+<img src="/2020/05/24/hashmap%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/3.png" class="" title="hash运算">
+
+<p>可以看出，有三个不同的元素进过&amp;运算得出了同样的结果，严重的hash碰撞了。</p>
+<p><a href="https://blog.csdn.net/apeopl/article/details/88935422" target="_blank" rel="noopener">https://blog.csdn.net/apeopl/article/details/88935422</a></p>
+<p><strong>总结:HashMap的初始化容量必须是2的幂次方是为了使元素在hashmap上均匀分布，尽量避免hash碰撞</strong></p>
+<h2 id="HashMap的负载因子为什么为0-75？"><a href="#HashMap的负载因子为什么为0-75？" class="headerlink" title="HashMap的负载因子为什么为0.75？"></a>HashMap的负载因子为什么为0.75？</h2><p>首先我们要明白负载因子如何影响HashMap</p>
+<p>负载因子高的话，链表会增多，数组的长度会变小（空间变小），又因为链表是一个查询慢的数据结构，多了自然会影响整个hash表的查找性能。小则反之。</p>
+<p>所以负载因子如果高的话，减少了空间的浪费但是增加了查找的消耗。如果负载因子小的话增加了空间的浪费但是减少了查找的消耗。</p>
+<p><strong>总结：提高空间利用率和减少查询成本的折中，通过泊松分布分布分析，0.75的话hash碰撞最小，</strong></p>
+<h2 id="JDK1-7中的HashMap有什么安全隐患？"><a href="#JDK1-7中的HashMap有什么安全隐患？" class="headerlink" title="JDK1.7中的HashMap有什么安全隐患？"></a>JDK1.7中的HashMap有什么安全隐患？</h2><ul>
+<li>可能会形成循环链表，从而引发死锁</li>
+<li>可以通过精心构造的恶意请求引发dos攻击（就是通过大量的hash值相同的值，将hash表退化为链表，这样服务器查询性能会大大降低）</li>
+</ul>
+<h2 id="JDK1-8中的HashMap与JDK1-7中的HashMap有啥不同？"><a href="#JDK1-8中的HashMap与JDK1-7中的HashMap有啥不同？" class="headerlink" title="JDK1.8中的HashMap与JDK1.7中的HashMap有啥不同？"></a>JDK1.8中的HashMap与JDK1.7中的HashMap有啥不同？</h2><table>
+<thead>
+<tr>
+<th>JDK1.8中的HashMap</th>
+<th>JDK1.7中的HashMap</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数组+链表/红黑书</td>
+<td>数组+链表</td>
+</tr>
+<tr>
+<td>插入元素链表尾插</td>
+<td>插入元素链表头插</td>
+</tr>
+<tr>
+<td>节点是Node</td>
+<td>节点是Entry</td>
+</tr>
+<tr>
+<td>hash算法相对简化</td>
+<td>hash算法相对复杂</td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>javaee</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见的4种线程池</title>
+    <url>/2020/05/23/%E5%B8%B8%E8%A7%81%E7%9A%844%E7%A7%8D%E7%BA%BF%E7%A8%8B%E6%B1%A0/</url>
+    <content><![CDATA[<h4 id="1、newFixedThreadPool-定长线程池"><a href="#1、newFixedThreadPool-定长线程池" class="headerlink" title="1、newFixedThreadPool  定长线程池"></a>1、newFixedThreadPool  定长线程池</h4><p>一个有指定的线程数的线程池，有核心的线程，里面有固定的线程数量，响应的速度快。正规的并发线程，多用于服务器。固定的线程数由系统资源设置。核心线程是没有超时机制的，队列大小没有限制，除非线程池关闭了核心线程才会被回收。</p>
+<a id="more"></a>
+
+<h4 id="2、newCachedThreadPool-可缓冲线程池"><a href="#2、newCachedThreadPool-可缓冲线程池" class="headerlink" title="2、newCachedThreadPool 可缓冲线程池"></a>2、newCachedThreadPool 可缓冲线程池</h4><p>只有非核心线程，最大线程数很大，每新来一个任务，当没有空余线程的时候就会重新创建一个线程，这边有一个超时机制，当空闲的线程超过60s内没有用到的话，就会被回收，它可以一定程序减少频繁创建/销毁线程,减少系统开销，适用于执行时间短并且数量多的任务场景。</p>
+<h4 id="3、ScheduledThreadPool-周期线程池"><a href="#3、ScheduledThreadPool-周期线程池" class="headerlink" title="3、ScheduledThreadPool  周期线程池"></a>3、ScheduledThreadPool  周期线程池</h4><p>创建一个定长线程池，支持定时及周期性任务执行，通过过schedule方法可以设置任务的周期执行</p>
+<h4 id="4、newSingleThreadExecutor-单任务线程池"><a href="#4、newSingleThreadExecutor-单任务线程池" class="headerlink" title="4、newSingleThreadExecutor 单任务线程池"></a>4、newSingleThreadExecutor 单任务线程池</h4><p>创建一个单线程化的线程池，它只会用唯一的工作线程来执行任务，保证所有任务按照指定顺序(FIFO, LIFO, 优先级)执行，每次任务到来后都会进入阻塞队列，然后按指定顺序执行。</p>
+<p>作者：维特无忧堡<br>链接：<a href="https://www.jianshu.com/p/6eb9217a2af9" target="_blank" rel="noopener">https://www.jianshu.com/p/6eb9217a2af9</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+]]></content>
+      <tags>
+        <tag>javase</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>什么是RPC</title>
     <url>/2020/05/22/%E4%BB%80%E4%B9%88%E6%98%AFRPC/</url>
     <content><![CDATA[<h1 id="借用别人的文章《如何给老婆解释RPC》"><a href="#借用别人的文章《如何给老婆解释RPC》" class="headerlink" title="借用别人的文章《如何给老婆解释RPC》"></a>借用别人的文章《如何给老婆解释RPC》</h1><blockquote>
@@ -962,7 +1051,7 @@
 <li>注入：就是利用set方法来进行对象bean的属性动态注入</li>
 </ul>
 </blockquote>
-<p><strong>总结：</strong>IOC是一种编程思想，由主动编程创建变成了被动的接受。Spring的IOC就是一句话：对象由Spring创建，创建，管理，装配</p>
+<p><strong>总结：</strong>IOC是一种编程思想，由主动编程创建变成了被动的接受。Spring的IOC就是一句话：对象由Spring创建，管理，装配</p>
 ]]></content>
       <tags>
         <tag>Spring</tag>
@@ -1320,7 +1409,7 @@
   <entry>
     <title>内部类</title>
     <url>/2020/04/20/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
-    <content><![CDATA[<h1 id="内部类总结"><a href="#内部类总结" class="headerlink" title="内部类总结"></a>内部类总结</h1><p>1.普通内部类相当于外部类的一个成员变量，因此内部类可以直接访问外部类的成员，<strong><em>\</em>包括私有**</strong>。</p>
+    <content><![CDATA[<h1 id="内部类总结"><a href="#内部类总结" class="headerlink" title="内部类总结"></a>内部类总结</h1><p>1.普通内部类相当于外部类的一个成员变量，因此内部类可以直接访问外部类的成员，<strong>包括私有</strong>。</p>
 <a id="more"></a>
 
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	        <span class="comment">//外部类名.内部类名 = 外部类对象.内部类对象</span></span><br><span class="line">	        Outer.Inner oi = <span class="keyword">new</span> Outer().<span class="keyword">new</span> Inner();            <span class="comment">//创建内部类对象</span></span><br><span class="line">	        oi.method();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

@@ -86,14 +86,14 @@
 
 
 
-<meta name="description" content="内部类总结1.普通内部类相当于外部类的一个成员变量，因此内部类可以直接访问外部类的成员，\包括私有**。">
+<meta name="description" content="内部类总结1.普通内部类相当于外部类的一个成员变量，因此内部类可以直接访问外部类的成员，包括私有。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="内部类">
 <meta property="og:url" content="http://kayuyu1.github.io/2020/04/20/%E5%86%85%E9%83%A8%E7%B1%BB/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="内部类总结1.普通内部类相当于外部类的一个成员变量，因此内部类可以直接访问外部类的成员，\包括私有**。">
+<meta property="og:description" content="内部类总结1.普通内部类相当于外部类的一个成员变量，因此内部类可以直接访问外部类的成员，包括私有。">
 <meta property="article:published_time" content="2020-04-20T11:59:16.000Z">
-<meta property="article:modified_time" content="2020-04-28T07:50:19.763Z">
+<meta property="article:modified_time" content="2020-05-22T04:27:56.552Z">
 <meta property="article:author" content="kuangyu">
 <meta property="article:tag" content="javase">
 <meta name="twitter:card" content="summary">
@@ -386,7 +386,7 @@
       
 
       
-        <h1 id="内部类总结"><a href="#内部类总结" class="headerlink" title="内部类总结"></a>内部类总结</h1><p>1.普通内部类相当于外部类的一个成员变量，因此内部类可以直接访问外部类的成员，<strong><em>\</em>包括私有**</strong>。</p>
+        <h1 id="内部类总结"><a href="#内部类总结" class="headerlink" title="内部类总结"></a>内部类总结</h1><p>1.普通内部类相当于外部类的一个成员变量，因此内部类可以直接访问外部类的成员，<strong>包括私有</strong>。</p>
 <a id="more"></a>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">	    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	        <span class="comment">//外部类名.内部类名 = 外部类对象.内部类对象</span></span><br><span class="line">	        Outer.Inner oi = <span class="keyword">new</span> Outer().<span class="keyword">new</span> Inner();            <span class="comment">//创建内部类对象</span></span><br><span class="line">	        oi.method();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num = <span class="number">10</span>;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -563,7 +563,7 @@
 			  <!-- <a href="/archives/%7C%7C%20archive"> -->
 				<a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
