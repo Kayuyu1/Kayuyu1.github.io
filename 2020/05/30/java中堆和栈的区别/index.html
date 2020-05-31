@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="bug," />
+  <meta name="keywords" content="JVM," />
 
 
 
@@ -86,24 +86,17 @@
 
 
 
-<meta name="description" content="在idea中的out目录中我们可以看到部署到tomcat的web项目">
+<meta name="description" content="区别java中堆和栈的区别自然是面试中的常见问题，下面几点就是其具体的区别">
 <meta property="og:type" content="article">
-<meta property="og:title" content="out中的lib没有jar包的问题">
-<meta property="og:url" content="http://kayuyu1.github.io/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="java中堆和栈的区别">
+<meta property="og:url" content="http://kayuyu1.github.io/2020/05/30/java%E4%B8%AD%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="在idea中的out目录中我们可以看到部署到tomcat的web项目">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/1.png">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/2.png">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/3.png">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/4.png">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/5.png">
-<meta property="og:image" content="http://kayuyu1.github.io/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/6.png">
-<meta property="article:published_time" content="2020-05-07T09:05:16.000Z">
-<meta property="article:modified_time" content="2020-05-07T09:35:41.365Z">
+<meta property="og:description" content="区别java中堆和栈的区别自然是面试中的常见问题，下面几点就是其具体的区别">
+<meta property="article:published_time" content="2020-05-30T08:45:50.000Z">
+<meta property="article:modified_time" content="2020-05-30T08:48:52.541Z">
 <meta property="article:author" content="kuangyu">
-<meta property="article:tag" content="bug">
+<meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://kayuyu1.github.io/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/1.png">
 
 
 
@@ -133,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://Kayuyu1.github.io/2020/05/07/out中的lib没有jar包的问题/"/>
+  <link rel="canonical" href="http://Kayuyu1.github.io/2020/05/30/java中堆和栈的区别/"/>
 
 
 
 
 
-  <title>out中的lib没有jar包的问题 | 湖底幽魂</title>
+  <title>java中堆和栈的区别 | 湖底幽魂</title>
   
 
 
@@ -290,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://Kayuyu1.github.io/2020/05/30/java%E4%B8%AD%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kuangyu">
@@ -307,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">out中的lib没有jar包的问题</h1>
+          <h1 class="post-title" itemprop="name headline">java中堆和栈的区别</h1>
         
 
         <div class="post-meta">
@@ -319,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-07T17:05:16+08:00">
-                2020-05-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-30T16:45:50+08:00">
+                2020-05-30
               </time>
             
 
@@ -356,7 +349,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  104
+                  273
                 </span>
               
 
@@ -393,27 +386,14 @@
       
 
       
-        <p>在idea中的out目录中我们可以看到部署到tomcat的web项目</p>
+        <h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>java中堆和栈的区别自然是面试中的常见问题，下面几点就是其具体的区别</p>
 <a id="more"></a>
 
-<img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/1.png" class="" title="结构">
+<h3 id="各司其职"><a href="#各司其职" class="headerlink" title="各司其职"></a>各司其职</h3><p>最主要的区别就是栈内存用来存储局部变量和方法调用。<br>而堆内存用来存储Java中的对象。无论是成员变量，局部变量，还是类变量，它们指向的对象都存储在堆内存中。</p>
+<h3 id="独有还是共享"><a href="#独有还是共享" class="headerlink" title="独有还是共享"></a>独有还是共享</h3><p>栈内存归属于单个线程，每个线程都会有一个栈内存，其存储的变量只能在其所属线程中可见，即栈内存可以理解成线程的私有内存。<br>而堆内存中的对象对所有线程可见。堆内存中的对象可以被所有线程访问。</p>
+<h3 id="异常错误"><a href="#异常错误" class="headerlink" title="异常错误"></a>异常错误</h3><p>如果栈内存没有可用的空间存储方法调用和局部变量，JVM会抛出java.lang.StackOverFlowError。<br>而如果是堆内存没有可用的空间存储生成的对象，JVM会抛出java.lang.OutOfMemoryError。</p>
+<h3 id="空间大小"><a href="#空间大小" class="headerlink" title="空间大小"></a>空间大小</h3><p>栈的内存要远远小于堆内存</p>
 
-<p>有时候我们明明通过maven配置了相关的jar包，但部署到tomcat的项目的lib下却没有</p>
-<p>如下：</p>
-<img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/2.png" class="" title="maven">
-
-<p>甚至连lib都没有</p>
-<img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/3.png" class="" title="lib">
-
-<p>这时候我们就要打开Project Settings-&gt;Artifacts</p>
-<p>选择没有lib的项目点击创建</p>
- <img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/4.png" class="" title="lib">
-
-<p>导入jar包</p>
- <img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/5.png" class="" title="jar">
-
-<p>再次启动tomcat或者idea就能看到lib和里面的jar包了</p>
-<img src="/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/6.png" class="" title="出现了">
       
     </div>
     
@@ -457,7 +437,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://kayuyu1.github.io/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/" title="out中的lib没有jar包的问题">http://kayuyu1.github.io/2020/05/07/out%E4%B8%AD%E7%9A%84lib%E6%B2%A1%E6%9C%89jar%E5%8C%85%E7%9A%84%E9%97%AE%E9%A2%98/</a>
+    <a href="http://kayuyu1.github.io/2020/05/30/java%E4%B8%AD%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/" title="java中堆和栈的区别">http://kayuyu1.github.io/2020/05/30/java%E4%B8%AD%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -472,7 +452,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/bug/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>bug</a>
+            <a href="/tags/JVM/" rel="tag"><i class="fa fa-tags" aria-hidden="true"></i>JVM</a>
           
         </div>
       
@@ -485,8 +465,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/06/%E4%B8%BA%E4%BB%80%E4%B9%88web-inf%E4%B8%8B%E7%9A%84%E8%B5%84%E6%BA%90%E4%B8%8D%E8%83%BD%E9%87%8D%E5%AE%9A%E5%90%91/" rel="next" title="为什么web-inf下的资源不能重定向">
-                <i class="fa fa-chevron-left"></i> 为什么web-inf下的资源不能重定向
+              <a href="/2020/05/26/JUC%E6%8E%A2%E7%B4%A2%E4%B8%8A/" rel="next" title="JUC探索上">
+                <i class="fa fa-chevron-left"></i> JUC探索上
               </a>
             
           </div>
@@ -495,8 +475,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/05/08/SSM%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%95%B4%E5%90%88/" rel="prev" title="SSM配置文件整合">
-                SSM配置文件整合 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/05/30/%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%92%8C%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="prev" title="内存溢出和内存泄露的区别">
+                内存溢出和内存泄露的区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -549,8 +529,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -644,6 +633,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#各司其职"><span class="nav-number">1.1.</span> <span class="nav-text">各司其职</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#独有还是共享"><span class="nav-number">1.2.</span> <span class="nav-text">独有还是共享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常错误"><span class="nav-number">1.3.</span> <span class="nav-text">异常错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间大小"><span class="nav-number">1.4.</span> <span class="nav-text">空间大小</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
