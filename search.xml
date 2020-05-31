@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>mysql的事务隔离级别</title>
+    <url>/2020/05/31/mysql%E7%9A%84%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/</url>
+    <content><![CDATA[<h1 id="1、首先了解什么是事务以及它的特性"><a href="#1、首先了解什么是事务以及它的特性" class="headerlink" title="1、首先了解什么是事务以及它的特性"></a>1、首先了解什么是事务以及它的特性</h1><p><a href="https://www.cnblogs.com/Kevin-ZhangCG/p/9038371.html" target="_blank" rel="noopener">https://www.cnblogs.com/Kevin-ZhangCG/p/9038371.html</a></p>
+<h1 id="2、了解脏读，幻读，不可重复读"><a href="#2、了解脏读，幻读，不可重复读" class="headerlink" title="2、了解脏读，幻读，不可重复读"></a>2、了解脏读，幻读，不可重复读</h1><p><a href="https://www.jianshu.com/p/0cef4c68b8f3" target="_blank" rel="noopener">https://www.jianshu.com/p/0cef4c68b8f3</a></p>
+<h1 id="3、事务隔离级别"><a href="#3、事务隔离级别" class="headerlink" title="3、事务隔离级别"></a>3、事务隔离级别</h1><p><a href="https://www.cnblogs.com/yuxiang1/p/11989667.html" target="_blank" rel="noopener">https://www.cnblogs.com/yuxiang1/p/11989667.html</a></p>
+<p><a href="https://www.cnblogs.com/QX-Tang/p/11516567.html" target="_blank" rel="noopener">https://www.cnblogs.com/QX-Tang/p/11516567.html</a></p>
+]]></content>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>内存溢出和内存泄露的区别</title>
     <url>/2020/05/30/%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA%E5%92%8C%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
     <content><![CDATA[<h1 id="内存溢出-out-of-memory"><a href="#内存溢出-out-of-memory" class="headerlink" title="内存溢出 out of memory"></a><strong>内存溢出 out of memory</strong></h1><p>是指程序在申请内存时，没有足够的内存空间供其使用，出现out of memory；比如申请 了一个integer,但给它存了long才能存下的数，那就是内存溢出。</p>
