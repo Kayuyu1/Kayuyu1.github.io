@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://kayuyu1.github.io/2020/06/01/JUC%E6%8E%A2%E7%B4%A2%E4%B8%8B/18.png">
 <meta property="og:image" content="http://kayuyu1.github.io/2020/06/01/JUC%E6%8E%A2%E7%B4%A2%E4%B8%8B/19.png">
 <meta property="article:published_time" content="2020-06-01T07:20:22.000Z">
-<meta property="article:modified_time" content="2020-06-03T07:21:02.932Z">
+<meta property="article:modified_time" content="2020-06-04T02:52:42.757Z">
 <meta property="article:author" content="kuangyu">
 <meta property="article:tag" content="JUC">
 <meta name="twitter:card" content="summary">
@@ -369,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.7k
+                  5.8k
                 </span>
               
 
@@ -678,8 +678,10 @@
 <h2 id="9-3、独享锁-共享锁"><a href="#9-3、独享锁-共享锁" class="headerlink" title="9.3、独享锁/共享锁"></a>9.3、独享锁/共享锁</h2><p>独享锁是指该锁一次只能被一个线程所持有。<br>共享锁是指该锁可被多个线程所持有。</p>
 <p>对于Java <code>ReentrantLock</code>而言，其是独享锁。但是对于Lock的另一个实现类<code>ReadWriteLock</code>，其读锁是共享锁，其写锁是独享锁。<br>读锁的共享锁可保证并发读是非常高效的，读写，写读 ，写写的过程是互斥的。<br>独享锁与共享锁也是通过AQS来实现的，通过实现不同的方法，来实现独享或者共享。<br>对于<code>Synchronized</code>而言，当然是独享锁。</p>
 <h2 id="9-4、互斥锁-读写锁"><a href="#9-4、互斥锁-读写锁" class="headerlink" title="9.4、互斥锁/读写锁"></a>9.4、互斥锁/读写锁</h2><p>上面讲的独享锁/共享锁就是一种广义的说法，互斥锁/读写锁就是具体的实现。<br>互斥锁在Java中的具体实现就是<code>ReentrantLock</code><br>读写锁在Java中的具体实现就是<code>ReadWriteLock</code></p>
-<h2 id="9-5、乐观锁-悲观锁"><a href="#9-5、乐观锁-悲观锁" class="headerlink" title="9.5、乐观锁/悲观锁"></a>9.5、乐观锁/悲观锁</h2><p>乐观锁与悲观锁不是指具体的什么类型的锁，而是指看待并发同步的角度。<br>悲观锁认为对于同一个数据的并发操作，一定是会发生修改的，哪怕没有修改，也会认为修改。因此对于同一个数据的并发操作，悲观锁采取加锁的形式。悲观的认为，不加锁的并发操作一定会出问题。<br>乐观锁则认为对于同一个数据的并发操作，是不会发生修改的。在更新数据的时候，会采用尝试更新，不断重新的方式更新数据。乐观的认为，不加锁的并发操作是没有事情的。</p>
+<h2 id="9-5、乐观锁-悲观锁"><a href="#9-5、乐观锁-悲观锁" class="headerlink" title="9.5、乐观锁/悲观锁"></a>9.5、乐观锁/悲观锁</h2><p>乐观锁与悲观锁不是指具体的什么类型的锁，而是指看待并发同步的角度。<br>悲观锁认为对于同一个数据的并发操作，一定是会发生修改的，哪怕没有修改，也会认为修改。因此对于同一个数据的并发操作，悲观锁采取加锁的形式。悲观的认为，不加锁的并发操作一定会出问题。</p>
+<p>乐观锁则认为对于同一个数据的并发操作，是不会发生修改的。在更新数据的时候，会采用尝试更新，不断重新的方式更新数据。乐观的认为，不加锁的并发操作是没有事情的。<strong>乐观锁的概念中其实已经阐述了它的具体实现细节。主要就是两个步骤：冲突检测和数据更新。其实现方式有一种比较典型的就是CAS(Compare and Swap)。</strong></p>
 <p>从上面的描述我们可以看出，悲观锁适合写操作非常多的场景，乐观锁适合读操作非常多的场景，不加锁会带来大量的性能提升。<br>悲观锁在Java中的使用，就是利用各种锁。<br>乐观锁在Java中的使用，是无锁编程，常常采用的是CAS算法，典型的例子就是原子类，通过CAS自旋实现原子操作的更新。</p>
+<p><a href="https://www.jianshu.com/p/d2ac26ca6525" target="_blank" rel="noopener">https://www.jianshu.com/p/d2ac26ca6525</a></p>
 <h2 id="9-6、自旋锁"><a href="#9-6、自旋锁" class="headerlink" title="9.6、自旋锁"></a>9.6、自旋锁</h2><p>在Java中，自旋锁是指尝试获取锁的线程不会立即阻塞，而是采用循环的方式去尝试获取锁，这样的好处是减少线程上下文切换的消耗，缺点是循环会消耗CPU。</p>
 <p><strong>手写自旋锁</strong>：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyLock</span> </span>&#123;</span><br><span class="line">    AtomicReference&lt;Thread&gt; atomicReference=<span class="keyword">new</span> AtomicReference&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">myLock</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Thread thread = Thread.currentThread();<span class="comment">//获取当前线程</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//期望值为null，更新值为当前线程,如果不是，循环等待</span></span><br><span class="line">        <span class="keyword">while</span> (!atomicReference.compareAndSet(<span class="keyword">null</span>,thread))</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">myUnLock</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Thread thread = Thread.currentThread();</span><br><span class="line">        <span class="comment">//期望值为当前线程，更新值为null</span></span><br><span class="line">        atomicReference.compareAndSet(thread,<span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
