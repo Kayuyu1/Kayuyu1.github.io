@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://kayuyu1.github.io/2020/05/16/JVM%E5%88%9D%E6%8E%A2/9.png">
 <meta property="og:image" content="http://kayuyu1.github.io/2020/05/16/JVM%E5%88%9D%E6%8E%A2/10.png">
 <meta property="article:published_time" content="2020-05-16T01:45:05.000Z">
-<meta property="article:modified_time" content="2020-05-26T01:51:00.793Z">
+<meta property="article:modified_time" content="2020-06-05T10:41:22.990Z">
 <meta property="article:author" content="kuangyu">
 <meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary">
@@ -449,7 +449,7 @@
 <p>趋势：现在用Native的越来越少了，除了硬件功能的调用如java程序驱动打印机还在使用，在企业级应用中都很少见了</p>
 <p>因为现在异构领域的通信都很发达，如Socket等。</p>
 <h3 id="PC寄存器"><a href="#PC寄存器" class="headerlink" title="PC寄存器"></a>PC寄存器</h3><p>每个线程都有一个程序计数器，是线程私有的,就是一个指针，指向方法区中的方法字节码（用来存储指向下一条指令的地址,也即将要执行的指令代码），由执行引擎读取下一条指令，是一个非常小的内存空间，几乎可以忽略不记。</p>
-<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>方法区被所有线程共享，它存放了类的字节码，静态方法，静态变量，和常量池，但是实例变量任然存在堆中，与类无关</p>
+<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>方法区被所有线程共享，它存放了类信息，静态变量，和常量池，但是实例变量任然存在堆中，与类无关</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String name=<span class="string">"ky"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student = <span class="keyword">new</span> Student();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <img src="/2020/05/16/JVM%E5%88%9D%E6%8E%A2/7.png" class="" title="第一种">
@@ -461,7 +461,8 @@
 <blockquote>
 <p>intern方法，这个方法首先在常量池中查找是否存在一份equal相等的字符串如果有的话就返回该字符串的引用，没有的话就将它加入到字符串常量池中。</p>
 </blockquote>
-<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>在java中，栈主管程序的运行，一个栈对应一个线程，栈生命周期与程序的线程相同。<strong>对于栈来说，不存在垃圾回收</strong>。栈中存放了基本数据类型，和引用数据类型的引用地址，以及方法的引用</p>
+<h3 id="java虚拟栈"><a href="#java虚拟栈" class="headerlink" title="java虚拟栈"></a>java虚拟栈</h3><p>在java中，栈主管程序的运行，一个栈对应一个线程，栈生命周期与程序的线程相同。<strong>对于栈来说，不存在垃圾回收</strong>。栈中存放了基本数据类型，和引用数据类型的引用地址，以及方法的引用</p>
+<h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><p>本地方法栈的功能和特点类似于虚拟机栈，均具有线程隔离的特点以及都能抛出StackOverflowError和OutOfMemoryError异常。本地方法栈服务的对象是JVM执行的native方法。</p>
 <h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>堆主要存放类实例化的真实对象。堆里面又分为新生代，老年代，和永久代（jdk1.8后改为元空间），垃圾回收主要发生在新生代和老年代。</p>
 <h3 id="新生代，老年代，永久代（元空间）"><a href="#新生代，老年代，永久代（元空间）" class="headerlink" title="新生代，老年代，永久代（元空间）"></a>新生代，老年代，永久代（元空间）</h3><p>新生代：一般对象的诞生的地方</p>
 <p>老年代：对象躲过15次GC（一般默认15次，可以自己设置）之后进入的地方</p>
@@ -662,7 +663,7 @@
 			  <!-- <a href="/archives/%7C%7C%20archive"> -->
 				<a href="/archives/">
               
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -675,7 +676,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -746,7 +747,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面试提问"><span class="nav-number">1.</span> <span class="nav-text">面试提问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM探究"><span class="nav-number">2.</span> <span class="nav-text">JVM探究</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM的位置"><span class="nav-number">2.0.1.</span> <span class="nav-text">JVM的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM的体系结构"><span class="nav-number">2.0.2.</span> <span class="nav-text">JVM的体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类加载器"><span class="nav-number">2.0.3.</span> <span class="nav-text">类加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双亲委派机制"><span class="nav-number">2.0.4.</span> <span class="nav-text">双亲委派机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Native"><span class="nav-number">2.0.5.</span> <span class="nav-text">Native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PC寄存器"><span class="nav-number">2.0.6.</span> <span class="nav-text">PC寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法区"><span class="nav-number">2.0.7.</span> <span class="nav-text">方法区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#栈"><span class="nav-number">2.0.8.</span> <span class="nav-text">栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆"><span class="nav-number">2.0.9.</span> <span class="nav-text">堆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新生代，老年代，永久代（元空间）"><span class="nav-number">2.0.10.</span> <span class="nav-text">新生代，老年代，永久代（元空间）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GC"><span class="nav-number">2.0.11.</span> <span class="nav-text">GC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JMM浅谈"><span class="nav-number">2.0.12.</span> <span class="nav-text">JMM浅谈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深究JVM"><span class="nav-number">2.0.13.</span> <span class="nav-text">深究JVM</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面试提问"><span class="nav-number">1.</span> <span class="nav-text">面试提问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM探究"><span class="nav-number">2.</span> <span class="nav-text">JVM探究</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM的位置"><span class="nav-number">2.0.1.</span> <span class="nav-text">JVM的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM的体系结构"><span class="nav-number">2.0.2.</span> <span class="nav-text">JVM的体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类加载器"><span class="nav-number">2.0.3.</span> <span class="nav-text">类加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双亲委派机制"><span class="nav-number">2.0.4.</span> <span class="nav-text">双亲委派机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Native"><span class="nav-number">2.0.5.</span> <span class="nav-text">Native</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PC寄存器"><span class="nav-number">2.0.6.</span> <span class="nav-text">PC寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法区"><span class="nav-number">2.0.7.</span> <span class="nav-text">方法区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java虚拟栈"><span class="nav-number">2.0.8.</span> <span class="nav-text">java虚拟栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地方法栈"><span class="nav-number">2.0.9.</span> <span class="nav-text">本地方法栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆"><span class="nav-number">2.0.10.</span> <span class="nav-text">堆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新生代，老年代，永久代（元空间）"><span class="nav-number">2.0.11.</span> <span class="nav-text">新生代，老年代，永久代（元空间）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GC"><span class="nav-number">2.0.12.</span> <span class="nav-text">GC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JMM浅谈"><span class="nav-number">2.0.13.</span> <span class="nav-text">JMM浅谈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深究JVM"><span class="nav-number">2.0.14.</span> <span class="nav-text">深究JVM</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
