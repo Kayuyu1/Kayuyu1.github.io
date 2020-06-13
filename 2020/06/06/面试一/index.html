@@ -86,17 +86,19 @@
 
 
 
-<meta name="description" content="1、请你谈谈java一般面试可能一开始会问这个问题，可以从以下方面阐述  跨平台性：一次编译到处运行 GC：不用手动回收 语言特性：lamda，泛型，反射 面向对象：封装，继承，多态 类库：自带的集合和并发库。 异常体系  2、java如何实现跨平台​        java源码文件由javac编译成class文件，这个class文件就是java实现跨平台的基础，java在不同的平台都有相应的JV">
+<meta name="description" content="1、请你谈谈java一般面试可能一开始会问这个问题，可以从以下方面阐述  跨平台性：一次编译到处运行 GC：不用手动回收 语言特性：lamda，泛型，反射 面向对象：封装，继承，多态 类库：自带的集合和并发库。 异常体系。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试一">
 <meta property="og:url" content="http://kayuyu1.github.io/2020/06/06/%E9%9D%A2%E8%AF%95%E4%B8%80/index.html">
 <meta property="og:site_name" content="湖底幽魂">
-<meta property="og:description" content="1、请你谈谈java一般面试可能一开始会问这个问题，可以从以下方面阐述  跨平台性：一次编译到处运行 GC：不用手动回收 语言特性：lamda，泛型，反射 面向对象：封装，继承，多态 类库：自带的集合和并发库。 异常体系  2、java如何实现跨平台​        java源码文件由javac编译成class文件，这个class文件就是java实现跨平台的基础，java在不同的平台都有相应的JV">
+<meta property="og:description" content="1、请你谈谈java一般面试可能一开始会问这个问题，可以从以下方面阐述  跨平台性：一次编译到处运行 GC：不用手动回收 语言特性：lamda，泛型，反射 面向对象：封装，继承，多态 类库：自带的集合和并发库。 异常体系。">
+<meta property="og:image" content="http://kayuyu1.github.io/2020/06/06/%E9%9D%A2%E8%AF%95%E4%B8%80/1.png">
 <meta property="article:published_time" content="2020-06-06T03:35:24.000Z">
-<meta property="article:modified_time" content="2020-06-06T03:53:29.012Z">
+<meta property="article:modified_time" content="2020-06-10T01:29:20.715Z">
 <meta property="article:author" content="kuangyu">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://kayuyu1.github.io/2020/06/06/%E9%9D%A2%E8%AF%95%E4%B8%80/1.png">
 
 
 
@@ -349,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  161
+                  1.5k
                 </span>
               
 
@@ -365,7 +367,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -393,10 +395,118 @@
 <li>语言特性：lamda，泛型，反射</li>
 <li>面向对象：封装，继承，多态</li>
 <li>类库：自带的集合和并发库。</li>
-<li>异常体系</li>
+<li>异常体系。<a id="more"></a></li>
 </ul>
 <h1 id="2、java如何实现跨平台"><a href="#2、java如何实现跨平台" class="headerlink" title="2、java如何实现跨平台"></a>2、java如何实现跨平台</h1><p>​        <strong>java源码文件由javac编译成class文件，这个class文件就是java实现跨平台的基础，java在不同的平台都有相应的JVM，JVM可以将class文件转换成具体平台的机器指令。</strong></p>
-<h1 id="3、JVM如何加载Class文件"><a href="#3、JVM如何加载Class文件" class="headerlink" title="3、JVM如何加载Class文件"></a>3、JVM如何加载Class文件</h1><h1 id="4、什么是反射"><a href="#4、什么是反射" class="headerlink" title="4、什么是反射"></a>4、什么是反射</h1>
+<h1 id="3、JVM的组成"><a href="#3、JVM的组成" class="headerlink" title="3、JVM的组成"></a>3、JVM的组成</h1><p>JVM可分为四大部分：</p>
+<ul>
+<li>类加载器：加载class文件进入内存</li>
+<li>运行数据域：堆，java虚拟栈等所在区域，程序加载的地方</li>
+<li>执行引擎：执行解析字节码文件</li>
+<li>本地方法接口：融合其他语言，如c/c++</li>
+</ul>
+<h1 id="4、什么是反射"><a href="#4、什么是反射" class="headerlink" title="4、什么是反射"></a>4、什么是反射</h1><p><strong>反射是在数据运行机制中，对于任意一个类和对象，都能任意的调用他们的方法和属性</strong></p>
+<p>反射相关的方法:</p>
+<ul>
+<li>Class.forName(‘“xxxx”‘):加载指定类并且返回类</li>
+<li>object.newInstance():创建实例对象</li>
+<li>object.getDeclaredMethods():获取所有声明方法（不包括继承或实现接口的方法）</li>
+<li>object.getMethods():获取public修饰的方法（可获取继承或实现接口的方法）</li>
+<li>object.getDeclaredContractors():获取所有声明的构造函数</li>
+<li>object.setAccessible(true):暴力破解</li>
+<li>object.invoke():执行方法</li>
+</ul>
+<h1 id="5、谈谈类从编译到执行的过程"><a href="#5、谈谈类从编译到执行的过程" class="headerlink" title="5、谈谈类从编译到执行的过程"></a>5、谈谈类从编译到执行的过程</h1><ol>
+<li>java源文件由javac编译成class文件</li>
+<li>class文件由类加载器加载至JVM中转换为Class<Objec>对象</li>
+<li>JVM利用类模板对象Class<Objec>实例化Object对象</li>
+</ol>
+<h1 id="6、谈谈ClassLoader"><a href="#6、谈谈ClassLoader" class="headerlink" title="6、谈谈ClassLoader"></a>6、谈谈ClassLoader</h1><p>ClassLoader是java的核心组件之一，它作用是加载class文件以供JVM使用。</p>
+<p>ClassLoader一般有：</p>
+<ul>
+<li>BootstrapClassLoader：根类加载器，负责加载java核心类库里面的类 java<em>.，*</em>用C++编写**，不可直接获取。</li>
+<li>ExtClassLoader：扩展类加载器，负责加载java扩展类javax*</li>
+<li>AppClassLoader：系统类加载器（应用类加载器），负责加载用户路径下的类</li>
+<li>自定义ClassLoader：可自定义加载</li>
+</ul>
+<h1 id="7、谈谈双亲加载机制"><a href="#7、谈谈双亲加载机制" class="headerlink" title="7、谈谈双亲加载机制"></a>7、谈谈双亲加载机制</h1><p><strong>双亲加载机制是，当类加载器收到类加载请求的时候不会立即加载会先判断已经装载过这个类，有就直接返回，没有会交给上一级处理，直到到达根类加载器，如果上级无法处理就会再返回给下级处理，依次类推。这样做的能避免用户自定类入侵，比如用户自定了一个String类，类加载器是不会让其加载的。</strong></p>
+<ul>
+<li>判断会不会已经加载</li>
+<li>有就直接返回</li>
+<li>没有就委托上一级</li>
+<li>上级不能处理再返回给下一级</li>
+</ul>
+<h1 id="8、类装载的详细过程"><a href="#8、类装载的详细过程" class="headerlink" title="8、类装载的详细过程"></a>8、类装载的详细过程</h1><blockquote>
+<p>注意，这里的装载以上的加载一个意思。</p>
+</blockquote>
+<ul>
+<li>加载（这里的加载是装载的一个步骤）：ClassLoader加载class字节码文件，生产Class模板类</li>
+<li>链接：<ul>
+<li>校验：检查加载的class的正确性和安全性</li>
+<li>准备：为类变量分配存储空间并设置类变量初始值</li>
+<li>解析：JVM将常量池内符号引用转换为直接引用</li>
+</ul>
+</li>
+<li>初始化：执行类变量赋值和静态代码块</li>
+</ul>
+<h1 id="9、类加载的方式"><a href="#9、类加载的方式" class="headerlink" title="9、类加载的方式"></a>9、类加载的方式</h1><ul>
+<li><p>隐式加载：new。</p>
+</li>
+<li><p>显式：loadClass，forName等。</p>
+<p>loadClass与forName的区别</p>
+</li>
+</ul>
+<p>测试：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoadDiff</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"hell word"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        ClassLoader classLoader = LoadDiff<span class="class">.<span class="keyword">class</span>.<span class="title">getClassLoader</span>()</span>;</span><br><span class="line">        classLoader.loadClass(<span class="string">"com.ky.javase.reflect.LoadDiff"</span>);</span><br><span class="line">        System.out.println(<span class="string">"==========================="</span>);</span><br><span class="line">        Class aClass = Class.forName(<span class="string">"com.ky.javase.reflect.LoadDiff"</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/06/06/%E9%9D%A2%E8%AF%95%E4%B8%80/1.png" class="" title="结果">
+
+<p>loadclass源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> Class&lt;?&gt; loadClass(String name) <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">    <span class="keyword">return</span> loadClass(name, <span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//If &lt;tt&gt;true&lt;/tt&gt; then resolve the class</span></span><br><span class="line"><span class="keyword">protected</span> Class&lt;?&gt; loadClass(String name, <span class="keyword">boolean</span> resolve)</span><br></pre></td></tr></table></figure>
+
+<p>foName源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@CallerSensitive</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Class&lt;?&gt; forName(String className)</span><br><span class="line">            <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">    Class&lt;?&gt; caller = Reflection.getCallerClass();</span><br><span class="line">    <span class="keyword">return</span> forName0(className, <span class="keyword">true</span>, ClassLoader.getClassLoader(caller), caller);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/** Called after security check for system loader access checks have been made. */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">native</span> Class&lt;?&gt; forName0(String name, <span class="keyword">boolean</span> initialize,</span><br><span class="line">                                            ClassLoader loader,</span><br><span class="line">                                            Class&lt;?&gt; caller)</span><br><span class="line">        <span class="keyword">throws</span> ClassNotFoundException;</span><br></pre></td></tr></table></figure>
+
+<p><strong>由源码和结果看出：因为loadClass的resolve（是否进行链接）为false，所以它在第一阶段。foName的initialize（是否进行初始化）为true，所以他在第三阶段类装载已完毕。</strong></p>
+<p><strong>使用举例场景：forName可用于加载数据库驱动。springIoc中使用了loadClass，延时加载，当调用的时候才会链接和初始化。</strong></p>
+<h1 id="10、JVM内存模型-JDK8"><a href="#10、JVM内存模型-JDK8" class="headerlink" title="10、JVM内存模型(JDK8)"></a>10、JVM内存模型(JDK8)</h1><p>可分为两类</p>
+<ul>
+<li>线程私有<ul>
+<li>java虚拟机栈：存放了局部变量和方法调用，不会发生gc，每一个方法对应一个栈帧。递归层次过多可能会引发SOF错误</li>
+<li>本地方法栈：作用与java虚拟栈类似，但服务对象为本地（native）方法。</li>
+<li>程序计数器：每一个线程都有，用来记录执行字节码指令的行号。</li>
+</ul>
+</li>
+<li>线程共享<ul>
+<li>堆：对象实例和常量池存在区域，gc发生的主要区域。<ul>
+<li>常量池：存放了字面量（比如String类型的字符串值或者定义为final类型的常量的值），和符号引用（对类或者方法或者变量的描述符）</li>
+</ul>
+</li>
+<li>元空间（方法区的实现）：<strong>存放类元数据，在本地内存中。</strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="11、JVM常考题"><a href="#11、JVM常考题" class="headerlink" title="11、JVM常考题"></a>11、JVM常考题</h1><h2 id="11-1、JVM三大性能调优参数-Xms-Xmx-Xss的含义"><a href="#11-1、JVM三大性能调优参数-Xms-Xmx-Xss的含义" class="headerlink" title="11.1、JVM三大性能调优参数 -Xms,-Xmx,-Xss的含义"></a>11.1、JVM三大性能调优参数 -Xms,-Xmx,-Xss的含义</h2><ul>
+<li>-Xms：堆初始化空间大小</li>
+<li>-Xmx：堆最大空间大小</li>
+<li>-Xss：虚拟栈空间大小</li>
+</ul>
+<h2 id="11-2、堆和栈的区别"><a href="#11-2、堆和栈的区别" class="headerlink" title="11.2、堆和栈的区别"></a>11.2、堆和栈的区别</h2><ul>
+<li>GC管理：栈不发生GC，堆是GC的主要区域</li>
+<li>空间大小：栈的空间大小是远远小于堆的</li>
+<li>碎片相关：由于栈和堆底层结构的特点，堆产生的碎片远多与栈</li>
+<li>线程相关：栈是线程私有的，堆是线程共享的</li>
+<li>存放相关：栈存放了局部变量和方法调用，堆存放了实例化的对象和常量池</li>
+<li>异常错误：栈能产生SOF和OOM,堆能产生OOM</li>
+</ul>
+<h2 id="11-3、不同版本间intern-方法的区别—jdk1-6vsjdk1-6"><a href="#11-3、不同版本间intern-方法的区别—jdk1-6vsjdk1-6" class="headerlink" title="11.3、不同版本间intern()方法的区别—jdk1.6vsjdk1.6+"></a>11.3、不同版本间intern()方法的区别—jdk1.6vsjdk1.6+</h2>
+
+
+
+<p>区别：一句话jdk1.6+intern()方法可以存放对象引用了。</p>
+
       
     </div>
     
@@ -478,6 +588,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2020/06/09/springboot%E6%95%B4%E5%90%88mybatis/" rel="prev" title="springboot整合mybatis">
+                springboot整合mybatis <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -558,7 +672,7 @@
 			  <!-- <a href="/archives/%7C%7C%20archive"> -->
 				<a href="/archives/">
               
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -571,7 +685,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -642,7 +756,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、请你谈谈java"><span class="nav-number">1.</span> <span class="nav-text">1、请你谈谈java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、java如何实现跨平台"><span class="nav-number">2.</span> <span class="nav-text">2、java如何实现跨平台</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、JVM如何加载Class文件"><span class="nav-number">3.</span> <span class="nav-text">3、JVM如何加载Class文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、什么是反射"><span class="nav-number">4.</span> <span class="nav-text">4、什么是反射</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、请你谈谈java"><span class="nav-number">1.</span> <span class="nav-text">1、请你谈谈java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、java如何实现跨平台"><span class="nav-number">2.</span> <span class="nav-text">2、java如何实现跨平台</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、JVM的组成"><span class="nav-number">3.</span> <span class="nav-text">3、JVM的组成</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、什么是反射"><span class="nav-number">4.</span> <span class="nav-text">4、什么是反射</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、谈谈类从编译到执行的过程"><span class="nav-number">5.</span> <span class="nav-text">5、谈谈类从编译到执行的过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6、谈谈ClassLoader"><span class="nav-number">6.</span> <span class="nav-text">6、谈谈ClassLoader</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7、谈谈双亲加载机制"><span class="nav-number">7.</span> <span class="nav-text">7、谈谈双亲加载机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8、类装载的详细过程"><span class="nav-number">8.</span> <span class="nav-text">8、类装载的详细过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9、类加载的方式"><span class="nav-number">9.</span> <span class="nav-text">9、类加载的方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10、JVM内存模型-JDK8"><span class="nav-number">10.</span> <span class="nav-text">10、JVM内存模型(JDK8)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11、JVM常考题"><span class="nav-number">11.</span> <span class="nav-text">11、JVM常考题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#11-1、JVM三大性能调优参数-Xms-Xmx-Xss的含义"><span class="nav-number">11.1.</span> <span class="nav-text">11.1、JVM三大性能调优参数 -Xms,-Xmx,-Xss的含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-2、堆和栈的区别"><span class="nav-number">11.2.</span> <span class="nav-text">11.2、堆和栈的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-3、不同版本间intern-方法的区别—jdk1-6vsjdk1-6"><span class="nav-number">11.3.</span> <span class="nav-text">11.3、不同版本间intern()方法的区别—jdk1.6vsjdk1.6+</span></a></li></ol></li></ol></div>
             
 
           </div>
